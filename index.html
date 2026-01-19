@@ -3,63 +3,83 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mateus Vitor | Portfólio</title>
-    <link rel="stylesheet" href="style/style.css" />
+    <title>Mateus Vitor | Web Designer & Full Stack</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="shortcut icon"
+      href="img/favicon/favicon.jpg"
+      type="image/x-icon"
+    />
+
+    <link rel="stylesheet" href="style/style.css" />
   </head>
+
   <body>
     <!-- HEADER -->
     <header class="header">
-      <div class="container">
+      <div class="container header-content">
         <h1 class="logo">Mateus<span>.</span></h1>
-        <nav>
+        <nav class="nav">
           <a href="#projetos">Projetos</a>
           <a href="#sobre">Sobre</a>
-          <a href="#contato">Contato</a>
+          <a href="#contato" class="nav-cta">Contato</a>
         </nav>
       </div>
     </header>
 
-    <!-- HOME -->
+    <!-- HERO -->
     <section class="hero">
-      <div class="container hero-content reveal">
+      <div class="container hero-grid">
         <div class="hero-text">
-          <h2>Web Designer & Full Stack Developer (code-first)</h2>
+          <span class="hero-badge">Web Designer & Full Stack (code-first)</span>
+
+          <h2>
+            Crio sites modernos, rápidos e focados em
+            <span>resultado</span>
+          </h2>
+
           <p>
-            Crio interfaces modernas, funcionais e focadas em conversão.
-            Transformo ideias em experiências digitais profissionais.
+            Transformo ideias em experiências digitais profissionais,
+            responsivas e orientadas à conversão.
           </p>
-          <div class="hero-buttons">
+
+          <div class="hero-actions">
             <a href="#projetos" class="btn primary">Ver projetos</a>
-            <a href="#contato" class="btn outline">Fale comigo</a>
+            <a href="#contato" class="btn ghost">Fale comigo</a>
           </div>
         </div>
 
-        <div class="hero-image">
-          <div class="mockup-wrapper">
-            <div class="mockup-slider">
-              <img
-                src="img/portifolio/judcement.png"
-                class="active"
-                data-link="/projetos/judcement/"
-              />
-              <img
-                src="img/portifolio/monarch.png"
-                data-link="/projetos/monarch/"
-              />
-            </div>
+        <div class="hero-visual">
+          <div class="hero-image">
+            <div class="mockup-wrapper">
+              <div class="mockup-slider">
+                <img
+                  src="img/portifolio/judcement.png"
+                  class="active"
+                  data-link="https://projeto-judcement.com"
+                  alt="Projeto Judcement"
+                />
+                <img
+                  src="img/portifolio/monarch.png"
+                  data-link="/projetos/monarch/"
+                  alt="Projeto Monarch"
+                />
+              </div>
 
-            <a
-              href="#"
-              target="_blank"
-              class="mockup-overlay"
-              aria-label="Ver projeto"
-            ></a>
+              <!-- overlay clicável -->
+              <a
+                href="#"
+                target="_blank"
+                class="mockup-overlay"
+                aria-label="Ver projeto"
+              ></a>
+            </div>
           </div>
         </div>
       </div>
@@ -68,66 +88,108 @@
     <!-- PROJETOS -->
     <section id="projetos" class="section">
       <div class="container">
-        <h3 class="section-title reveal">Projetos</h3>
+        <div class="section-head">
+          <h3>Projetos</h3>
+          <p>Alguns trabalhos que demonstram meu processo e resultados</p>
+        </div>
 
         <div class="projects-grid">
-          <div class="project-card reveal-left">
-            <h4>Landing Page de Automação</h4>
-            <p>
-              <strong>Objetivo:</strong> Captar leads para venda de automações.
-            </p>
-            <p>
-              <strong>Solução:</strong> Layout clean, CTA claro e estrutura
-              focada em conversão.
-            </p>
-            <p><strong>Tecnologias:</strong> HTML, CSS, JavaScript</p>
-            <p>
-              <strong>Resultado:</strong> Página leve, responsiva e otimizada.
-            </p>
-            <a href="#" target="_blank">Ver projeto →</a>
-          </div>
+          <article class="project-card">
+            <div class="project-image">
+              <img src="img/portifolio/judcement.png" alt="Landing Page" />
+            </div>
 
-          <div class="project-card">
-            <h4>Dashboard Web</h4>
-            <p><strong>Objetivo:</strong> Visualizar dados de usuários.</p>
-            <p><strong>Solução:</strong> Interface intuitiva e moderna.</p>
-            <p><strong>Tecnologias:</strong> HTML, CSS, JS</p>
-            <p><strong>Resultado:</strong> Melhor leitura e usabilidade.</p>
-            <a href="#" target="_blank">Ver projeto →</a>
-          </div>
+            <div class="project-content">
+              <h4>Landing Page de Automação</h4>
+              <p>
+                Página criada para captar leads com foco total em conversão,
+                velocidade e clareza.
+              </p>
+
+              <ul class="project-tags">
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+              </ul>
+
+              <a href="#" class="project-link">Ver projeto →</a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-image">
+              <img src="img/portifolio/monarch.png" alt="Dashboard Web" />
+            </div>
+
+            <div class="project-content">
+              <h4>The Blood Crowned Monarch</h4>
+              <p>
+                Uma experiência visual imersiva inspirada em estética
+                dark-fantasy, combinando tipografia refinada, efeitos de luz
+                cinematográficos e animações sutis para criar uma presença
+                digital intensa, atmosférica e memorável.
+              </p>
+
+              <ul class="project-tags">
+                <li>UI Design</li>
+                <li>UX Design</li>
+                <li>Front-end</li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>Motion Design</li>
+                <li>Cinematic Visual</li>
+                <li>Dark Fantasy</li>
+                <li>Visual Storytelling</li>
+                <li>Responsive Design</li>
+              </ul>
+
+              <a href="/projetos/monarch/" class="project-link">Ver projeto →</a>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- SOBRE -->
-    <section id="sobre" class="section alt">
-      <div class="container">
-        <h3 class="section-title">Sobre mim</h3>
-        <p class="about-text reveal">
-          Sou desenvolvedor focado em criar experiências digitais bem
-          estruturadas, modernas e eficientes. Tenho interesse em projetos
-          reais, freelas, parcerias e oportunidades na área de tecnologia.
+    <section id="sobre" class="section section-alt">
+      <div class="container about">
+        <h3>Sobre mim</h3>
+
+        <p>
+          Sou web designer e desenvolvedor full stack com foco em criar
+          interfaces modernas, bem estruturadas e orientadas à experiência do
+          usuário. Trabalho de forma code-first, transformando ideias em
+          soluções digitais reais.
         </p>
       </div>
     </section>
 
     <!-- CONTATO -->
     <section id="contato" class="section">
-      <div class="container">
-        <h3 class="section-title">Contato</h3>
+      <div class="container contact">
+        <h3>Vamos conversar?</h3>
+        <p>Aberto a freelas, parcerias e oportunidades</p>
 
-        <div class="contact-box">
-          <a href="https://wa.me/5562995006895" target="_blank">WhatsApp</a>
-          <a href="https://instagram.com/nocturnweb" target="_blank"
+        <div class="contact-actions">
+          <a
+            href="https://wa.me/5562995006895"
+            target="_blank"
+            class="btn primary"
+            >WhatsApp</a
+          >
+          <a
+            href="https://instagram.com/nocturnweb"
+            target="_blank"
+            class="btn ghost"
             >Instagram</a
           >
-          <a href="mailto:seuemail@email.com">Email</a>
+          <a href="mailto:seuemail@email.com" class="btn ghost">Email</a>
         </div>
       </div>
     </section>
 
     <footer class="footer">
-      <p>© 2026 Mateus Vitor. Todos os direitos reservados.</p>
+      <p>© 2026 Mateus Vitor — Todos os direitos reservados.</p>
     </footer>
 
     <script src="js/script.js"></script>

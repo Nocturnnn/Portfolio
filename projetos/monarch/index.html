@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>The Blood Crowned Monarch</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Inter:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+
+  <body>
+    <main class="hero">
+      <!-- ORNAMENTOS -->
+      <div class="ornament left">✶</div>
+      <div class="ornament right">✶</div>
+
+      <!-- PERSONAGEM -->
+      <div class="character-wrapper">
+        <div class="halo"></div>
+        <img
+          src="img/malenia.png"
+          alt="The Blood Crowned Monarch"
+          class="character"
+        />
+      </div>
+
+      <!-- CONTEÚDO -->
+      <div class="content">
+        <span class="eyebrow">THE BLOOD</span>
+
+        <h1 class="title">MONARCH</h1>
+
+        <span class="subtitle">CROWNED MONARCH</span>
+
+        <p class="description">
+          Born in blood, crowned in chaos. A divine ruler forged by shadows,
+          prophecy and eternal dominion.
+        </p>
+      </div>
+
+      <!-- FOOTNOTE -->
+      <footer class="footer">
+        <span>BLOOD · CROWNED · DIVINE REIGN</span>
+      </footer>
+    </main>
+
+    <script>
+      const character = document.querySelector(".character-wrapper");
+
+      window.addEventListener("mousemove", (e) => {
+        const { innerWidth, innerHeight } = window;
+
+        const x = (e.clientX / innerWidth - 0.5) * 20;
+        const y = (e.clientY / innerHeight - 0.5) * 20;
+
+        character.style.transform = `
+            translate(${x}px, ${y}px)
+        `;
+      });
+    </script>
+  </body>
+</html>
