@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+ 
 body {
   background: #050505;
   overflow: hidden;
@@ -53,14 +53,14 @@ body {
 .label {
   position: absolute;
   max-width: 260px;
-  font-size: 0.95rem;
+  font-size: 1rem;
   line-height: 1.6;
   z-index: 4;
 }
 
 .label h4 {
   font-family: "Cinzel Decorative", serif;
-  font-size: 0.7rem;
+  font-size: 1.5rem;
   letter-spacing: 3px;
   margin-bottom: 0.5rem;
   opacity: 0.8;

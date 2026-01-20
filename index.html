@@ -8,186 +8,127 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
-    />
-    <link
-      rel="shortcut icon"
-      href="img/favicon/favicon.jpg"
-      type="image/x-icon"
     />
 
     <link rel="stylesheet" href="style/style.css" />
   </head>
-
   <body>
-    <!-- HEADER -->
-    <header class="header">
-      <div class="container header-content">
-        <h1 class="logo">Mateus<span>.</span></h1>
-        <nav class="nav">
+    <header>
+      <div class="container header-inner">
+        <div class="logo">Mateus<span>.</span></div>
+        <nav>
           <a href="#projetos">Projetos</a>
           <a href="#sobre">Sobre</a>
-          <a href="#contato" class="nav-cta">Contato</a>
+          <a href="#contato">Contato</a>
         </nav>
       </div>
     </header>
 
-    <!-- HERO -->
     <section class="hero">
       <div class="container hero-grid">
-        <div class="hero-text">
-          <span class="hero-badge">Web Designer & Full Stack (code-first)</span>
-
-          <h2>
-            Crio sites modernos, rápidos e focados em
-            <span>resultado</span>
-          </h2>
-
+        <div>
+          <span class="badge">Web Designer & Full Stack · Code-First</span>
+          <h1>
+            Crio experiências digitais <span>modernas</span>, rápidas e
+            memoráveis
+          </h1>
           <p>
-            Transformo ideias em experiências digitais profissionais,
-            responsivas e orientadas à conversão.
+            Transformo ideias em produtos digitais com foco em estética,
+            performance e conversão.
           </p>
-
-          <div class="hero-actions">
+          <div class="actions">
             <a href="#projetos" class="btn primary">Ver projetos</a>
             <a href="#contato" class="btn ghost">Fale comigo</a>
           </div>
         </div>
 
-        <div class="hero-visual">
-          <div class="hero-image">
-            <div class="mockup-wrapper">
-              <div class="mockup-slider">
-                <img
-                  src="img/portifolio/Balduino.png"
-                  class="active"
-                  data-link="projetos/Balduino_IV/"
-                  alt="Projeto Judcement"
-                />
-                <img
-                  src="img/portifolio/monarch.png"
-                  data-link="projetos/monarch/"
-                  alt="Projeto Monarch"
-                />
-              </div>
-
-              <!-- overlay clicável -->
-              <a
-                href="#"
-                target="_blank"
-                class="mockup-overlay"
-                aria-label="Ver projeto"
-              ></a>
-            </div>
+        <div class="mockup">
+          <div class="mockup-slider">
+            <img
+              src="img/portifolio/Balduino.png"
+              class="active"
+              data-link="projetos/Balduino_IV/"
+            />
+            <img
+              src="img/portifolio/monarch.png"
+              data-link="projetos/monarch/"
+            />
           </div>
+
+          <a
+            class="mockup-overlay"
+            target="_blank"
+            aria-label="Ver projeto"
+          ></a>
         </div>
       </div>
     </section>
 
-    <!-- PROJETOS -->
-    <section id="projetos" class="section">
+    <section id="projetos">
       <div class="container">
         <div class="section-head">
-          <h3>Projetos</h3>
-          <p>Alguns trabalhos que demonstram meu processo e resultados</p>
+          <h2>Projetos selecionados</h2>
+          <p>Trabalhos que unem direção visual, código limpo e narrativa.</p>
         </div>
 
-        <div class="projects-grid">
-          <article class="project-card">
-            <div class="project-image">
-              <img
-                src="img/portifolio/Balduino.png"
-                alt="Balduíno IV — Poster Editorial"
-              />
-            </div>
-
-            <div class="project-content">
-              <h4>Balduíno IV — Poster Editorial</h4>
-
+        <div class="projects">
+          <article class="card">
+            <img src="img/portifolio/Balduino.png" alt="Balduíno IV" />
+            <div class="card-content">
+              <h3>Balduíno IV — Poster Editorial</h3>
               <p>
-                Projeto visual inspirado em pôsteres históricos e editoriais,
-                retratando o reinado de Balduíno IV com foco em atmosfera,
-                tipografia monumental e composição dramática.
+                Experiência editorial inspirada em pôsteres históricos, com
+                tipografia monumental e atmosfera dramática.
               </p>
-
-              <ul class="project-tags">
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>Responsive Design</li>
-                <li>Editorial Layout</li>
-                <li>Typography</li>
-                <li>UI Composition</li>
-                <li>Visual Hierarchy</li>
-                <li>Creative Coding</li>
-              </ul>
-
-              <a
-                href="projetos/Balduino_IV/"
-                class="project-link"
-                target="_blank"
-                rel="noopener"
-              >
-                Ver projeto →
-              </a>
+              <div class="tags">
+                <span>HTML</span><span>CSS</span><span>Editorial</span
+                ><span>Typography</span>
+              </div>
+              <a href="projetos/Balduino_IV/" target="_blank">Ver projeto →</a>
             </div>
           </article>
 
-          <article class="project-card">
-            <div class="project-image">
-              <img src="img/portifolio/monarch.png" alt="Dashboard Web" />
-            </div>
-
-            <div class="project-content">
-              <h4>The Blood Crowned Monarch</h4>
+          <article class="card">
+            <img src="img/portifolio/monarch.png" alt="Monarch" />
+            <div class="card-content">
+              <h3>The Blood Crowned Monarch</h3>
               <p>
-                Uma experiência visual imersiva inspirada em estética
-                dark-fantasy, combinando tipografia refinada, efeitos de luz
-                cinematográficos e animações sutis para criar uma presença
-                digital intensa, atmosférica e memorável.
+                Projeto dark-fantasy com estética cinematográfica, efeitos sutis
+                e narrativa visual intensa.
               </p>
-
-              <ul class="project-tags">
-                <li>UI Design</li>
-                <li>UX Design</li>
-                <li>Front-end</li>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>Motion Design</li>
-                <li>Cinematic Visual</li>
-                <li>Dark Fantasy</li>
-                <li>Visual Storytelling</li>
-                <li>Responsive Design</li>
-              </ul>
-
-              <a href="/projetos/monarch/" class="project-link">Ver projeto →</a>
+              <div class="tags">
+                <span>UI</span><span>UX</span><span>Front-end</span
+                ><span>Cinematic</span>
+              </div>
+              <a href="projetos/monarch/" target="_blank">Ver projeto →</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- SOBRE -->
-    <section id="sobre" class="section section-alt">
+    <section id="sobre">
       <div class="container about">
-        <h3>Sobre mim</h3>
-
+        <div class="section-head">
+          <h2>Sobre mim</h2>
+        </div>
         <p>
-          Sou web designer e desenvolvedor full stack com foco em criar
-          interfaces modernas, bem estruturadas e orientadas à experiência do
-          usuário. Trabalho de forma code-first, transformando ideias em
-          soluções digitais reais.
+          Sou web designer e desenvolvedor full stack focado em criar interfaces
+          sofisticadas, funcionais e alinhadas a objetivos reais. Trabalho de
+          forma code-first, unindo design e engenharia desde a primeira linha.
         </p>
       </div>
     </section>
 
-    <!-- CONTATO -->
-    <section id="contato" class="section">
+    <section id="contato">
       <div class="container contact">
-        <h3>Vamos conversar?</h3>
-        <p>Disponível para oportunidades profissionais, projetos criativos, freelas e colaborações.</p>
-
-        <div class="contact-actions">
+        <div class="section-head">
+          <h2>Vamos conversar</h2>
+          <p>Aberto a freelas, parcerias e oportunidades profissionais.</p>
+        </div>
+        <div class="actions" style="justify-content: center">
           <a
             href="https://wa.me/5562995006895"
             target="_blank"
@@ -204,9 +145,7 @@
       </div>
     </section>
 
-    <footer class="footer">
-      <p>© 2026 Mateus Vitor — Todos os direitos reservados.</p>
-    </footer>
+    <footer>© 2026 Mateus Vitor — Todos os direitos reservados.</footer>
 
     <script src="js/script.js"></script>
   </body>
