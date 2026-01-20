@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
   sliderMockup();
   glowCards();
+  revealOnScroll();
 });
 
 /* =========================
@@ -42,4 +43,27 @@ function glowCards() {
       card.style.setProperty("--y", `${e.clientY - r.top}px`);
     });
   });
+}
+
+/* =========================
+   motion design de interface
+========================= */
+function revealOnScroll() {
+  const elements = document.querySelectorAll(".reveal");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+          observer.unobserve(entry.target); // anima só uma vez
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+    },
+  );
+
+  elements.forEach((el) => observer.observe(el));
 }

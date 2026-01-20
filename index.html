@@ -17,8 +17,10 @@
   <body>
     <header>
       <div class="container header-inner">
-        <div class="logo">Mateus<span>.</span></div>
-        <nav>
+        <div class="logo reveal" data-reveal="top" style="--delay: 0.05s">
+          Mateus<span>.</span>
+        </div>
+        <nav class="reveal" data-reveal="top" style="--delay: 0.15s">
           <a href="#projetos">Projetos</a>
           <a href="#sobre">Sobre</a>
           <a href="#contato">Contato</a>
@@ -29,22 +31,27 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="badge">Web Designer & Full Stack · Code-First</span>
-          <h1>
+          <span class="badge reveal" data-reveal="top" style="--delay: 0.1s">
+            Web Designer & Full Stack · Code-First
+          </span>
+
+          <h1 class="reveal" data-reveal="top" style="--delay: 0.2s">
             Crio experiências digitais <span>modernas</span>, rápidas e
             memoráveis
           </h1>
-          <p>
+
+          <p class="reveal" data-reveal="top" style="--delay: 0.3s">
             Transformo ideias em produtos digitais com foco em estética,
             performance e conversão.
           </p>
-          <div class="actions">
+
+          <div class="actions reveal" data-reveal="top" style="--delay: 0.4s">
             <a href="#projetos" class="btn primary">Ver projetos</a>
             <a href="#contato" class="btn ghost">Fale comigo</a>
           </div>
         </div>
 
-        <div class="mockup">
+        <div class="mockup reveal" data-reveal="right" style="--delay: 0.3s">
           <div class="mockup-slider">
             <img
               src="img/portifolio/Balduino.png"
@@ -63,18 +70,26 @@
             aria-label="Ver projeto"
           ></a>
         </div>
+
+        <p
+          class="desktop-hint reveal"
+          data-reveal="bottom"
+          style="--delay: 0.45s"
+        >
+          Para uma experiência completa, visualize este site em um computador.
+        </p>
       </div>
     </section>
 
     <section id="projetos">
       <div class="container">
-        <div class="section-head">
+        <div class="section-head reveal" data-reveal="bottom">
           <h2>Projetos selecionados</h2>
           <p>Trabalhos que unem direção visual, código limpo e narrativa.</p>
         </div>
 
         <div class="projects">
-          <article class="card">
+          <article class="card reveal" data-reveal="left" style="--delay: 0.1s">
             <img src="img/portifolio/Balduino.png" alt="Balduíno IV" />
             <div class="card-content">
               <h3>Balduíno IV — Poster Editorial</h3>
@@ -90,7 +105,11 @@
             </div>
           </article>
 
-          <article class="card">
+          <article
+            class="card reveal"
+            data-reveal="right"
+            style="--delay: 0.2s"
+          >
             <img src="img/portifolio/monarch.png" alt="Monarch" />
             <div class="card-content">
               <h3>The Blood Crowned Monarch</h3>
@@ -111,10 +130,10 @@
 
     <section id="sobre">
       <div class="container about">
-        <div class="section-head">
+        <div class="section-head reveal" data-reveal="bottom">
           <h2>Sobre mim</h2>
         </div>
-        <p>
+        <p class="reveal" data-reveal="bottom" style="--delay: 0.15s">
           Sou web designer e desenvolvedor full stack focado em criar interfaces
           sofisticadas, funcionais e alinhadas a objetivos reais. Trabalho de
           forma code-first, unindo design e engenharia desde a primeira linha.
@@ -124,11 +143,16 @@
 
     <section id="contato">
       <div class="container contact">
-        <div class="section-head">
+        <div class="section-head reveal" data-reveal="bottom">
           <h2>Vamos conversar</h2>
           <p>Aberto a freelas, parcerias e oportunidades profissionais.</p>
         </div>
-        <div class="actions" style="justify-content: center">
+
+        <div
+          class="actions reveal"
+          data-reveal="bottom"
+          style="--delay: 0.2s; justify-content: center"
+        >
           <a
             href="https://wa.me/5562995006895"
             target="_blank"
@@ -145,7 +169,9 @@
       </div>
     </section>
 
-    <footer>© 2026 Mateus Vitor — Todos os direitos reservados.</footer>
+    <footer class="reveal" data-reveal="bottom" style="--delay: 0.1s">
+      © 2026 Mateus Vitor — Todos os direitos reservados.
+    </footer>
 
     <script src="js/script.js"></script>
   </body>
