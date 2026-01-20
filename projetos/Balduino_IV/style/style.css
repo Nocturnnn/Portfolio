@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #050505;
+  overflow: hidden;
+  font-family: "Cormorant Garamond", serif;
+  color: #eaeaea;
+}
+
+/* TEXTO GIGANTE */
+.background-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Cinzel Decorative", serif;
+
+  font-size: clamp(10rem, 20vw, 15.1rem);
+  letter-spacing: clamp(0.4rem, 1vw, 1.2rem);
+
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.08);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.background-text span {
+  line-height: 0.85;
+}
+
+/* IMAGEM */
+.character {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: auto;
+  width: auto;
+  max-height: 150vh;
+  max-width: 100%;
+  z-index: 3;
+  filter: contrast(1.15) brightness(1.05);
+}
+
+/* TEXTOS PEQUENOS */
+.label {
+  position: absolute;
+  max-width: 260px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  z-index: 4;
+}
+
+.label h4 {
+  font-family: "Cinzel Decorative", serif;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
+}
+
+.label p {
+  opacity: 0.75;
+}
+
+/* POSIÇÕES */
+.label.left {
+  top: 30%;
+  left: 8%;
+}
+
+.label.right {
+  top: 35%;
+  right: 8%;
+  text-align: right;
+}
+
+.label.top {
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 10;
+}
+
+/* POSTER */
+.poster {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+/* LUZ DIVINA LOCALIZADA – ROSTO E MÃO */
+.poster::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 50% 32%,
+      rgba(255, 245, 210, 0.45),
+      rgba(255, 245, 210, 0.18),
+      rgba(255, 245, 210, 0.05),
+      transparent 55%
+    ),
+    radial-gradient(
+      circle at 58% 48%,
+      rgba(255, 245, 210, 0.35),
+      rgba(255, 245, 210, 0.12),
+      transparent 50%
+    );
+  animation: holyGlow 16s ease-in-out infinite;
+  z-index: 4;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* GRANULAÇÃO / CLIMA */
+.poster::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255, 255, 255, 0.05),
+      rgba(0, 0, 0, 0.9)
+    ),
+    url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity: 0.4;
+  z-index: 5;
+  pointer-events: none;
+}
+
+@keyframes holyGlow {
+  0% {
+    opacity: 0.35;
+    filter: blur(2px);
+  }
+  50% {
+    opacity: 0.55;
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 0.35;
+    filter: blur(2px);
+  }
+}
+
+/* =========================
+   TABLETS (até 1024px)
+========================= */
+@media (max-width: 1024px) {
+  .background-text {
+    font-size: clamp(5rem, 16vw, 10rem);
+    letter-spacing: clamp(0.3rem, 0.8vw, 1rem);
+  }
+
+  .character {
+    max-height: 120vh;
+  }
+
+  .label {
+    max-width: 220px;
+    font-size: 0.9rem;
+  }
+
+  .label.left {
+    left: 5%;
+  }
+
+  .label.right {
+    right: 5%;
+  }
+
+  .label.top {
+    top: 6%;
+  }
+}
+
+/* =========================
+   MOBILE (até 768px)
+========================= */
+@media (max-width: 768px) {
+  body {
+    overflow: hidden;
+  }
+
+  .background-text {
+    font-size: clamp(4rem, 22vw, 8rem);
+    letter-spacing: clamp(0.3rem, 1.2vw, 0.8rem);
+  }
+
+  .character {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    max-height: 90vh;
+    max-width: 85vw;
+  }
+
+  /* Labels viram cards centrais */
+  .label {
+    position: relative;
+    max-width: 90%;
+    margin: 1rem auto;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .label.left,
+  .label.right,
+  .label.top {
+    top: auto;
+    left: auto;
+    right: auto;
+    transform: none;
+  }
+
+  .poster {
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-bottom: 2rem;
+  }
+
+  /* Luz divina ajustada ao enquadramento mobile */
+  .poster::before {
+    background:
+      radial-gradient(
+        circle at 50% 28%,
+        rgba(255, 245, 210, 0.35),
+        rgba(255, 245, 210, 0.15),
+        transparent 55%
+      ),
+      radial-gradient(
+        circle at 52% 42%,
+        rgba(255, 245, 210, 0.25),
+        transparent 50%
+      );
+  }
+}
+
+/* =========================
+   MOBILE PEQUENO (até 480px)
+========================= */
+@media (max-width: 480px) {
+  .background-text {
+    font-size: clamp(3.5rem, 24vw, 7rem);
+    letter-spacing: clamp(0.2rem, 1vw, 0.6rem);
+  }
+
+  .character {
+    max-height: 80vh;
+    max-width: 90vw;
+  }
+
+  .label h4 {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+  }
+
+  .label p {
+    font-size: 0.85rem;
+  }
+}
