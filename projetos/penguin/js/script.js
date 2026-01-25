@@ -1,33 +1,44 @@
-const clock = document.getElementById("clock");
-const phrase = document.getElementById("phrase");
-
-const phrases = [
-  "As aventuras que nenhum pinguim jamais viu",
-  "Diante de tudo, ele permanece",
-  "O mundo é grande demais para pressa",
-  "Nem toda jornada precisa de testemunhas",
-  "O silêncio também é um caminho",
-  "Firme, mesmo quando ninguém observa",
-  "A vastidão não o intimida",
-  "Ele não espera. Ele existe.",
+const words = [
+  "ELE",
+  "O PINGUIM",
+  "A CRIATURA",
+  "O VIAJANTE",
+  "ALGUÉM",
+  "NINGUÉM",
 ];
 
-function updateClock() {
-  const now = new Date();
-  const hours = String(now.getHours()).padStart(2, "0");
-  const minutes = String(now.getMinutes()).padStart(2, "0");
-  clock.textContent = `${hours}:${minutes}`;
+const target = document.getElementById("subject");
+const typingSpeed = 150;
+const deletingSpeed = 150;
+const holdAfterType = 1600;
+const holdAfterDelete = 600;
+
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function typeLoop() {
+  const currentWord = words[wordIndex];
+
+  if (!isDeleting) {
+    charIndex++;
+    target.textContent = currentWord.slice(0, charIndex) + "_";
+
+    if (charIndex === currentWord.length) {
+      setTimeout(() => (isDeleting = true), holdAfterType);
+    }
+  } else {
+    charIndex--;
+    target.textContent = currentWord.slice(0, charIndex) + "_";
+
+    if (charIndex === 0) {
+      isDeleting = false;
+      wordIndex = (wordIndex + 1) % words.length;
+      setTimeout(() => {}, holdAfterDelete);
+    }
+  }
+
+  setTimeout(typeLoop, isDeleting ? deletingSpeed : typingSpeed);
 }
 
-function changePhrase() {
-  phrase.style.opacity = 0;
-  setTimeout(() => {
-    const random = Math.floor(Math.random() * phrases.length);
-    phrase.textContent = phrases[random];
-    phrase.style.opacity = 1;
-  }, 1000);
-}
-
-updateClock();
-setInterval(updateClock, 1000);
-setInterval(changePhrase, 10000);
+typeLoop();
