@@ -191,6 +191,35 @@ header a:hover {
   animation: fadeUp 1.4s ease-out both;
 }
 
+.video-link {
+  position: relative;
+  display: inline-block;
+}
+
+.play-icon {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-size: 3rem;
+  color: rgba(230, 232, 235, 0.85);
+  opacity: 0;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  pointer-events: none;
+}
+
+.video-link:hover .play-icon {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.video-link:hover img {
+  opacity: 0.75;
+  filter: brightness(1) contrast(1.1);
+}
+
 @keyframes fadeUp {
   from {
     opacity: 0;
