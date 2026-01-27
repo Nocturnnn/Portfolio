@@ -1,13 +1,29 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>xadrez-3d</title>
+    <title>Xadrez 3D</title>
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <section class="intro">
+      <canvas id="webgl"></canvas>
+
+      <div class="intro-text">
+        <h1>O Xadrez</h1>
+        <p class="subtitle">Um jogo milenar onde cada decisão ecoa no tempo.</p>
+        <p class="atmosphere">Silêncio. Estratégia. Paciência.</p>
+      </div>
+
+      <div class="intro-text intro-text--right">
+        <p class="small-title">Cada partida é única</p>
+        <p class="right-text">
+          Nenhuma peça se move sem propósito.<br />
+          Nenhuma vitória nasce do acaso.
+        </p>
+      </div>
+    </section>
+
+    <script type="module" src="src/main.ts"></script>
   </body>
 </html>
