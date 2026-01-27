@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Xadrez 3D</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <section class="intro">
+      <canvas id="webgl"></canvas>
+
+      <div class="intro-text">
+        <h1>O Xadrez</h1>
+        <p class="subtitle">Um jogo milenar onde cada decisão ecoa no tempo.</p>
+        <p class="atmosphere">Silêncio. Estratégia. Paciência.</p>
+      </div>
+
+      <div class="intro-text intro-text--right">
+        <p class="small-title">Cada partida é única</p>
+        <p class="right-text">
+          Nenhuma peça se move sem propósito.<br />
+          Nenhuma vitória nasce do acaso.
+        </p>
+      </div>
+    </section>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.158.0/build/three.module.js",
+          "three/examples/jsm/": "https://unpkg.com/three@0.158.0/examples/jsm/"
+        }
+      }
+    </script>
+
+    <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
