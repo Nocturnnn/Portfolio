@@ -110,3 +110,14 @@ gsap.from(".intro-text--right", {
   duration: 1.6,
   ease: "power3.out",
 });
+
+window.addEventListener("resize", () => {
+  const width = window.innerWidth;
+  const height = window.innerHeight;
+
+  camera.aspect = width / height;
+  camera.updateProjectionMatrix();
+
+  renderer.setSize(width, height);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+});
