@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  font-family: sans-serif;
+}
+
+/* FUNDO ESPACIAL */
+#space {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* ESTRELAS */
+.star {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  opacity: var(--opacity);
+  z-index: var(--z);
+  animation: twinkle linear forwards;
+  filter: blur(var(--blur));
+}
+
+/* ANIMAÇÃO DAS ESTRELAS */
+@keyframes twinkle {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  20% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy));
+  }
+}
+
+/* SURFISTA */
+.surfer {
+  position: fixed;
+  right: 6%;
+  top: 50%;
+  width: 160px;
+  transform: translateY(-50%);
+  animation: float 6s ease-in-out infinite;
+  filter:
+    drop-shadow(0 0 6px rgba(255,255,255,0.6))
+    drop-shadow(0 0 16px rgba(180,220,255,0.4));
+}
+
+/* FLUTUAÇÃO */
+@keyframes float {
+  0% { transform: translateY(-50%) translateY(0); }
+  50% { transform: translateY(-50%) translateY(-20px); }
+  100% { transform: translateY(-50%) translateY(0); }
+}
