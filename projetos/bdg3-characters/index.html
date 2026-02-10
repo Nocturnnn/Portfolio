@@ -3,111 +3,331 @@
   <head>
     <meta charset="UTF-8" />
     <title>BDG3 — Lista de Personagens</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="style/style.css" />
   </head>
+
   <body>
-    <header class="top-bar">
+    <!-- INTRO CINEMÁTICA -->
+    <div id="intro">
+      <img src="img/LarianStudiosLogo.png" alt="Larian Studios" />
+      <span class="intro-hint">Clique para iniciar</span>
+    </div>
+
+    <audio id="intro-audio" src="audio/BALDURS GATE 3 Music.mp3"></audio>
+
+    <!-- HEADER -->
+    <header
+      class="top-bar"
+      data-aos="fade-down"
+      data-aos-duration="1200"
+      data-aos-delay="300"
+    >
       <h1>Baldur’s Gate 3</h1>
-      <span id="counter">Selecionados: 0</span>
+
+      <div class="hud-right">
+        <span id="counter">Selecionados: 0</span>
+
+        <button id="mute-btn" aria-label="Mutar áudio">
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
+      </div>
     </header>
 
+    <!-- GALERIA -->
     <main class="gallery">
-      <article class="card tall" data-name="Astarion">
+      <article
+        class="card tall"
+        data-name="Astarion"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
         <img src="img/astarion.png" alt="Astarion" />
-        <div class="card-info">
+        <div class="card-info" data-aos="fade-up" data-aos-delay="300">
           <h3>Astarion</h3>
           <span>Vampire Spawn</span>
         </div>
       </article>
 
-      <article class="card" data-name="Shadowheart">
+      <article
+        class="card"
+        data-name="Shadowheart"
+        data-aos="fade-up"
+        data-aos-delay="150"
+      >
         <img src="img/shadowheart.png" alt="Shadowheart" />
-        <div class="card-info">
+        <div class="card-info" data-aos="fade-up" data-aos-delay="350">
           <h3>Shadowheart</h3>
           <span>Cleric of Shar</span>
         </div>
       </article>
 
-      <article class="card _tall" data-name="Laezel">
+      <article
+        class="card _tall"
+        data-name="Laezel"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
         <img src="img/Laezel.jfif" alt="Lae'zel" />
-        <div class="card-info">
+        <div class="card-info" data-aos="fade-up" data-aos-delay="400">
           <h3>Lae’zel</h3>
           <span>Githyanki Warrior</span>
         </div>
       </article>
 
-      <article class="card" data-name="Gale">
+      <article
+        class="card"
+        data-name="Gale"
+        data-aos="fade-up"
+        data-aos-delay="250"
+      >
         <img src="img/Gale.jfif" alt="Gale" />
-        <div class="card-info">
+        <div class="card-info" data-aos="fade-up" data-aos-delay="450">
           <h3>Gale</h3>
           <span>Wizard of Waterdeep</span>
         </div>
       </article>
 
-      <article class="card" data-name="Karlach">
+      <article
+        class="card"
+        data-name="Karlach"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
         <img src="img/Karlach.jfif" alt="Karlach" />
-        <div class="card-info">
+        <div class="card-info" data-aos="fade-up" data-aos-delay="500">
           <h3>Karlach</h3>
           <span>Infernal Engine</span>
         </div>
       </article>
 
-      <article class="card _tall" data-name="Wyll">
+      <article
+        class="card _tall"
+        data-name="Wyll"
+        data-aos="fade-up"
+        data-aos-delay="350"
+      >
         <img src="img/Wyll.jfif" alt="Wyll" />
-        <div class="card-info">
+        <div class="card-info" data-aos="fade-up" data-aos-delay="550">
           <h3>Wyll</h3>
           <span>The Blade of Frontiers</span>
         </div>
       </article>
 
-      <article class="card" data-name="Halsin">
+      <article
+        class="card"
+        data-name="Halsin"
+        data-aos="fade-up"
+        data-aos-delay="400"
+      >
         <img src="img/Halsin.jfif" alt="Halsin" />
-        <div class="card-info">
+        <div class="card-info" data-aos="fade-up" data-aos-delay="600">
           <h3>Halsin</h3>
           <span>Druid of the Emerald Grove</span>
         </div>
       </article>
 
-      <article class="card _tall" data-name="Minthara">
+      <article
+        class="card _tall"
+        data-name="Minthara"
+        data-aos="fade-up"
+        data-aos-delay="450"
+      >
         <img src="img/Minthara.jfif" alt="Minthara" />
-        <div class="card-info">
+        <div class="card-info" data-aos="fade-up" data-aos-delay="650">
           <h3>Minthara</h3>
           <span>Drow Paladin</span>
         </div>
       </article>
 
-      <article class="card" data-name="Jaheira">
+      <article
+        class="card"
+        data-name="Jaheira"
+        data-aos="fade-up"
+        data-aos-delay="500"
+      >
         <img src="img/Jaheira.jfif" alt="Jaheira" />
-        <div class="card-info">
+        <div class="card-info" data-aos="fade-up" data-aos-delay="700">
           <h3>Jaheira</h3>
           <span>High Harper Druid</span>
         </div>
       </article>
 
-      <article class="card wide" data-name="Withers">
+      <article
+        class="card wide"
+        data-name="Withers"
+        data-aos="fade-up"
+        data-aos-delay="550"
+      >
         <img src="img/Withers Baldurs gate 3.jfif" alt="Withers" />
-        <div class="card-info">
+        <div class="card-info" data-aos="fade-up" data-aos-delay="750">
           <h3>Withers</h3>
           <span>Servant of Death</span>
         </div>
       </article>
 
-      <article class="card" data-name="DarkUrge">
+      <article
+        class="card"
+        data-name="DarkUrge"
+        data-aos="fade-up"
+        data-aos-delay="600"
+      >
         <img src="img/DarkUrge.jfif" alt="The Dark Urge" />
-        <div class="card-info">
+        <div class="card-info" data-aos="fade-up" data-aos-delay="800">
           <h3>The Dark Urge</h3>
           <span>Origin of Blood</span>
         </div>
       </article>
 
-      <article class="card tall" data-name="Emperor">
+      <article
+        class="card tall"
+        data-name="Emperor"
+        data-aos="fade-up"
+        data-aos-delay="650"
+      >
         <img src="img/The emperor Baldurs gate 3.jfif" alt="The Emperor" />
-        <div class="card-info">
+        <div class="card-info" data-aos="fade-up" data-aos-delay="850">
           <h3>The Emperor</h3>
           <span>Mind Flayer</span>
         </div>
       </article>
+
+      <article
+        class="card"
+        data-name="Alfira"
+        data-aos="fade-up"
+        data-aos-delay="700"
+      >
+        <img src="img/Alfira _ Baldur's Gate 3.jfif" alt="Alfira" />
+        <div class="card-info" data-aos="fade-up" data-aos-delay="900">
+          <h3>Alfira</h3>
+          <span>Tiefling Bard</span>
+        </div>
+      </article>
+
+      <article
+        class="card tall"
+        data-name="Volo"
+        data-aos="fade-up"
+        data-aos-delay="750"
+      >
+        <img src="img/Volo.jfif" alt="Volo" />
+        <div class="card-info" data-aos="fade-up" data-aos-delay="950">
+          <h3>Volo</h3>
+          <span>Wandering Scholar</span>
+        </div>
+      </article>
+
+      <article
+        class="card"
+        data-name="Mizora"
+        data-aos="fade-up"
+        data-aos-delay="800"
+      >
+        <img src="img/Mizora the devil.jfif" alt="Mizora" />
+        <div class="card-info" data-aos="fade-up" data-aos-delay="1000">
+          <h3>Mizora</h3>
+          <span>Cambion Tempter</span>
+        </div>
+      </article>
+
+      <article
+        class="card _tall"
+        data-name="DameAylin"
+        data-aos="fade-up"
+        data-aos-delay="850"
+      >
+        <img src="img/Dame Ay.jfif" alt="Dame Aylin" />
+        <div class="card-info" data-aos="fade-up" data-aos-delay="1050">
+          <h3>Dame Aylin</h3>
+          <span>Daughter of Selûne</span>
+        </div>
+      </article>
+
+      <article
+        class="card"
+        data-name="Isobel"
+        data-aos="fade-up"
+        data-aos-delay="900"
+      >
+        <img src="img/Isobel.jfif" alt="Isobel" />
+        <div class="card-info" data-aos="fade-up" data-aos-delay="1100">
+          <h3>Isobel</h3>
+          <span>Cleric of Selûne</span>
+        </div>
+      </article>
+
+      <article
+        class="card _tall"
+        data-name="Orin"
+        data-aos="fade-up"
+        data-aos-delay="1000"
+      >
+        <img src="img/Orin.jfif" alt="Orin the Red" />
+        <div class="card-info" data-aos="fade-up" data-aos-delay="1200">
+          <h3>Orin</h3>
+          <span>The Red — Chosen of Bhaal</span>
+        </div>
+      </article>
+
+      <article
+        class="card"
+        data-name="Gortash"
+        data-aos="fade-up"
+        data-aos-delay="1050"
+      >
+        <img src="img/Gortash.jfif" alt="Enver Gortash" />
+        <div class="card-info" data-aos="fade-up" data-aos-delay="1250">
+          <h3>Gortash</h3>
+          <span>Chosen of Bane</span>
+        </div>
+      </article>
+
+      <article
+        class="card wide"
+        data-name="Raphael"
+        data-aos="fade-up"
+        data-aos-delay="950"
+      >
+        <img src="img/Raphael.jfif" alt="Raphael" />
+        <div class="card-info" data-aos="fade-up" data-aos-delay="1150">
+          <h3>Raphael</h3>
+          <span>Devil of the House of Hope</span>
+        </div>
+      </article>
+
+      <article
+        class="card"
+        data-name="KethericThorm"
+        data-aos="fade-up"
+        data-aos-delay="1100"
+      >
+        <img src="img/KethericThorm.jfif" alt="Ketheric Thorm" />
+        <div class="card-info" data-aos="fade-up" data-aos-delay="1300">
+          <h3>Ketheric Thorm</h3>
+          <span>Chosen of Myrkul</span>
+        </div>
+      </article>
     </main>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <script>
+      AOS.init({
+        duration: 1200,
+        easing: "ease-out-cubic",
+        once: true,
+        offset: 120,
+      });
+    </script>
 
     <script src="js/script.js"></script>
   </body>
