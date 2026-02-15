@@ -349,6 +349,258 @@ body {
   filter: blur(0);
 }
 
+/* =========================
+   CHARACTER PANEL — CINEMATIC CODEX
+========================= */
+
+.panel {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  backdrop-filter: blur(18px);
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(111, 92, 255, 0.18),
+      transparent 60%
+    ),
+    rgba(0, 0, 0, 0.92);
+
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+.panel.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Overlay mágico adicional */
+.panel-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 30%,
+    rgba(200, 164, 93, 0.08),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* =========================
+   CONTAINER PRINCIPAL
+========================= */
+
+.panel-content {
+  position: relative;
+  z-index: 2;
+
+  width: 90%;
+  max-width: 1200px;
+  height: 85vh;
+
+  display: flex;
+  gap: 60px;
+  padding: 50px;
+
+  background: linear-gradient(145deg, #0e0e18, #141425);
+
+  border-radius: 24px;
+
+  border: 1px solid rgba(200, 164, 93, 0.25);
+
+  box-shadow:
+    0 0 120px rgba(111, 92, 255, 0.35),
+    0 0 40px rgba(200, 164, 93, 0.2),
+    var(--shadow-black);
+}
+
+.panel-content {
+  transform: translateY(50px) scale(0.95);
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Quando painel estiver ativo */
+.panel.active .panel-content {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* =========================
+   IMAGEM LADO ESQUERDO
+========================= */
+
+.panel-left {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.panel-left img {
+  width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  /* object-position: top center; 👈 AQUI */
+
+  border-radius: 16px;
+
+  filter: contrast(1.15) saturate(1.2) brightness(0.95);
+
+  box-shadow: 0 0 40px rgba(111, 92, 255, 0.4);
+
+  transition: transform 0.6s ease;
+}
+
+.panel-left img:hover {
+  transform: scale(1.03);
+}
+
+/* =========================
+   LADO DIREITO — GRIMÓRIO
+========================= */
+
+.panel-right {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Scroll personalizado */
+.panel-right::-webkit-scrollbar {
+  width: 6px;
+}
+
+.panel-right::-webkit-scrollbar-thumb {
+  background: rgba(200, 164, 93, 0.4);
+  border-radius: 10px;
+}
+
+/* Nome */
+.panel-right h2 {
+  font-family: "Cinzel", serif;
+  font-size: 2rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+
+  color: var(--gold-ancient);
+
+  margin-bottom: 10px;
+
+  text-shadow: 0 0 20px rgba(200, 164, 93, 0.5);
+}
+
+/* Título */
+.panel-right h4 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+
+  color: var(--gold-soft);
+  opacity: 0.9;
+
+  margin-bottom: 30px;
+}
+
+/* História */
+.panel-right p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 35px;
+}
+
+/* =========================
+   CARACTERÍSTICAS — GRID RPG
+========================= */
+
+#panel-characteristics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+#panel-characteristics div {
+  background: rgba(255, 255, 255, 0.04);
+  padding: 12px 14px;
+  border-radius: 10px;
+
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+
+  border: 1px solid rgba(200, 164, 93, 0.2);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+#panel-characteristics div:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(200, 164, 93, 0.3);
+}
+
+#panel-characteristics strong {
+  color: var(--gold-ancient);
+}
+
+/* =========================
+   BOTÃO FECHAR — ARCANO
+========================= */
+
+#close-panel {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+
+  background: transparent;
+  border: 1px solid rgba(200, 164, 93, 0.4);
+  color: var(--gold-ancient);
+
+  padding: 8px 14px;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-family: "Cinzel", serif;
+  letter-spacing: 0.2em;
+
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
+}
+
+#close-panel:hover {
+  background: rgba(200, 164, 93, 0.15);
+  box-shadow: 0 0 25px rgba(200, 164, 93, 0.4);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   ANIMAÇÃO CINEMÁTICA
+========================= */
+
+@keyframes panelCinematic {
+  0% {
+    transform: translateY(60px) scale(0.92);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-8px) scale(1.02);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
 @keyframes hintFade {
   from {
     opacity: 0.2;

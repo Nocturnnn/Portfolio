@@ -33,8 +33,6 @@
       <h1>Baldur’s Gate 3</h1>
 
       <div class="hud-right">
-        <span id="counter">Selecionados: 0</span>
-
         <button id="mute-btn" aria-label="Mutar áudio">
           <i class="fa-solid fa-volume-high"></i>
         </button>
@@ -317,6 +315,27 @@
       </article>
     </main>
 
+    <!-- CHARACTER PANEL -->
+    <div id="character-panel" class="panel hidden">
+      <div class="panel-overlay"></div>
+
+      <div class="panel-content">
+        <button id="close-panel">✕</button>
+
+        <div class="panel-left">
+          <img id="panel-image" src="" alt="" />
+        </div>
+
+        <div class="panel-right">
+          <h2 id="panel-name"></h2>
+          <h4 id="panel-title"></h4>
+          <p id="panel-history"></p>
+
+          <div id="panel-characteristics"></div>
+        </div>
+      </div>
+    </div>
+
     <!-- AOS -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
@@ -330,5 +349,6 @@
     </script>
 
     <script src="js/script.js"></script>
+    <script src="js/characters.js"></script>
   </body>
 </html>
