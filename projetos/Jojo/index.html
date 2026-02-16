@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="shortcut icon" href="/img/favicon/favicon.jpg" type="image/x-icon">
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
@@ -17,13 +18,23 @@
   </head>
 
   <body>
+    <div class="stars"></div>
+
+    <div class="time-stop-overlay"></div>
+
     <header class="top-bar">
       <div class="logo">JOJO</div>
       <nav>
         <a href="#">Home</a>
-        <a href="#">Characters</a>
-        <a href="#">Parts</a>
-        <a href="#">About</a>
+        <a href="History/history.html?character=jotaro">History</a>
+        <a
+          href="https://jjba.fandom.com/pt-br/wiki/Hirohiko_Araki"
+          target="_blank"
+          >Author</a
+        >
+        <a href="https://nocturnnn.github.io/Portfolio/" target="_blank"
+          >Portfolio</a
+        >
       </nav>
     </header>
 
@@ -32,28 +43,29 @@
         <!-- JOTARO -->
         <section class="slide active" data-theme="#5A4FCF">
           <div class="content-left">
-            <h1>Jotaro Kujo</h1>
-            <h3>Stand User — Star Platinum</h3>
+            <h1 data-aos="fade-right">Jotaro Kujo</h1>
+            <h3 data-aos="fade-right" data-aos-delay="100">
+              Stand User — Star Platinum
+            </h3>
 
-            <p>
+            <p data-aos="fade-right" data-aos-delay="200">
               Um estudante frio e extremamente estratégico. Usuário do poderoso
               stand Star Platinum, capaz de parar o tempo.
             </p>
 
-            <div class="power">
+            <div class="power" data-aos="fade-up" data-aos-delay="300">
               <span>Power</span>
               <p>Força extrema, precisão absoluta, Time Stop.</p>
             </div>
           </div>
 
-          <div class="content-right Jotaro">
-            <img src="img/Jotaro Kujo.png" alt="Jotaro Kujo" />
-          </div>
-
-          <div class="tags">
-            <div class="tag">Precision</div>
-            <div class="tag">Strength</div>
-            <div class="tag">Time Stop</div>
+          <div class="content-right">
+            <img
+              src="img/Jotaro Kujo.png"
+              alt="Jotaro Kujo"
+              data-aos="fade-left"
+              data-aos-delay="200"
+            />
           </div>
         </section>
 
@@ -74,8 +86,8 @@
             </div>
           </div>
 
-          <div class="content-right">
-            <img src="img/dio.png" alt="Dio Brando" />
+          <div class="content-right Dio">
+            <img src="img/Dio Brando.png" alt="Dio Brando" />
           </div>
 
           <div class="tags">
