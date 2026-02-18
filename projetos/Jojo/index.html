@@ -10,7 +10,11 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="shortcut icon" href="/img/favicon/favicon.jpg" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="/img/favicon/favicon.jpg"
+      type="image/x-icon"
+    />
     <!-- AOS CSS -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 
@@ -26,7 +30,7 @@
       <div class="logo">JOJO</div>
       <nav>
         <a href="#">Home</a>
-        <a href="History/history.html?character=jotaro">History</a>
+        <a href="History/" id="history-link">History</a>
         <a
           href="https://jjba.fandom.com/pt-br/wiki/Hirohiko_Araki"
           target="_blank"
@@ -41,7 +45,11 @@
     <main class="hero">
       <div class="slider">
         <!-- JOTARO -->
-        <section class="slide active" data-theme="#5A4FCF">
+        <section
+          class="slide active"
+          data-character="jotaro"
+          data-theme="#5A4FCF"
+        >
           <div class="content-left">
             <h1 data-aos="fade-right">Jotaro Kujo</h1>
             <h3 data-aos="fade-right" data-aos-delay="100">
@@ -70,7 +78,7 @@
         </section>
 
         <!-- DIO -->
-        <section class="slide" data-theme="#C6A300">
+        <section class="slide" data-character="dio" data-theme="#C6A300">
           <div class="content-left">
             <h1>Dio Brando</h1>
             <h3>Vampire — The World</h3>
@@ -89,18 +97,14 @@
           <div class="content-right Dio">
             <img src="img/Dio Brando.png" alt="Dio Brando" />
           </div>
-
-          <div class="tags">
-            <div class="tag">Charisma</div>
-            <div class="tag">Time Control</div>
-            <div class="tag">Immortality</div>
-          </div>
         </section>
       </div>
 
       <div class="pagination">
-        <span class="dot active" data-slide="0">01</span>
-        <span class="dot" data-slide="1">02</span>
+        <span class="dot active" data-character="jotaro" data-slide="0"
+          >Jotaro Kujo</span
+        >
+        <span class="dot" data-character="dio" data-slide="1">Dio Brando</span>
       </div>
 
       <div class="scroll-indicator">Scroll</div>
