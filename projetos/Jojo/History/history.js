@@ -89,6 +89,14 @@ const character = params.get("character");
 const characterIndexMap = {
   jotaro: 0,
   dio: 1,
+  jonathan: 2,
+  joseph: 3,
+  josuke: 4,
+  giorno: 5,
+  jolyne: 6,
+  johnny: 7,
+  josuke8: 8,
+  jodio: 9,
 };
 
 if (characterIndexMap[character] !== undefined) {
