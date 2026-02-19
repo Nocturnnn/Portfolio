@@ -20,6 +20,17 @@ body {
   transition: background 0.8s ease;
 }
 
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("../img/noise (2).jfif");
+  background-size: 300px;
+  opacity: 0.03;
+  pointer-events: none;
+  z-index: 9999;
+}
+
 /* TOP BAR */
 .top-bar {
   position: absolute;
@@ -81,6 +92,16 @@ nav a:hover {
   z-index: 2;
 }
 
+.slide {
+  transform: scale(1.05);
+  filter: blur(10px);
+}
+
+.slide.active {
+  transform: scale(1);
+  filter: blur(0);
+}
+
 /* LEFT CONTENT */
 .content-left {
   max-width: 500px;
@@ -90,6 +111,9 @@ nav a:hover {
   font-size: 64px;
   font-weight: 800;
   margin-bottom: 10px;
+  text-shadow:
+    0 0 30px var(--theme-color),
+    0 0 60px var(--theme-color);
 }
 
 .content-left h3 {
@@ -218,31 +242,113 @@ nav a:hover {
   transition: 0.4s ease;
 }
 
-/* PAGINATION */
+/* ===============================
+   PAGINATION CONTAINER
+================================= */
+
 .pagination {
-  position: absolute;
-  right: 80px;
+  position: fixed;
+  right: 40px;
   top: 50%;
   transform: translateY(-50%);
+
   display: flex;
   flex-direction: column;
+  align-items: center;
+
+  width: 55px; /* pequeno no estado fechado */
+  padding: 12px 10px;
+
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+
+  transition: width 0.45s cubic-bezier(0.77, 0, 0.18, 1);
+  overflow: hidden;
   z-index: 1000;
 }
 
-.dot {
-  margin: 10px 0;
+/* ===============================
+   EXPANSÃO
+================================= */
+
+.pagination.open {
+  width: 220px;
+  align-items: flex-start;
+}
+
+/* ===============================
+   TOGGLE BUTTON
+================================= */
+
+.menu-toggle {
+  font-size: 20px;
   cursor: pointer;
-  font-size: 14px;
-  opacity: 0.4;
-  transition: 0.3s;
-  color: #fff;
-  z-index: 999;
+  color: white;
+  margin-bottom: 10px;
+  transition: 0.3s ease;
+  user-select: none;
+}
+
+.pagination.open .menu-toggle {
+  transform: rotate(90deg);
+}
+
+/* ===============================
+   MENU ITEMS
+================================= */
+
+.menu-items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(10px);
+
+  transition: 0.35s ease;
+}
+
+/* mostra quando aberto */
+.pagination.open .menu-items,
+.pagination:hover .menu-items {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(0);
+}
+
+/* ===============================
+   DOT ITEMS
+================================= */
+
+.dot {
+  padding: 8px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+  cursor: pointer;
+
+  color: rgba(255, 255, 255, 0.65);
+  transition: 0.3s ease;
+}
+
+.dot:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .dot.active {
-  opacity: 1;
-  font-weight: 600;
-  color: var(--theme-color);
+  color: white;
+  background: rgba(255, 255, 255, 0.15);
+
+  box-shadow: 0 0 15px var(--theme-color);
 }
 
 /* SCROLL INDICATOR */
@@ -342,5 +448,158 @@ nav a:hover {
   100% {
     filter: brightness(1) contrast(1);
     transform: scale(1);
+  }
+}
+
+@media (max-width: 1400px) {
+  .slide {
+    padding: 0 80px;
+  }
+
+  .content-left h1 {
+    font-size: 52px;
+  }
+
+  .content-right img {
+    height: 110vh;
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+    overflow-y: auto;
+  }
+
+  .slide {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 120px 40px 60px;
+  }
+
+  .content-left {
+    max-width: 100%;
+  }
+
+  .content-left h1 {
+    font-size: 44px;
+  }
+
+  .content-right {
+    margin-top: 40px;
+  }
+
+  .content-right img {
+    height: 70vh !important;
+  }
+
+  .top-bar {
+    left: 40px;
+    right: 40px;
+  }
+
+  nav a {
+    margin-left: 20px;
+  }
+
+  .scroll-indicator {
+    display: none;
+  }
+
+  /* paginação vira botão flutuante */
+  .pagination {
+    top: auto;
+    bottom: 30px;
+    right: 30px;
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+
+  .top-bar nav {
+    gap: 16px;
+    flex-wrap: wrap; /* permite quebrar linha */
+    justify-content: flex-end;
+  }
+
+  .top-bar a {
+    font-size: 13px;
+  }
+
+  .slide {
+    padding: 100px 20px 40px;
+  }
+
+  .slide {
+    justify-content: flex-start !important;
+    align-items: center;
+  }
+
+  .content-left h1 {
+    font-size: 36px;
+  }
+
+  .content-left h3 {
+    font-size: 14px;
+  }
+
+  .content-left p {
+    font-size: 13px;
+  }
+
+  .power {
+    margin-top: 25px;
+  }
+
+  .content-right img {
+    height: 55vh !important;
+  }
+
+  .dot {
+    font-size: 12px;
+  }
+
+  /* 🔥 IMAGEM FIXADA EMBAIXO */
+  .content-right {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  /* Remove scroll indicator */
+  .scroll-indicator {
+    display: none;
+  }
+
+  html,
+  body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-left h1 {
+    font-size: 28px;
+  }
+
+  .content-left p {
+    font-size: 12px;
+  }
+
+  .content-right img {
+    height: 45vh !important;
+  }
+
+  .pagination {
+    bottom: 20px;
+    right: 20px;
   }
 }

@@ -123,3 +123,16 @@ function createStars(amount = 40) {
 }
 
 createStars(50);
+
+const pagination = document.getElementById("pagination");
+const toggle = document.querySelector(".menu-toggle");
+
+toggle.addEventListener("click", () => {
+  pagination.classList.toggle("open");
+
+  if (pagination.classList.contains("open")) {
+    document.querySelector(".menu-items").style.display = "flex";
+  } else {
+    document.querySelector(".menu-items").style.display = "none";
+  }
+});
