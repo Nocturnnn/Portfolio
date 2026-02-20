@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6">
-      
+    
       {/* Glow Background */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-1/3 left-1/2 w-[600px] h-[600px] bg-blue-500/20 blur-[120px] rounded-full -translate-x-1/2" />
