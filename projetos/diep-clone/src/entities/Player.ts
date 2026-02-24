@@ -3,15 +3,30 @@ import { Bullet } from "./Bullet";
 export class Player {
   x = 400;
   y = 300;
+
   radius = 25;
   speed = 200;
   angle = 0;
+
+  recoilX = 0;
+  recoilY = 0;
 
   fireRate = 0.2; // segundos entre tiros
   fireCooldown = 0;
 
   update(delta: number, input: any, bullets: Bullet[]) {
-    // Movimento
+    // 💥 aplicar recoil
+    this.x += this.recoilX;
+    this.y += this.recoilY;
+
+    // desacelerar suavemente
+    this.recoilX *= 0.85;
+    this.recoilY *= 0.85;
+
+    if (Math.abs(this.recoilX) < 0.01) this.recoilX = 0;
+    if (Math.abs(this.recoilY) < 0.01) this.recoilY = 0;
+
+    // ===== Movimento normal =====
     if (input.keys["w"]) this.y -= this.speed * delta;
     if (input.keys["s"]) this.y += this.speed * delta;
     if (input.keys["a"]) this.x -= this.speed * delta;
@@ -25,7 +40,7 @@ export class Player {
     // Cooldown
     this.fireCooldown -= delta;
 
-    if (this.fireCooldown <= 0) {
+    if (input.mouse.down && this.fireCooldown <= 0) {
       this.shoot(bullets);
       this.fireCooldown = this.fireRate;
     }
@@ -38,23 +53,57 @@ export class Player {
     const spawnY = this.y + Math.sin(this.angle) * offset;
 
     bullets.push(new Bullet(spawnX, spawnY, this.angle));
+
+    // 💥 RECOIL
+    const force = 3; // ajuste aqui se quiser
+    this.recoilX = -Math.cos(this.angle) * force;
+    this.recoilY = -Math.sin(this.angle) * force;
   }
 
   draw(ctx: CanvasRenderingContext2D) {
-    // Corpo
-    ctx.fillStyle = "#4cc9f0";
+    // ====== CORPO ======
+    ctx.save();
+
+    // Sombra externa
+    ctx.shadowColor = "rgba(189,147,249,0.4)"; // roxo glow
+    ctx.shadowBlur = 18;
+    ctx.shadowOffsetY = 4;
+
+    ctx.fillStyle = "#BD93F9"; // Purple (Dracula)
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
     ctx.fill();
 
-    // Cano
+    ctx.restore();
+
+    // Borda
+    ctx.lineWidth = 4;
+    ctx.strokeStyle = "#bd93f9bd"; // Cyan
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    ctx.stroke();
+
+    // ====== CANO ======
     ctx.save();
     ctx.translate(this.x, this.y);
     ctx.rotate(this.angle);
 
-    ctx.fillStyle = "#3a86ff";
-    ctx.fillRect(0, -6, 40, 12);
+    // Base do cano
+    ctx.fillStyle = "#FF79C6"; // Pink
+    ctx.beginPath();
+    ctx.arc(0, 0, 11, 0, Math.PI * 2);
+    ctx.fill();
+
+    // Corpo do cano
+    ctx.fillStyle = "#FF79C6"; // Cyan
+    ctx.fillRect(0, -8, 50, 16);
 
     ctx.restore();
+
+    // ====== CENTRO ======
+    ctx.fillStyle = "#FF79C6"; // Pink
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius * 0.45, 0, Math.PI * 2);
+    ctx.fill();
   }
 }

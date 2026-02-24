@@ -3,6 +3,7 @@ export class Input {
   mouse = {
     x: 0,
     y: 0,
+    down: false,
   };
 
   constructor(canvas: HTMLCanvasElement) {
@@ -18,6 +19,14 @@ export class Input {
       const rect = canvas.getBoundingClientRect();
       this.mouse.x = e.clientX - rect.left;
       this.mouse.y = e.clientY - rect.top;
+    });
+
+    window.addEventListener("mousedown", (e) => {
+      if (e.button === 0) this.mouse.down = true;
+    });
+
+    window.addEventListener("mouseup", (e) => {
+      if (e.button === 0) this.mouse.down = false;
     });
   }
 }

@@ -23,9 +23,24 @@ export class Bullet {
   }
 
   draw(ctx: CanvasRenderingContext2D) {
-    ctx.fillStyle = "#ffffff";
+    ctx.save();
+
+    // Glow externo
+    ctx.shadowColor = "#FF79C6";
+    ctx.shadowBlur = 12;
+
+    // Corpo principal
+    ctx.fillStyle = "#FF79C6";
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+    ctx.fill();
+
+    ctx.restore();
+
+    // Núcleo interno (contraste)
+    ctx.fillStyle = "#BD93F9";
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.radius * 0.6, 0, Math.PI * 2);
     ctx.fill();
   }
 
