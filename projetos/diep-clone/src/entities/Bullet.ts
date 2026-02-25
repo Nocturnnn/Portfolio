@@ -3,9 +3,10 @@ export class Bullet {
   y: number;
   radius = 6;
   speed = 500;
+  damage = 8; // 💥 DANO DA BALA
   vx: number;
   vy: number;
-  life = 2; // segundos
+  life = 2;
 
   constructor(x: number, y: number, angle: number) {
     this.x = x;
@@ -18,18 +19,15 @@ export class Bullet {
   update(delta: number) {
     this.x += this.vx * delta;
     this.y += this.vy * delta;
-
     this.life -= delta;
   }
 
   draw(ctx: CanvasRenderingContext2D) {
     ctx.save();
 
-    // Glow externo
     ctx.shadowColor = "#FF79C6";
     ctx.shadowBlur = 12;
 
-    // Corpo principal
     ctx.fillStyle = "#FF79C6";
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
@@ -37,7 +35,6 @@ export class Bullet {
 
     ctx.restore();
 
-    // Núcleo interno (contraste)
     ctx.fillStyle = "#BD93F9";
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius * 0.6, 0, Math.PI * 2);

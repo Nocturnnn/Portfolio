@@ -9,6 +9,11 @@ export class Camera {
     this.height = height;
   }
 
+  updateSize(width: number, height: number) {
+    this.width = width;
+    this.height = height;
+  }
+
   follow(targetX: number, targetY: number) {
     this.x = targetX - this.width / 2;
     this.y = targetY - this.height / 2;

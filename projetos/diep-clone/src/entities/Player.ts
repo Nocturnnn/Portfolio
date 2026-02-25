@@ -10,6 +10,9 @@ export class Player {
 
   recoilX = 0;
   recoilY = 0;
+  private recoil = 0;
+  private recoilMax = 8; // quanto encurta
+  private recoilSpeed = 20; // velocidade que volta
 
   fireRate = 0.2; // segundos entre tiros
   fireCooldown = 0;
@@ -18,6 +21,12 @@ export class Player {
     // 💥 aplicar recoil
     this.x += this.recoilX;
     this.y += this.recoilY;
+
+    // Atualizar recoil visual
+    if (this.recoil > 0) {
+      this.recoil -= this.recoilSpeed * delta;
+      if (this.recoil < 0) this.recoil = 0;
+    }
 
     // desacelerar suavemente
     this.recoilX *= 0.85;
@@ -54,7 +63,10 @@ export class Player {
 
     bullets.push(new Bullet(spawnX, spawnY, this.angle));
 
-    // 💥 RECOIL
+    // 💥 RECOIL VISUAL DO CANO
+    this.recoil = this.recoilMax;
+
+    // 💥 RECOIL Tank
     const force = 3; // ajuste aqui se quiser
     this.recoilX = -Math.cos(this.angle) * force;
     this.recoilY = -Math.sin(this.angle) * force;
@@ -96,7 +108,9 @@ export class Player {
 
     // Corpo do cano
     ctx.fillStyle = "#FF79C6"; // Cyan
-    ctx.fillRect(0, -8, 50, 16);
+    const baseBarrelLength = 50;
+    const barrelLength = baseBarrelLength - this.recoil;
+    ctx.fillRect(-this.recoil * 0.3, -8, barrelLength, 16);
 
     ctx.restore();
 
