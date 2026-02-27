@@ -4,8 +4,13 @@ export class Player {
   x = 400;
   y = 300;
 
+  xp = 0;
+  level = 1;
+  xpToNextLevel = 100;
+
   radius = 25;
   speed = 200;
+  mass = 4;
   angle = 0;
 
   recoilX = 0;
@@ -16,6 +21,12 @@ export class Player {
 
   fireRate = 0.2; // segundos entre tiros
   fireCooldown = 0;
+
+  upgrades = {
+    damage: 0,
+    fireRate: 0,
+    speed: 0,
+  };
 
   update(delta: number, input: any, bullets: Bullet[]) {
     // 💥 aplicar recoil
@@ -55,13 +66,47 @@ export class Player {
     }
   }
 
+  applyUpgrade(type: string) {
+    switch (type) {
+      case "damage":
+        this.upgrades.damage++;
+        break;
+
+      case "fireRate":
+        this.upgrades.fireRate++;
+        this.fireRate *= 0.9; // atira mais rápido
+        break;
+
+      case "speed":
+        this.upgrades.speed++;
+        this.speed += 20;
+        break;
+    }
+  }
+
+  addXP(amount: number): boolean {
+    this.xp += amount;
+
+    let leveledUp = false;
+
+    while (this.xp >= this.xpToNextLevel) {
+      this.xp -= this.xpToNextLevel;
+      this.level++;
+      this.xpToNextLevel = Math.floor(this.xpToNextLevel * 1.2);
+      leveledUp = true;
+    }
+
+    return leveledUp;
+  }
+
   shoot(bullets: Bullet[]) {
     const offset = this.radius + 10;
 
     const spawnX = this.x + Math.cos(this.angle) * offset;
     const spawnY = this.y + Math.sin(this.angle) * offset;
 
-    bullets.push(new Bullet(spawnX, spawnY, this.angle));
+    const damage = 8 + this.upgrades.damage * 2;
+    bullets.push(new Bullet(spawnX, spawnY, this.angle, damage));
 
     // 💥 RECOIL VISUAL DO CANO
     this.recoil = this.recoilMax;

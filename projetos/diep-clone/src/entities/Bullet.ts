@@ -8,9 +8,11 @@ export class Bullet {
   vy: number;
   life = 2;
 
-  constructor(x: number, y: number, angle: number) {
+  constructor(x: number, y: number, angle: number, damage: number) {
     this.x = x;
     this.y = y;
+
+    this.damage = damage;
 
     this.vx = Math.cos(angle) * this.speed;
     this.vy = Math.sin(angle) * this.speed;

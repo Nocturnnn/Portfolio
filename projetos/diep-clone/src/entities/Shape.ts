@@ -3,11 +3,15 @@ export type ShapeType = "square" | "triangle" | "pentagon";
 export class Shape {
   x: number;
   y: number;
+
   radius: number;
   hp: number;
   maxHp: number;
+  xpValue: number;
+  mass: number;
   type: ShapeType;
   angle = 0;
+
   private vx: number;
   private vy: number;
   private moveSpeed: number;
@@ -29,16 +33,22 @@ export class Shape {
     if (type === "square") {
       this.radius = 20;
       this.hp = this.maxHp = 10;
+      this.mass = 1;
+      this.xpValue = 10;
     }
 
     if (type === "triangle") {
       this.radius = 25;
       this.hp = this.maxHp = 20;
+      this.mass = 2;
+      this.xpValue = 25;
     }
 
     if (type === "pentagon") {
       this.radius = 35;
       this.hp = this.maxHp = 60;
+      this.mass = 5;
+      this.xpValue = 130;
     }
 
     // 🎲 Movimento aleatório inicial
@@ -64,7 +74,7 @@ export class Shape {
 
     if (Math.abs(this.knockbackX) < 0.1) this.knockbackX = 0;
     if (Math.abs(this.knockbackY) < 0.1) this.knockbackY = 0;
-    
+
     // ===== MOVIMENTO =====
     this.x += this.vx * delta;
     this.y += this.vy * delta;
