@@ -24,7 +24,7 @@ export class Game {
   private availableUpgrades: string[] = [];
 
   constructor() {
-    this.spawnShapes(300);
+    this.spawnShapes(1000);
   }
 
   private isInView(x: number, y: number, radius: number) {
