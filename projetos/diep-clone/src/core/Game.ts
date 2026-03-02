@@ -344,8 +344,7 @@ export class Game {
 
       if (shape.isDead()) {
         this.spawnParticles(shape.x, shape.y); // efeito de partículas
-        this.player.addXP(shape.xpValue); // 🎯 dar XP
-        const leveledUp = this.player.addXP(shape.xpValue);
+        const leveledUp = this.player.addXP(shape.xpValue); // 🎯 dar XP
         if (leveledUp) {
           this.openUpgradeMenu();
         }
