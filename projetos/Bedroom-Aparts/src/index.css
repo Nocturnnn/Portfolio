@@ -14,7 +14,13 @@
 }
 
 body {
-  @apply bg-[#E4E3E0] text-[#141414] font-sans antialiased overflow-hidden;
+  @apply bg-[#E4E3E0] text-[#141414] font-sans antialiased;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .glass {
