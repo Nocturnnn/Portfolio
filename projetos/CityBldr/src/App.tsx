@@ -3,50 +3,43 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState } from 'react';
-import { 
-  Search, 
-  Bell, 
-  MapPin, 
-  Plus, 
-  Minus, 
-  Box, 
-  Home, 
-  LayoutGrid, 
-  Calendar, 
-  CheckCircle2, 
-  TrendingUp, 
+import React, { useState } from "react";
+import {
+  Search,
+  Bell,
+  MapPin,
+  Plus,
+  Minus,
+  Home,
+  LayoutGrid,
+  Calendar,
+  CheckCircle2,
+  TrendingUp,
   Globe,
   ChevronDown,
-  User,
-  Phone,
-  Mail,
-  ExternalLink
-} from 'lucide-react';
-import { motion, AnimatePresence } from 'motion/react';
-import { 
-  LineChart, 
-  Line, 
-  XAxis, 
-  YAxis, 
-  CartesianGrid, 
-  Tooltip, 
-  ResponsiveContainer,
+  ExternalLink,
+} from "lucide-react";
+import { motion } from "motion/react";
+import {
   AreaChart,
-  Area
-} from 'recharts';
+  Area,
+  ResponsiveContainer,
+  XAxis,
+  YAxis,
+  Tooltip,
+} from "recharts";
 
 const chartData = [
-  { name: 'Jan', value: 40 },
-  { name: 'Feb', value: 55 },
-  { name: 'Mar', value: 48 },
-  { name: 'Apr', value: 70 },
-  { name: 'May', value: 85 },
-  { name: 'Jun', value: 94 },
+  { name: "Jan", value: 40 },
+  { name: "Feb", value: 55 },
+  { name: "Mar", value: 48 },
+  { name: "Apr", value: 70 },
+  { name: "May", value: 85 },
+  { name: "Jun", value: 94 },
 ];
 
 const FilterButton = ({ label, value }: { label: string; value: string }) => (
-  <button className="flex items-center gap-2 px-4 py-2 text-xs font-medium bg-white/40 hover:bg-white/60 border border-white/20 rounded-full transition-all">
+  <button className="flex items-center gap-2 px-4 py-2 text-xs font-medium bg-white/40 hover:bg-white/60 border border-white/20 rounded-full transition-all whitespace-nowrap">
     <span className="text-black/40">{label}:</span>
     <span className="text-black">{value}</span>
     <ChevronDown size={14} className="text-black/40" />
@@ -54,47 +47,51 @@ const FilterButton = ({ label, value }: { label: string; value: string }) => (
 );
 
 export default function App() {
-  const [viewMode, setViewMode] = useState<'2D' | '3D'>('3D');
+  const [viewMode, setViewMode] = useState<"2D" | "3D">("3D");
 
   return (
-    <div className="relative w-full h-screen bg-[#E4E3E0] overflow-hidden selection:bg-black selection:text-white">
-      {/* Background Visualization */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center">
-        <div className="relative w-full h-full max-w-6xl max-h-[80vh] flex items-center justify-center">
-          <motion.img 
+    <div className="relative w-full min-h-screen bg-[#E4E3E0] overflow-x-hidden selection:bg-black selection:text-white">
+      {/* Background */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center px-4 md:px-0">
+        <div className="relative w-full h-[60vh] md:h-full max-w-6xl md:max-h-[80vh] flex items-center justify-center">
+          <motion.img
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            src="https://picsum.photos/seed/architecture/1600/1200" 
+            transition={{ duration: 1.2 }}
+            src="https://picsum.photos/seed/architecture/1600/1200"
             alt="Urban Visualization"
-            className="w-full h-full object-cover rounded-[40px] shadow-2xl opacity-80"
-            referrerPolicy="no-referrer"
+            className="w-full h-full object-cover rounded-[28px] md:rounded-[40px] shadow-2xl opacity-80"
           />
-          {/* Overlay Grid Effect */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(228,227,224,0.4)_100%)] rounded-[40px]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(228,227,224,0.4)_100%)] rounded-[28px] md:rounded-[40px]" />
         </div>
       </div>
 
-      {/* Top Navigation / Filters */}
-      <motion.header 
+      {/* Header */}
+      <motion.header
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className="absolute top-8 left-0 right-0 z-20 px-12 flex items-center justify-between"
+        className="relative md:absolute md:top-8 left-0 right-0 z-20 px-4 md:px-12 pt-6 md:pt-0 flex flex-col md:flex-row gap-6 md:gap-0 items-start md:items-center justify-between"
       >
-        <div className="flex items-center gap-8">
-          <div className="flex items-center gap-3 bg-white/60 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/40 shadow-soft">
-            <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
-              <TrendingUp size={18} className="text-white" />
-            </div>
-            <span className="font-bold tracking-tight text-sm uppercase">CITYBLDR</span>
-            <div className="flex items-center gap-2 ml-4">
-              <Bell size={16} className="text-black/40 cursor-pointer hover:text-black transition-colors" />
-              <MapPin size={16} className="text-black/40 cursor-pointer hover:text-black transition-colors" />
-            </div>
+        <div className="flex items-center gap-3 bg-white/60 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/40 shadow-soft">
+          <div className="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
+            <TrendingUp size={18} className="text-white" />
+          </div>
+          <span className="font-bold text-sm uppercase tracking-tight">
+            CITYBLDR
+          </span>
+          <div className="flex items-center gap-2 ml-4">
+            <Bell
+              size={16}
+              className="text-black/40 hover:text-black transition-colors"
+            />
+            <MapPin
+              size={16}
+              className="text-black/40 hover:text-black transition-colors"
+            />
           </div>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap gap-3 w-full md:w-auto">
           <FilterButton label="Property Type" value="Apartments" />
           <FilterButton label="Score" value="100+" />
           <FilterButton label="Last Sold" value="From 2021" />
@@ -102,259 +99,122 @@ export default function App() {
         </div>
       </motion.header>
 
-      {/* Left Floating Card: Target Segment */}
-      <motion.div 
-        initial={{ x: -40, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ delay: 0.2 }}
-        className="absolute top-40 left-12 z-20 w-80 glass p-8 rounded-[32px] shadow-soft animate-float"
-      >
-        <div className="flex justify-between items-start mb-6">
-          <div>
-            <p className="text-[10px] font-bold text-black/40 uppercase tracking-widest mb-1">Target Segment</p>
-            <h2 className="text-2xl font-medium tracking-tight">2-Bedroom Aparts</h2>
+      {/* Content Wrapper */}
+      <div className="relative z-20 px-4 md:px-0 pb-32 md:pb-0 mt-6 md:mt-0">
+        {/* Left Card */}
+        <motion.div
+          initial={{ x: -40, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.2 }}
+          className="relative md:absolute md:top-40 md:left-12 w-full md:w-80 glass p-8 rounded-[28px] md:rounded-[32px] shadow-soft mb-6 md:mb-0"
+        >
+          <p className="text-xs font-bold text-black/40 uppercase tracking-widest mb-1">
+            Target Segment
+          </p>
+          <h2 className="text-2xl font-medium tracking-tight mb-6">
+            2-Bedroom Apartments
+          </h2>
+
+          <div className="mb-6">
+            <p className="text-xs text-black/40 mb-1">Average Score</p>
+            <h3 className="text-3xl font-semibold">94</h3>
           </div>
-          <div className="p-2 bg-white/40 rounded-full">
-            <ExternalLink size={14} className="text-black/60" />
+
+          <div className="h-32">
+            <ResponsiveContainer width="100%" height="100%">
+              <AreaChart data={chartData}>
+                <XAxis dataKey="name" hide />
+                <YAxis hide />
+                <Tooltip />
+                <Area
+                  type="monotone"
+                  dataKey="value"
+                  stroke="#000"
+                  fill="#000"
+                  fillOpacity={0.2}
+                />
+              </AreaChart>
+            </ResponsiveContainer>
           </div>
+        </motion.div>
+
+        {/* Right Column */}
+        <div className="relative md:absolute md:top-40 md:right-20 flex flex-col gap-8 w-full md:w-auto">
+          <motion.div
+            initial={{ x: 40, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.4 }}
+            className="w-full md:w-[380px] glass p-8 rounded-[28px] md:rounded-[32px] shadow-soft"
+          >
+            <p className="text-xs font-bold text-black/40 uppercase tracking-widest mb-1">
+              Property Details
+            </p>
+            <h3 className="text-xl font-medium mb-4">
+              Modern Residential Complex
+            </h3>
+
+            <div className="flex justify-between text-sm text-black/60 mb-4">
+              <span>Units</span>
+              <span>124</span>
+            </div>
+
+            <div className="flex justify-between text-sm text-black/60 mb-4">
+              <span>Lot Area</span>
+              <span>3,200 m²</span>
+            </div>
+
+            <div className="flex justify-between text-sm text-black/60">
+              <span>Completion</span>
+              <span>2025</span>
+            </div>
+          </motion.div>
         </div>
+      </div>
 
-        <div className="grid grid-cols-2 gap-4 mb-8">
-          <div>
-            <p className="text-[10px] text-black/40 uppercase font-bold mb-1">Anchor Units</p>
-            <p className="text-lg font-mono">7</p>
-          </div>
-          <div>
-            <p className="text-[10px] text-black/40 uppercase font-bold mb-1">Avg Sq Ft</p>
-            <p className="text-lg font-mono">1,100</p>
-          </div>
-        </div>
-
-        <div className="space-y-6 mb-8">
-          <div className="relative">
-            <div className="flex justify-between items-end mb-2">
-              <p className="text-[10px] text-black/40 uppercase font-bold">Efficiency Ratio</p>
-              <p className="text-sm font-mono">88%</p>
-            </div>
-            <div className="h-1 bg-black/10 rounded-full overflow-hidden">
-              <motion.div 
-                initial={{ width: 0 }}
-                animate={{ width: '88%' }}
-                transition={{ duration: 1, delay: 0.5 }}
-                className="h-full bg-black" 
-              />
-            </div>
-          </div>
-
-          <div className="relative">
-            <div className="flex justify-between items-end mb-2">
-              <p className="text-[10px] text-black/40 uppercase font-bold">IRR Projection</p>
-              <p className="text-sm font-mono">6.2%</p>
-            </div>
-            <div className="h-1 bg-black/10 rounded-full overflow-hidden">
-              <motion.div 
-                initial={{ width: 0 }}
-                animate={{ width: '62%' }}
-                transition={{ duration: 1, delay: 0.7 }}
-                className="h-full bg-black" 
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="flex items-center justify-between">
-          <div>
-            <p className="text-3xl font-medium tracking-tight">$ 3,900</p>
-            <p className="text-[10px] text-black/40 font-bold uppercase">Monthly Rent</p>
-          </div>
-          <button className="px-6 py-3 bg-black text-white text-xs font-bold rounded-full hover:scale-105 transition-transform">
-            Make an Offer
-          </button>
-        </div>
-      </motion.div>
-
-      {/* Right Panel: Property Details */}
-      <motion.div 
-        initial={{ x: 40, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ delay: 0.4 }}
-        className="absolute top-40 right-12 z-20 w-96 glass p-8 rounded-[32px] shadow-soft"
-      >
-        <div className="flex justify-between items-start mb-8">
-          <div className="flex items-center gap-2">
-            <button 
-              onClick={() => setViewMode('2D')}
-              className={`p-2 rounded-full transition-all ${viewMode === '2D' ? 'bg-black text-white' : 'bg-white/40 text-black/40'}`}
-            >
-              <Minus size={16} />
-            </button>
-            <div className="bg-white/60 px-4 py-2 rounded-full border border-white/40 flex items-center gap-2">
-              <Box size={14} />
-              <span className="text-xs font-bold">2-Bedroom Aparts</span>
-            </div>
-            <button 
-              onClick={() => setViewMode('3D')}
-              className={`p-2 rounded-full transition-all ${viewMode === '3D' ? 'bg-black text-white' : 'bg-white/40 text-black/40'}`}
-            >
-              <Plus size={16} />
-            </button>
-          </div>
-          <div className="p-2 bg-white/40 rounded-full">
-            <ChevronDown size={14} className="text-black/60" />
-          </div>
-        </div>
-
-        <div className="mb-8">
-          <p className="text-[10px] font-bold text-black/40 uppercase tracking-widest mb-1">1108 33RD AVE</p>
-          <h1 className="text-4xl font-medium tracking-tighter mb-4">#619012<br />RC-4 / 80-D</h1>
-          
-          <div className="flex gap-2">
-            <span className="px-3 py-1 bg-yellow-400/20 text-yellow-700 text-[10px] font-bold rounded-full border border-yellow-400/30">In Progress</span>
-            <span className="px-3 py-1 bg-green-400/20 text-green-700 text-[10px] font-bold rounded-full border border-green-400/30">Verified</span>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-3 gap-4 mb-8">
-          <div>
-            <p className="text-[10px] text-black/40 font-bold uppercase mb-1">Score</p>
-            <p className="text-sm font-mono text-green-600">138.2</p>
-          </div>
-          <div>
-            <p className="text-[10px] text-black/40 font-bold uppercase mb-1">17 Units</p>
-            <p className="text-sm font-mono">63,000 sq ft</p>
-          </div>
-        </div>
-
-        <div className="space-y-6 pt-6 border-t border-black/5">
-          <div className="flex justify-between items-center">
-            <div>
-              <p className="text-[10px] text-black/40 font-bold uppercase mb-1">Owner</p>
-              <p className="text-sm font-medium">Kenneth Lee</p>
-            </div>
-            <div className="text-right">
-              <p className="text-[10px] text-black/40 font-bold uppercase mb-1">Last Sold - 09.2021</p>
-              <p className="text-sm font-mono">$ 2,150,000</p>
-            </div>
-          </div>
-
-          <div className="flex items-center justify-between bg-white/40 p-4 rounded-2xl border border-white/40">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-black/10 rounded-full flex items-center justify-center overflow-hidden">
-                <User size={20} className="text-black/40" />
-              </div>
-              <div>
-                <p className="text-[10px] text-black/40 font-bold uppercase">Assigned to</p>
-                <p className="text-sm font-medium">Ramsey Casey</p>
-              </div>
-            </div>
-            <div className="flex gap-2">
-              <button className="p-2 bg-white/60 rounded-full hover:bg-white transition-colors">
-                <Mail size={14} />
-              </button>
-              <button className="p-2 bg-white/60 rounded-full hover:bg-white transition-colors">
-                <Phone size={14} />
-              </button>
-            </div>
-          </div>
-        </div>
-      </motion.div>
-
-      {/* Bottom Right: Construction Velocity */}
-      <motion.div 
+      {/* Construction Velocity */}
+      <motion.div
         initial={{ y: 40, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.6 }}
-        className="absolute bottom-12 right-12 z-20 w-80 glass p-8 rounded-[32px] shadow-soft"
+        className="relative md:absolute md:bottom-12 md:right-12 z-20 w-full md:w-80 glass p-8 rounded-[28px] md:rounded-[32px] shadow-soft mx-4 md:mx-0 mb-24 md:mb-0"
       >
-        <div className="flex justify-between items-start mb-6">
-          <div>
-            <p className="text-[10px] font-bold text-black/40 uppercase tracking-widest mb-1">Construction Velocity</p>
-            <div className="flex items-baseline gap-2">
-              <h3 className="text-3xl font-medium tracking-tight">94%</h3>
-              <span className="text-xs text-black/40 font-bold uppercase tracking-widest">- Success Rate</span>
-            </div>
-          </div>
-          <div className="p-2 bg-white/40 rounded-full">
-            <ExternalLink size={14} className="text-black/60" />
-          </div>
-        </div>
-
-        <div className="h-32 w-full">
-          <ResponsiveContainer width="100%" height="100%">
-            <AreaChart data={chartData}>
-              <defs>
-                <linearGradient id="colorValue" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#000" stopOpacity={0.1}/>
-                  <stop offset="95%" stopColor="#000" stopOpacity={0}/>
-                </linearGradient>
-              </defs>
-              <Area 
-                type="monotone" 
-                dataKey="value" 
-                stroke="#000" 
-                strokeWidth={2} 
-                fillOpacity={1} 
-                fill="url(#colorValue)" 
-              />
-            </AreaChart>
-          </ResponsiveContainer>
-        </div>
-
-        <div className="flex justify-between items-end mt-4">
-          <p className="text-[10px] text-black/40 font-bold uppercase">Highest and Best Use</p>
-          <div className="flex items-center gap-1">
-            <div className="w-2 h-2 bg-black rounded-full" />
-            <span className="text-[10px] font-bold uppercase">Current</span>
-          </div>
-        </div>
+        <p className="text-xs font-bold text-black/40 uppercase tracking-widest mb-1">
+          Construction Velocity
+        </p>
+        <h3 className="text-2xl font-semibold mb-4">+18% YoY</h3>
       </motion.div>
 
-      {/* Floating Controls (Left) */}
-      <div className="absolute left-12 bottom-40 z-20 flex flex-col gap-3">
+      {/* Floating Controls */}
+      <div className="hidden md:flex absolute left-12 bottom-40 z-20 flex-col gap-3">
         <button className="w-10 h-10 bg-white/60 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40 shadow-soft hover:bg-white transition-all">
           <Plus size={18} />
         </button>
         <button className="w-10 h-10 bg-white/60 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40 shadow-soft hover:bg-white transition-all">
           <Minus size={18} />
         </button>
-        <button className="w-10 h-10 bg-white/60 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40 shadow-soft hover:bg-white transition-all">
-          <span className="text-[10px] font-bold">2D</span>
+        <button
+          onClick={() => setViewMode(viewMode === "2D" ? "3D" : "2D")}
+          className="w-10 h-10 bg-white/60 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40 shadow-soft hover:bg-white transition-all text-xs font-bold"
+        >
+          {viewMode}
         </button>
       </div>
 
-      {/* Bottom Navigation Bar */}
-      <motion.nav 
+      {/* Bottom Nav */}
+      <motion.nav
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.8 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 bg-white/60 backdrop-blur-md px-4 py-3 rounded-full border border-white/40 shadow-soft"
+        className="fixed md:absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 bg-white/60 backdrop-blur-md px-4 py-3 rounded-full border border-white/40 shadow-soft"
       >
-        <button className="p-3 text-black/40 hover:text-black transition-colors">
-          <Search size={20} />
-        </button>
-        <button className="p-3 text-black bg-white rounded-full shadow-sm">
-          <Home size={20} />
-        </button>
-        <button className="p-3 text-black/40 hover:text-black transition-colors">
-          <LayoutGrid size={20} />
-        </button>
-        <button className="p-3 text-black/40 hover:text-black transition-colors">
-          <Calendar size={20} />
-        </button>
-        <button className="p-3 text-black/40 hover:text-black transition-colors">
-          <CheckCircle2 size={20} />
-        </button>
-        <button className="p-3 text-black/40 hover:text-black transition-colors">
-          <TrendingUp size={20} />
-        </button>
-        <button className="p-3 text-black/40 hover:text-black transition-colors">
-          <Globe size={20} />
-        </button>
+        <Search size={20} />
+        <Home size={20} />
+        <LayoutGrid size={20} />
+        <Calendar size={20} />
+        <CheckCircle2 size={20} />
+        <TrendingUp size={20} />
+        <Globe size={20} />
       </motion.nav>
-
-      {/* Subtle Grid Background */}
-      <div className="fixed inset-0 pointer-events-none opacity-[0.03]" 
-           style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
     </div>
   );
 }
