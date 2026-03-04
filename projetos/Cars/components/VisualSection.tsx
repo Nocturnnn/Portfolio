@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Image from 'next/image';
-import { motion } from 'motion/react';
+import React from "react";
+import Image from "next/image";
+import { motion } from "motion/react";
 
 const VisualSection = () => {
   return (
@@ -26,8 +26,8 @@ const VisualSection = () => {
         </motion.div>
       </div>
 
-      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-8">
-        <motion.h2 
+      <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-8 mt-28 md:mt-0">
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -37,12 +37,13 @@ const VisualSection = () => {
         </motion.h2>
         <motion.div
           initial={{ width: 0 }}
-          whileInView={{ width: '100px' }}
+          whileInView={{ width: "100px" }}
           viewport={{ once: true }}
           className="h-1 bg-accent mb-8"
         />
         <p className="text-white/40 max-w-lg mx-auto text-lg">
-          Experience the pinnacle of automotive engineering and design. Our fleet represents the absolute best the world has to offer.
+          Experience the pinnacle of automotive engineering and design. Our
+          fleet represents the absolute best the world has to offer.
         </p>
       </div>
     </section>

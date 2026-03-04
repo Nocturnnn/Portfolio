@@ -2,21 +2,32 @@
 @import "tw-animate-css";
 
 @theme {
-  --font-sans: var(--font-sans);
-  --font-display: var(--font-display);
+  --font-sans: "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Outfit", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --color-accent: #eab308; /* Vibrant Yellow */
 }
 
 @layer base {
   body {
     @apply bg-black text-white selection:bg-accent selection:text-black;
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
   }
 }
 
 @layer utilities {
   .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
+    @apply border border-white/10 bg-white/5 backdrop-blur-md;
   }
+
   .text-glow {
     text-shadow: 0 0 20px rgba(234, 179, 8, 0.3);
   }
