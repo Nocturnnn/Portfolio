@@ -20,855 +20,254 @@
     <link rel="stylesheet" href="style/style.css" />
   </head>
   <body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-grid"></div>
+
     <header>
       <div class="container header-inner">
-        <div class="logo reveal" data-reveal="top" style="--delay: 0.05s">
+        <a
+          href="#topo"
+          class="logo reveal"
+          data-reveal="top"
+          style="--delay: 0.05s"
+        >
           Mateus<span>.</span>
-        </div>
+        </a>
+
         <nav class="reveal" data-reveal="top" style="--delay: 0.15s">
           <a href="#projetos">Projetos</a>
           <a href="#sobre">Sobre</a>
           <a href="#contato">Contato</a>
         </nav>
+
+        <a
+          href="https://github.com/Nocturnnn"
+          target="_blank"
+          class="header-cta reveal"
+          data-reveal="top"
+          style="--delay: 0.2s"
+        >
+          Github
+        </a>
       </div>
     </header>
 
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <span class="badge reveal" data-reveal="top" style="--delay: 0.1s">
-            Web Designer & Full Stack · Code-First
-          </span>
+    <main id="topo">
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <span class="badge reveal" data-reveal="top" style="--delay: 0.1s">
+              Web Designer & Full Stack · Code-First
+            </span>
 
-          <h1 class="reveal" data-reveal="top" style="--delay: 0.2s">
-            Crio experiências digitais <span>modernas</span>, rápidas e
-            memoráveis
-          </h1>
+            <h1 class="reveal" data-reveal="top" style="--delay: 0.2s">
+              Crio experiências digitais <span>modernas</span>, interativas e
+              com direção visual forte
+            </h1>
 
-          <p class="reveal" data-reveal="top" style="--delay: 0.3s">
-            Transformo ideias em produtos digitais com foco em estética,
-            performance e conversão.
-          </p>
+            <p class="reveal" data-reveal="top" style="--delay: 0.3s">
+              Desenvolvo interfaces que unem estética, performance e narrativa
+              visual — com foco em impacto, clareza e experiência premium.
+            </p>
 
-          <div class="actions reveal" data-reveal="top" style="--delay: 0.4s">
-            <a href="#projetos" class="btn primary">Ver projetos</a>
-            <a href="#contato" class="btn ghost">Fale comigo</a>
-          </div>
-        </div>
+            <div
+              class="hero-stats reveal"
+              data-reveal="top"
+              style="--delay: 0.35s"
+            >
+              <div class="stat">
+                <strong id="heroProjectCount">0+</strong>
+                <span>projetos</span>
+              </div>
+              <div class="stat">
+                <strong>UI + Code</strong>
+                <span>design orientado à implementação</span>
+              </div>
+              <div class="stat">
+                <strong>Front-end</strong>
+                <span>com base full stack</span>
+              </div>
+            </div>
 
-        <div class="mockup reveal" data-reveal="right" style="--delay: 0.3s">
-          <div class="mockup-slider">
-            <img
-              src="img/portifolio/Balduino.png"
-              class="active"
-              data-link="projetos/Balduino_IV/"
-            />
-            <img
-              src="img/portifolio/monarch.png"
-              data-link="projetos/monarch/"
-            />
-            <img
-              src="img/portifolio/dream-house.png"
-              data-link="projetos/dream-house-home/"
-            />
-            <img src="img/portifolio/pingu.png" data-link="projetos/penguin/" />
-            <img
-              src="img/portifolio/chess3d.png"
-              data-link="projetos/chess-3d/"
-            />
-            <img
-              src="img/portifolio/surfer.png"
-              data-link="projetos/Surfista_Prateado/"
-            />
-            <img
-              src="img/portifolio/BDG3.png"
-              data-link="projetos/bdg3-characters/"
-            />
-            <img src="img/portifolio/Jojo.png" data-link="projetos/Jojo/" />
-            <img
-              src="img/portifolio/neuroflow_ai.png"
-              data-link="https://github.com/Nocturnnn/Neuroflow_AI"
-            />
-            <img
-              src="img/portifolio/Bedroom Aparts.png"
-              data-link="https://bedroom-aparts.vercel.app/"
-            />
-            <img
-              src="img/portifolio/Cars.png"
-              data-link="https://cars-delta-two.vercel.app/"
-            />
-            <img
-              src="img/portifolio/Vantage.png"
-              data-link="https://vantage-adventure.vercel.app/"
-            />
-            <img
-              src="img/portifolio/nocturngear.png"
-              data-link="https://nocturn-gear.vercel.app/"
-            />
-            <img
-              src="img/portifolio/Nike.png"
-              data-link="https://github.com/Nocturnnn/nike-shoe-landing"
-            />
-            <img
-              src="img/portifolio/pagani.png"
-              data-link="https://github.com/Nocturnnn/pagani-automobili"
-            />
-            <img
-              src="img/portifolio/neo street.png"
-              data-link="https://neo-street.vercel.app/"
-            />
+            <div class="actions reveal" data-reveal="top" style="--delay: 0.4s">
+              <a href="#projetos" class="btn primary">Ver projetos</a>
+              <a href="#contato" class="btn ghost">Fale comigo</a>
+            </div>
           </div>
 
-          <a
-            class="mockup-overlay"
-            target="_blank"
-            aria-label="Ver projeto"
-          ></a>
-        </div>
-
-        <p
-          class="desktop-hint reveal"
-          data-reveal="bottom"
-          style="--delay: 0.45s"
-        >
-          Para uma experiência completa, visualize este site em um computador.
-        </p>
-      </div>
-    </section>
-
-    <section id="projetos">
-      <div class="container">
-        <div class="section-head reveal" data-reveal="bottom">
-          <h2>Projetos selecionados</h2>
-          <p>Trabalhos que unem direção visual, código limpo e narrativa.</p>
-        </div>
-
-        <div class="projects">
-          <article class="card reveal" data-reveal="left" style="--delay: 0.1s">
-            <img src="img/portifolio/Balduino.png" alt="Balduíno IV" />
-            <div class="card-content">
-              <h3>Balduíno IV — Poster Editorial</h3>
-              <p>
-                Experiência editorial inspirada em pôsteres históricos, com
-                tipografia monumental e atmosfera dramática.
-              </p>
-              <div class="tags">
-                <span>HTML</span><span>CSS</span><span>Editorial</span
-                ><span>Typography</span>
-              </div>
-              <a href="projetos/Balduino_IV/" target="_blank">Ver projeto →</a>
-            </div>
-          </article>
-
-          <article
-            class="card reveal"
-            data-reveal="right"
-            style="--delay: 0.2s"
-          >
-            <img src="img/portifolio/monarch.png" alt="Monarch" />
-            <div class="card-content">
-              <h3>The Blood Crowned Monarch</h3>
-              <p>
-                Projeto dark-fantasy com estética cinematográfica, efeitos sutis
-                e narrativa visual intensa.
-              </p>
-              <div class="tags">
-                <span>UI</span><span>UX</span><span>Front-end</span
-                ><span>Cinematic</span>
-              </div>
-              <a href="projetos/monarch/" target="_blank">Ver projeto →</a>
-            </div>
-          </article>
-
-          <article
-            class="card reveal"
-            data-reveal="left"
-            style="--delay: 0.15s"
-          >
-            <img
-              src="img/portifolio/dream-house.png"
-              alt="Dream House — Real Estate Concept"
-            />
-
-            <div class="card-content">
-              <h3>Dream House — Real Estate Landing Page</h3>
-
-              <p>
-                Landing page imobiliária com abordagem editorial, tipografia
-                refinada e elementos decorativos sutis inspirados em layouts
-                cinematográficos.
-              </p>
-
-              <div class="tags">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>Landing Page</span>
-                <span>Editorial</span>
-                <span>UI Design</span>
-              </div>
-
-              <a href="projetos/dream-house-home/" target="_blank"
-                >Ver projeto →</a
-              >
-            </div>
-          </article>
-
-          <article
-            class="card reveal"
-            data-reveal="right"
-            style="--delay: 0.2s"
-          >
-            <img src="img/portifolio/pingu.png" alt="O Pinguim e a Montanha" />
-            <div class="card-content">
-              <h3>O Pinguim e a Montanha (meme)</h3>
-              <p>
-                Experimento visual e narrativo inspirado em um meme existencial.
-                Um pinguim caminha em direção à montanha sem saber o motivo —
-                apenas continua.
-              </p>
-              <div class="tags">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>UI</span>
-                <span>Experimento</span>
-                <span>Front-end</span>
-                <span>Meme</span>
-                <span>Existencial</span>
-                <span>Cinemático</span>
-              </div>
-              <a href="projetos/penguin/" target="_blank">Ver projeto →</a>
-            </div>
-          </article>
-
-          <article class="card reveal" data-reveal="left" style="--delay: 0.3s">
-            <img
-              src="img/portifolio/chess3d.png"
-              alt="Xadrez 3D Cinematográfico"
-            />
-            <div class="card-content">
-              <h3>Xadrez 3D — Experiência Cinematográfica</h3>
-              <p>
-                Experimento visual em WebGL inspirado na estética e na filosofia
-                do xadrez. Um tabuleiro 3D apresentado de forma contemplativa,
-                onde luz, câmera e silêncio reforçam a ideia de que cada
-                movimento carrega intenção.
-              </p>
-              <div class="tags">
-                <span>Three.js</span>
-                <span>WebGL</span>
-                <span>JavaScript</span>
-                <span>GSAP</span>
-                <span>React</span>
-                <span>CSS</span>
-                <span>3D</span>
-                <span>Cinemático</span>
-                <span>Experimento</span>
-                <span>Front-end</span>
-              </div>
-              <a href="projetos/chess-3d/" target="_blank">Ver projeto →</a>
-            </div>
-          </article>
-
-          <article class="card reveal" data-reveal="left" style="--delay: 0.3s">
-            <img
-              src="img/portifolio/surfer.png"
-              alt="Cosmic Drift — Experiência Visual Espacial"
-            />
-            <div class="card-content">
-              <h3>
-                Cosmic Drift Surfista Prateado — Experiência Visual Espacial
-              </h3>
-              <p>
-                O projeto utiliza JavaScript imperativo para geração dinâmica
-                das estrelas, enquanto o React atua apenas como camada
-                estrutural, priorizando performance, clareza arquitetural e
-                fluidez visual.
-              </p>
-              <div class="tags">
-                <span>React</span>
-                <span>Vite</span>
-                <span>JavaScript</span>
-                <span>CSS Animations</span>
-                <span>Procedural</span>
-                <span>Performance</span>
-                <span>Fake Depth</span>
-                <span>Experimento</span>
-                <span>Front-end</span>
-                <span>Visual</span>
-              </div>
-              <a href="projetos/Surfista_Prateado/" target="_blank"
-                >Ver projeto →</a
-              >
-            </div>
-          </article>
-
-          <article class="card reveal" data-reveal="left" style="--delay: 0.3s">
-            <img
-              src="img/portifolio/BDG3.png"
-              alt="BDG3 — Codex Cinematográfico Interativo"
-            />
-            <div class="card-content">
-              <h3>Baldur’s Gate 3 — Codex Cinematográfico Interativo</h3>
-              <p>
-                Uma experiência visual imersiva inspirada na atmosfera sombria
-                de Baldur’s Gate 3. O projeto combina HTML semântico, CSS
-                cinematográfico e JavaScript orientado a dados para criar um
-                painel interativo estilo RPG. Cada personagem possui história e
-                características estruturadas em variáveis JavaScript, permitindo
-                transições suaves, enquadramento dinâmico de imagem
-                (object-position) e animações com estética de grimório arcano.
-              </p>
-              <div class="tags">
-                <span>HTML5</span>
-                <span>CSS3</span>
-                <span>JavaScript</span>
-                <span>AOS</span>
-                <span>Cinematic UI</span>
-                <span>Data Driven</span>
-                <span>RPG Interface</span>
-                <span>Dark Theme</span>
-                <span>UI/UX</span>
-                <span>Front-end</span>
-              </div>
-              <a href="projetos/bdg3-characters/" target="_blank"
-                >Ver projeto →</a
-              >
-            </div>
-          </article>
-
-          <article
-            class="card reveal"
+          <div
+            class="hero-visual reveal"
             data-reveal="right"
             style="--delay: 0.3s"
           >
-            <img
-              src="img/portifolio/Jojo.png"
-              alt="JoJo — Experiência Cinematográfica Interativa"
-            />
-            <div class="card-content">
-              <h3>JoJo — Experiência Cinematográfica Interativa</h3>
-              <p>
-                Uma experiência visual inspirada na estética dramática e
-                estilizada de JoJo’s Bizarre Adventure. O projeto combina HTML
-                semântico, CSS com composição cinematográfica e JavaScript
-                orientado a estados para criar uma navegação imersiva entre
-                protagonistas da obra. Cada personagem é estruturado através de
-                dados dinâmicos, permitindo transições suaves, enquadramento
-                estratégico de imagem (object-position) e mudanças de atmosfera
-                conforme a Parte selecionada. O layout foi desenvolvido com foco
-                em impacto visual: tipografia marcante, contraste forte,
-                sobreposições controladas e responsividade otimizada para
-                preservar a experiência tanto no desktop quanto no mobile. A
-                navegação funciona como um slider narrativo, onde cada clique
-                altera contexto, identidade visual e hierarquia de informação de
-                forma fluida.
-              </p>
-              <div class="tags">
-                <span>HTML5</span>
-                <span>CSS3</span>
-                <span>JavaScript</span>
-                <span>Responsive Design</span>
-                <span>Cinematic UI</span>
-                <span>State Driven</span>
-                <span>Animation</span>
-                <span>Dark Theme</span>
-                <span>UI/UX</span>
-                <span>Front-end</span>
-              </div>
-              <a href="projetos/Jojo/" target="_blank"> Ver projeto → </a>
-            </div>
-          </article>
-
-          <article class="card reveal" data-reveal="left" style="--delay: 0.3s">
-            <img
-              src="img/portifolio/neuroflow_ai.png"
-              alt="NeuroFlow AI — Landing Page SaaS com Next.js"
-            />
-            <div class="card-content">
-              <h3>NeuroFlow AI — Landing Page SaaS com Next.js</h3>
-              <p>
-                Projeto desenvolvido como parte do meu início de aprendizado em
-                Next.js, com foco na construção de uma landing page moderna para
-                um produto SaaS de automação com inteligência artificial. A
-                aplicação utiliza o App Router do Next.js para organização
-                estrutural, Tailwind CSS v4 para estilização utilitária de alta
-                performance e Framer Motion para criar animações suaves e
-                envolventes. A arquitetura foi pensada para escalar, priorizando
-                separação de componentes, clareza estrutural e base sólida para
-                futuras integrações como autenticação, dashboard e APIs.
-              </p>
-              <div class="tags">
-                <span>Next.js</span>
-                <span>React</span>
-                <span>TypeScript</span>
-                <span>Tailwind CSS v4</span>
-                <span>Framer Motion</span>
-                <span>App Router</span>
-                <span>SaaS</span>
-                <span>UI/UX</span>
-                <span>Performance</span>
-                <span>Front-end</span>
-              </div>
-              <a
-                href="https://github.com/Nocturnnn/Neuroflow_AI"
-                target="_blank"
-              >
-                Ver projeto →
-              </a>
-            </div>
-          </article>
-
-          <article class="card reveal" data-reveal="left" style="--delay: 0.3s">
-            <img
-              src="img/portifolio/Bedroom Aparts.png"
-              alt="Bedroom Aparts — Dashboard Imobiliário com React + Motion"
-            />
-            <div class="card-content">
-              <h3>Bedroom Aparts — Dashboard Imobiliário com React + Motion</h3>
-              <p>
-                Projeto desenvolvido com foco em interface imobiliária de alto
-                padrão, explorando visualização de dados, microinterações e
-                layout imersivo. A aplicação foi construída com React +
-                TypeScript, utilizando Tailwind CSS para estilização moderna e
-                sistema de glassmorphism. As animações são controladas com
-                Motion (motion/react), garantindo transições suaves e entradas
-                progressivas dos componentes. Para visualização analítica,
-                integrei gráficos dinâmicos com Recharts, criando um dashboard
-                responsivo que combina estética minimalista com experiência
-                interativa. A arquitetura prioriza componentização,
-                responsividade mobile-first e organização escalável para futura
-                integração com APIs e dados reais.
-              </p>
-              <div class="tags">
-                <span>React</span>
-                <span>TypeScript</span>
-                <span>Vite</span>
-                <span>Tailwind CSS</span>
-                <span>Motion</span>
-                <span>Recharts</span>
-                <span>Glassmorphism</span>
-                <span>Dashboard UI</span>
-                <span>Data Visualization</span>
-                <span>Front-end</span>
-              </div>
-              <a href="https://bedroom-aparts.vercel.app/" target="_blank">
-                Ver projeto →
-              </a>
-            </div>
-          </article>
-
-          <article class="card reveal" data-reveal="left" style="--delay: 0.4s">
-            <img
-              src="img/portifolio/Cars.png"
-              alt="Karzone Luxury Automotive — Landing Page Premium com Next.js"
-            />
-
-            <div class="card-content">
-              <h3>
-                Karzone Luxury Automotive — Experiência Web Premium para Carros
-                de Luxo
-              </h3>
-
-              <p>
-                Projeto desenvolvido com foco em criar uma experiência digital
-                imersiva inspirada no universo automotivo de alto padrão. A
-                interface explora estética minimalista, contrastes marcantes e
-                storytelling visual para transmitir exclusividade, performance e
-                sofisticação. A aplicação foi construída com Next.js + React e
-                TypeScript, utilizando Tailwind CSS para estilização moderna e
-                responsiva. O projeto explora animações suaves e interações
-                baseadas em scroll utilizando Motion, criando transições fluidas
-                entre seções e elementos que respondem ao movimento do usuário.
-                Um destaque da interface é a seção interativa de showcase de
-                veículos, onde imagens deslizam horizontalmente conforme o
-                usuário navega verticalmente pela página, criando uma
-                experiência cinematográfica. A arquitetura prioriza
-                componentização, organização escalável e design mobile-first,
-                garantindo performance elevada e base preparada para futura
-                integração com APIs, catálogos de veículos e sistemas de
-                reserva.
-              </p>
-
-              <div class="tags">
-                <span>Next.js</span>
-                <span>React</span>
-                <span>TypeScript</span>
-                <span>Tailwind CSS</span>
-                <span>Motion</span>
-                <span>Scroll Animation</span>
-                <span>Luxury UI</span>
-                <span>Interactive Landing Page</span>
-                <span>Responsive Design</span>
-                <span>Front-end</span>
+            <div class="mockup-shell">
+              <div class="mockup-topbar">
+                <span></span>
+                <span></span>
+                <span></span>
               </div>
 
-              <a href="https://cars-delta-two.vercel.app/" target="_blank">
-                Ver projeto →
-              </a>
-            </div>
-          </article>
+              <div class="mockup">
+                <div class="mockup-slider" id="mockupSlider"></div>
 
-          <article class="card reveal" data-reveal="left" style="--delay: 0.4s">
-            <img
-              src="img/portifolio/Vantage.png"
-              alt="Vantage Expedition — Landing Page Cinematográfica de Exploração"
-            />
+                <a
+                  class="mockup-overlay"
+                  id="mockupOverlay"
+                  target="_blank"
+                  aria-label="Ver projeto em destaque"
+                ></a>
 
-            <div class="card-content">
-              <h3>
-                Vantage Expedition — Experiência Web Cinematográfica Inspirada
-                em Explorações Alpinas
-              </h3>
-
-              <p>
-                Projeto desenvolvido com foco em criar uma experiência digital
-                imersiva inspirada no universo das grandes expedições de
-                montanha e nos arquivos clássicos de exploração geográfica. A
-                interface explora uma estética vintage contemporânea, combinando
-                tipografia expressiva, imagens cinematográficas e contrastes
-                profundos para transmitir aventura, descoberta e sofisticação. A
-                aplicação foi construída com React e TypeScript, utilizando
-                Tailwind CSS para estilização moderna e altamente responsiva. O
-                projeto incorpora animações fluidas e microinterações com
-                Motion, criando transições suaves entre seções e elementos que
-                respondem de forma orgânica ao movimento do usuário. Um dos
-                destaques da interface é a galeria interativa de destinos, onde
-                os cartões de expedição se expandem dinamicamente ao hover,
-                revelando informações detalhadas e criando uma navegação visual
-                envolvente. A arquitetura do projeto foi pensada para priorizar
-                componentização, organização escalável e design mobile-first,
-                garantindo performance elevada e base preparada para futuras
-                integrações com APIs de destinos, sistemas de reserva e
-                plataformas de expedições.
-              </p>
-
-              <div class="tags">
-                <span>React</span>
-                <span>TypeScript</span>
-                <span>Tailwind CSS</span>
-                <span>Motion</span>
-                <span>Scroll Animation</span>
-                <span>Responsive Design</span>
-                <span>Interactive UI</span>
-                <span>Cinematic Layout</span>
-                <span>Landing Page</span>
-                <span>Front-end</span>
+                <div class="mockup-caption" id="mockupCaption">
+                  <span class="mockup-label">Projeto em destaque</span>
+                  <h3 id="mockupTitle">Carregando...</h3>
+                  <p id="mockupType">Tipo</p>
+                </div>
               </div>
-
-              <a href="https://vantage-adventure.vercel.app/" target="_blank">
-                Ver projeto →
-              </a>
             </div>
-          </article>
 
-          <article class="card reveal" data-reveal="left" style="--delay: 0.4s">
-            <img
-              src="img/portifolio/nocturngear.png"
-              alt="NocturnGear — Experiência Web Premium para Equipamentos Outdoor e Táticos"
-            />
-
-            <div class="card-content">
-              <h3>
-                NocturnGear — Experiência Web Premium para Equipamentos Outdoor
-                e Exploração Moderna
-              </h3>
-
-              <p>
-                Projeto desenvolvido com foco em criar uma experiência digital
-                imersiva para uma marca fictícia de equipamentos outdoor e
-                táticos voltados para exploradores modernos. A interface explora
-                uma estética robusta e sofisticada, combinando contrastes
-                naturais, tipografia forte e imagens de alto impacto para
-                transmitir resistência, aventura e confiabilidade. A aplicação
-                foi construída com React e TypeScript, utilizando Tailwind CSS
-                para estilização moderna e altamente responsiva. O projeto
-                incorpora animações suaves e microinterações utilizando Motion,
-                criando efeitos de reveal on scroll e transições fluidas entre
-                seções que tornam a navegação mais dinâmica e envolvente. Entre
-                os destaques da interface estão a vitrine de produtos em grid
-                interativo, a seção flagship dedicada ao produto principal da
-                marca e os cards de blog com conteúdo editorial voltado para
-                exploração e preparação outdoor. A arquitetura do projeto
-                prioriza componentização, organização escalável e design
-                mobile-first, garantindo performance elevada e uma base sólida
-                para futuras integrações com APIs de e-commerce, sistemas de
-                carrinho, autenticação de usuários e plataformas de conteúdo.
-              </p>
-
-              <div class="tags">
-                <span>React</span>
-                <span>TypeScript</span>
-                <span>Tailwind CSS</span>
-                <span>Motion</span>
-                <span>Scroll Animation</span>
-                <span>Responsive Design</span>
-                <span>E-commerce UI</span>
-                <span>Interactive UI</span>
-                <span>Landing Page</span>
-                <span>Front-end</span>
-              </div>
-
-              <a href="https://nocturn-gear.vercel.app/" target="_blank">
-                Ver projeto →
-              </a>
-            </div>
-          </article>
-
-          <article class="card reveal" data-reveal="left" style="--delay: 0.4s">
-            <img
-              src="img/portifolio/Nike.png"
-              alt="Nike 3D Experience — Experiência Web Interativa com Modelo 3D"
-            />
-
-            <div class="card-content">
-              <h3>
-                Nike 3D Product Experience — Showcase Interativo de Produto com
-                WebGL
-              </h3>
-
-              <p>
-                Projeto desenvolvido com foco em criar uma experiência digital
-                imersiva inspirada nas páginas de produto premium utilizadas por
-                grandes marcas esportivas. A proposta foi explorar a integração
-                entre design, interatividade e visualização 3D para transformar
-                um produto em protagonista absoluto da interface. A página
-                apresenta um modelo 3D de tênis renderizado diretamente no
-                navegador, com rotação dinâmica e animações guiadas pelo scroll
-                que criam uma sensação de movimento, profundidade e presença
-                visual. A interface adota uma estética moderna e minimalista,
-                com fundo escuro, iluminação azul e tipografia impactante para
-                reforçar a atmosfera tecnológica e esportiva da experiência. O
-                projeto foi construído com React e TypeScript, utilizando React
-                Three Fiber para renderização 3D baseada em Three.js e Tailwind
-                CSS para estilização responsiva e organizada. As interações e
-                microanimações são controladas com GSAP e Framer Motion,
-                permitindo transições suaves, efeitos cinematográficos e
-                sincronização de movimento com o scroll da página. Entre os
-                destaques da interface estão o texto tipográfico gigante
-                translúcido no fundo, detalhes sutis de UI inspirados em
-                interfaces futuristas e iluminação dinâmica que valoriza o
-                modelo tridimensional. A arquitetura do projeto prioriza
-                componentização, separação clara entre camada de UI e
-                renderização 3D e uma base escalável que pode ser expandida para
-                experiências mais avançadas como catálogos interativos, páginas
-                de produto para e-commerce ou campanhas digitais focadas em
-                storytelling visual.
-              </p>
-
-              <div class="tags">
-                <span>React</span>
-                <span>TypeScript</span>
-                <span>Three.js</span>
-                <span>React Three Fiber</span>
-                <span>GSAP</span>
-                <span>Framer Motion</span>
-                <span>Tailwind CSS</span>
-                <span>WebGL</span>
-                <span>3D Interaction</span>
-                <span>Scroll Animation</span>
-                <span>Interactive UI</span>
-                <span>Product Showcase</span>
-                <span>Front-end</span>
-              </div>
-
-              <a
-                href="https://github.com/Nocturnnn/nike-shoe-landing"
-                target="_blank"
-              >
-                Ver projeto →
-              </a>
-            </div>
-          </article>
-
-          <article class="card reveal" data-reveal="left" style="--delay: 0.4s">
-            <img
-              src="img/portifolio/pagani.png"
-              alt="Pagani Digital Showroom — Experiência Web 3D Cinematográfica"
-            />
-
-            <div class="card-content">
-              <h3>
-                Pagani Digital Showroom — Experiência Web 3D Inspirada em
-                Exposições Automotivas
-              </h3>
-
-              <p>
-                Projeto desenvolvido com foco em criar uma experiência digital
-                cinematográfica inspirada em eventos e exposições automotivas de
-                alto padrão, onde veículos exclusivos são apresentados como
-                verdadeiras peças de arte. A proposta da aplicação foi
-                reproduzir digitalmente a sensação de entrar em um estande
-                premium e encontrar um hypercar em destaque no centro do
-                ambiente, iluminado e apresentado como objeto de apreciação. A
-                experiência coloca um modelo 3D do Pagani Huayra R no centro da
-                cena, girando suavemente como em um showroom, enquanto o usuário
-                explora o site. A aplicação foi construída com Next.js e React,
-                utilizando React Three Fiber e Three.js para renderização 3D em
-                tempo real no navegador. A interface explora iluminação
-                cinematográfica, reflexos realistas e composição minimalista
-                para destacar a escultura automotiva do veículo. O projeto
-                também incorpora animações guiadas por scroll utilizando GSAP e
-                ScrollTrigger, criando mudanças sutis de iluminação e atmosfera
-                conforme o usuário navega pela página. Elementos visuais como
-                halo de luz, plataforma de exposição e ambientação HDRI foram
-                utilizados para reforçar a sensação de um estande automotivo
-                premium. A arquitetura prioriza componentização, organização
-                escalável e performance otimizada para WebGL, criando uma base
-                sólida para futuras expansões como hotspots interativos,
-                exploração técnica do veículo ou experiências imersivas mais
-                avançadas.
-              </p>
-
-              <div class="tags">
-                <span>Next.js</span>
-                <span>React</span>
-                <span>Three.js</span>
-                <span>React Three Fiber</span>
-                <span>GSAP</span>
-                <span>ScrollTrigger</span>
-                <span>WebGL</span>
-                <span>3D Web Experience</span>
-                <span>Cinematic UI</span>
-                <span>Automotive Design</span>
-                <span>Interactive Showcase</span>
-                <span>Front-end</span>
-              </div>
-
-              <a
-                href="https://github.com/Nocturnnn/pagani-automobili"
-                target="_blank"
-              >
-                Ver projeto →
-              </a>
-            </div>
-          </article>
-
-          <article class="card reveal" data-reveal="left" style="--delay: 0.4s">
-            <img
-              src="img/portifolio/neo street.png"
-              alt="Neo-Street — Experiência Web Inspirada em Streetwear Futurista"
-            />
-
-            <div class="card-content">
-              <h3>
-                Neo-Street — Experiência Web Inspirada em Streetwear Futurista e
-                Identidade Urbana Digital
-              </h3>
-
-              <p>
-                Projeto desenvolvido com o objetivo de explorar uma abordagem
-                visual mais ousada para interfaces de e-commerce e landing pages
-                de moda urbana. A proposta do Neo-Street foi criar uma
-                experiência digital inspirada no universo do streetwear
-                contemporâneo, combinando referências de cultura urbana,
-                estética techwear, glitch digital e elementos visuais inspirados
-                em sinalizações industriais e sistemas urbanos.
-                <br /><br />
-                Em vez de seguir o padrão tradicional de lojas online
-                minimalistas e neutras, o projeto busca transmitir atitude e
-                identidade visual forte, criando uma interface que se comporta
-                quase como um sistema urbano digital. O layout foi estruturado
-                utilizando grids marcantes, contrastes agressivos, tipografia
-                pesada e elementos gráficos inspirados em mapas urbanos,
-                scanners e painéis de controle.
-                <br /><br />
-                A experiência visual incorpora efeitos como glitch bars,
-                scanlines, ruído fotográfico e camadas gráficas que reforçam a
-                sensação de ambiente digital ativo. O design também utiliza
-                cartões visuais robustos, sombras duras e elementos com
-                aparência industrial para criar uma estética editorial que
-                mistura design de moda, interface digital e identidade de marca.
-                <br /><br />
-                A aplicação foi construída com React e TypeScript, utilizando
-                Tailwind CSS para estilização altamente modular e responsiva. O
-                projeto explora componentização extensiva para facilitar a
-                reutilização de elementos como cards, seções editoriais, grids
-                de produtos e blocos de informação.
-                <br /><br />
-                A estrutura da página inclui diferentes áreas que ajudam a
-                construir um universo visual mais completo da marca, como seções
-                de categorias, new arrivals, collections, studio, archive e
-                journal, aproximando a interface de um editorial digital em vez
-                de uma simples vitrine de produtos.
-                <br /><br />
-                O resultado é uma experiência que mistura e-commerce, direção de
-                arte e design experimental, explorando uma estética futurista
-                urbana voltada para marcas de moda que buscam transmitir
-                personalidade forte e identidade visual marcante no ambiente
-                digital.
-              </p>
-
-              <div class="tags">
-                <span>React</span>
-                <span>TypeScript</span>
-                <span>Tailwind CSS</span>
-                <span>UI/UX Design</span>
-                <span>Streetwear Aesthetic</span>
-                <span>Techwear Inspiration</span>
-                <span>Creative Front-end</span>
-                <span>Editorial Layout</span>
-                <span>Interactive UI</span>
-                <span>Modern Web Design</span>
-                <span>Landing Page Concept</span>
-                <span>Front-end</span>
-              </div>
-
-              <a href="https://neo-street.vercel.app/" target="_blank">
-                Ver projeto →
-              </a>
-            </div>
-          </article>
+            <p
+              class="desktop-hint reveal"
+              data-reveal="bottom"
+              style="--delay: 0.45s"
+            >
+              Para uma experiência completa, visualize este site em um
+              computador.
+            </p>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="sobre">
-      <div class="container about">
-        <div class="section-head reveal" data-reveal="bottom">
-          <h2>Sobre mim</h2>
-        </div>
-        <p class="reveal" data-reveal="bottom" style="--delay: 0.15s">
-          Sou web designer e desenvolvedor full stack focado em criar interfaces
-          sofisticadas, funcionais e alinhadas a objetivos reais. Trabalho de
-          forma code-first, unindo design e engenharia desde a primeira linha.
-        </p>
-      </div>
-    </section>
+      <section id="projetos">
+        <div class="container">
+          <div class="section-head reveal" data-reveal="bottom">
+            <span class="section-kicker">Portfólio</span>
+            <h2>Projetos selecionados</h2>
+            <p>
+              Trabalhos que exploram interface, narrativa, motion, 3D e direção
+              visual com foco em experiência digital.
+            </p>
+          </div>
 
-    <section id="contato">
-      <div class="container contact">
-        <div class="section-head reveal" data-reveal="bottom">
-          <h2>Vamos conversar</h2>
-          <p>Aberto a freelas, parcerias e oportunidades profissionais.</p>
-        </div>
-
-        <div
-          class="actions reveal"
-          data-reveal="bottom"
-          style="--delay: 0.2s; justify-content: center"
-        >
-          <a
-            href="https://wa.me/5562995006895"
-            target="_blank"
-            class="btn primary"
-            >WhatsApp</a
+          <div
+            class="filters reveal"
+            data-reveal="bottom"
+            style="--delay: 0.1s"
           >
-          <a
-            href="https://instagram.com/nocturnweb"
-            target="_blank"
-            class="btn ghost"
-            >Instagram</a
+            <div class="filter-group filter-search">
+              <label for="searchInput">Buscar projeto</label>
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Ex.: React, 3D, landing page, dashboard..."
+              />
+            </div>
+
+            <div class="filter-group">
+              <label for="stackFilter">Stack</label>
+              <select id="stackFilter">
+                <option value="all">Todas</option>
+              </select>
+            </div>
+
+            <div class="filter-group">
+              <label for="typeFilter">Tipo</label>
+              <select id="typeFilter">
+                <option value="all">Todos</option>
+              </select>
+            </div>
+
+            <button
+              class="btn ghost filter-reset"
+              id="resetFilters"
+              type="button"
+            >
+              Limpar filtros
+            </button>
+          </div>
+
+          <div
+            class="projects-toolbar reveal"
+            data-reveal="bottom"
+            style="--delay: 0.15s"
           >
-          <a
-            href="https://github.com/Nocturnnn"
-            target="_blank"
-            class="btn ghost"
-            >Github</a
-          >
+            <p id="projectsCounter">0 projetos encontrados</p>
+          </div>
+
+          <div class="projects" id="projectsGrid"></div>
+
+          <div class="empty-state hidden" id="emptyState">
+            <div class="empty-state-box">
+              <h3>Nenhum projeto encontrado</h3>
+              <p>Tente ajustar a busca ou limpar os filtros aplicados.</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section id="sobre">
+        <div class="container about">
+          <div class="section-head reveal" data-reveal="bottom">
+            <span class="section-kicker">Sobre</span>
+            <h2>Sobre mim</h2>
+          </div>
+
+          <div
+            class="about-card reveal"
+            data-reveal="bottom"
+            style="--delay: 0.15s"
+          >
+            <p>
+              Sou web designer e desenvolvedor full stack focado em criar
+              interfaces sofisticadas, funcionais e alinhadas a objetivos reais.
+              Trabalho de forma code-first, unindo design e engenharia desde a
+              primeira linha.
+            </p>
+
+            <p>
+              Gosto de construir experiências com identidade visual forte,
+              motion design, storytelling e atenção aos detalhes — sem abrir mão
+              de performance, responsividade e organização técnica.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contato">
+        <div class="container contact">
+          <div class="section-head reveal" data-reveal="bottom">
+            <span class="section-kicker">Contato</span>
+            <h2>Vamos conversar</h2>
+            <p>Aberto a freelas, parcerias e oportunidades profissionais.</p>
+          </div>
+
+          <div
+            class="actions reveal"
+            data-reveal="bottom"
+            style="--delay: 0.2s; justify-content: center"
+          >
+            <a
+              href="https://wa.me/5562995006895"
+              target="_blank"
+              class="btn primary"
+              >WhatsApp</a
+            >
+            <a
+              href="https://instagram.com/nocturnweb"
+              target="_blank"
+              class="btn ghost"
+              >Instagram</a
+            >
+            <a
+              href="https://github.com/Nocturnnn"
+              target="_blank"
+              class="btn ghost"
+              >Github</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer class="reveal" data-reveal="bottom" style="--delay: 0.1s">
       © 2026 Mateus Vitor — Todos os direitos reservados.
