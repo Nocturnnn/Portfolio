@@ -208,6 +208,24 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
       featured: true,
     },
+    {
+      title: "Portfolio Scene — Hero Cinematográfica Interativa",
+      description:
+        "Experimento visual desenvolvido para explorar uma abertura de portfólio mais artística, com tipografia monumental, parallax no mouse, cards centralizados com falso 3D e acabamento glass premium.",
+      image: "img/portifolio/cinematic-portifolio.png",
+      link: "https://portfolio-cinematic-brown.vercel.app/",
+      type: "Experimento",
+      stack: [
+        "React",
+        "Vite",
+        "JavaScript",
+        "CSS",
+        "Parallax",
+        "Glassmorphism",
+        "Creative Front-end",
+      ],
+      featured: true,
+    },
   ];
 
   const projectsGrid = document.getElementById("projectsGrid");
