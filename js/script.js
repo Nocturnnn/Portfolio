@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Dark Fantasy Living Wallpaper — Experiência Web 3D Ritualística",
       description:
         "Projeto experimental inspirado na estética de wallpapers cinematográficos de desktop, transformando esse conceito em uma experiência web viva com modelo 3D central, halo luminoso, partículas, butterflies e atmosfera dark fantasy em tempo real.",
-      image: "img/portifolio/dark-fantasy-wallpaper.png",
+      image: "img/portifolio/dark-fantasy.png",
       link: "https://github.com/Nocturnnn/dark-fantasy-site",
       type: "3D Web Experience",
       stack: [
