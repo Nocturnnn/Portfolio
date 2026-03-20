@@ -246,6 +246,24 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
       featured: true,
     },
+    {
+      title: "Eterna — Poster Editorial Sci-Fi Interativo",
+      description:
+        "Experimento visual desenvolvido em React com proposta editorial e atmosfera sci-fi minimalista, combinando tipografia monumental animada, glow reativo ao mouse, parallax em múltiplas camadas, efeito liquid distortion nas letras e microdetalhes de interface para criar uma hero section artística e cinematográfica.",
+      image: "img/portifolio/eterna-design.png",
+      link: "https://eterna-hero.vercel.app/",
+      type: "Experimento",
+      stack: [
+        "React",
+        "Vite",
+        "JavaScript",
+        "CSS",
+        "Creative Front-end",
+        "Parallax",
+        "Motion Design",
+      ],
+      featured: true,
+    },
   ];
 
   const projectsGrid = document.getElementById("projectsGrid");
