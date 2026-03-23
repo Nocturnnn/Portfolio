@@ -264,6 +264,24 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
       featured: true,
     },
+    {
+      title: "Portal Terra — Boas-vindas para Alienígenas 👽🌍",
+      description:
+        "Landing page experimental com estética sci-fi que simula um portal diplomático da Terra, tentando convencer alienígenas a não atacarem o planeta. Combina humor, vídeo de fundo e interface cinematográfica para criar uma experiência imersiva e criativa.",
+      image: "img/portifolio/bem vindo há terra.png",
+      link: "https://welcome-earth-five.vercel.app/",
+      type: "Landing Page",
+      stack: [
+        "React",
+        "Vite",
+        "JavaScript",
+        "CSS",
+        "UI/UX",
+        "Motion",
+        "Creative Front-end",
+      ],
+      featured: true,
+    },
   ];
 
   const projectsGrid = document.getElementById("projectsGrid");
