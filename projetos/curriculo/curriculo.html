@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Mateus Vitor Silvério da Silva | Desenvolvedor Frontend Júnior
+    </title>
+
+    <style>
+      :root {
+        --bg: #ffffff;
+        --surface: #f8fafc;
+        --surface-2: #f1f5f9;
+        --text: #0f172a;
+        --muted: #475569;
+        --soft: #64748b;
+        --line: #e2e8f0;
+        --strong: #020617;
+        --accent: #0f172a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.42;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      .resume {
+        width: 100%;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 28px 24px 32px;
+      }
+
+      .header {
+        border-bottom: 2px solid var(--line);
+        padding-bottom: 16px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 2.15rem;
+        line-height: 1.02;
+        letter-spacing: -0.04em;
+        color: var(--strong);
+      }
+
+      .headline {
+        margin: 8px 0 0;
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--muted);
+      }
+
+      .contact {
+        margin-top: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px 14px;
+        font-size: 0.93rem;
+        color: var(--muted);
+      }
+
+      .contact a {
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      .contact a:hover {
+        text-decoration: underline;
+      }
+
+      .summary {
+        margin: 14px 0 0;
+        font-size: 0.97rem;
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .highlights {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .highlight {
+        border: 1px solid var(--line);
+        background: var(--surface);
+        border-radius: 10px;
+        padding: 12px;
+      }
+
+      .highlight strong {
+        display: block;
+        font-size: 1rem;
+        color: var(--strong);
+      }
+
+      .highlight span {
+        display: block;
+        margin-top: 5px;
+        font-size: 0.8rem;
+        color: var(--muted);
+        line-height: 1.35;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: 1.4fr 0.9fr;
+        gap: 24px;
+        margin-top: 18px;
+      }
+
+      section {
+        margin-top: 16px;
+      }
+
+      h2 {
+        margin: 0 0 10px;
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: var(--strong);
+      }
+
+      .block {
+        border-top: 1px solid var(--line);
+        padding-top: 12px;
+        margin-top: 12px;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .title {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--strong);
+      }
+
+      .subtitle {
+        margin-top: 2px;
+        color: var(--muted);
+        font-weight: 700;
+        font-size: 0.92rem;
+      }
+
+      .meta {
+        color: var(--soft);
+        font-size: 0.88rem;
+        white-space: nowrap;
+      }
+
+      ul {
+        margin: 8px 0 0 18px;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 6px;
+      }
+
+      .project {
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 10px;
+        padding: 12px;
+        margin-top: 10px;
+      }
+
+      .project:first-of-type {
+        margin-top: 0;
+      }
+
+      .project-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .project-type {
+        font-size: 0.8rem;
+        color: var(--soft);
+        font-weight: 700;
+      }
+
+      .project p {
+        margin: 8px 0 0;
+        font-size: 0.92rem;
+        color: var(--muted);
+      }
+
+      .chip-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+      }
+
+      .chip {
+        border: 1px solid var(--line);
+        background: var(--surface);
+        padding: 5px 9px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        color: var(--text);
+      }
+
+      .value-box {
+        border: 1px solid var(--line);
+        background: var(--surface);
+        border-radius: 10px;
+        padding: 12px;
+      }
+
+      .value-box p {
+        margin: 0;
+        font-size: 0.93rem;
+        color: var(--text);
+        font-weight: 700;
+      }
+
+      .value-box small {
+        display: block;
+        margin-top: 6px;
+        color: var(--muted);
+        line-height: 1.4;
+      }
+
+      .mini-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .edu-item,
+      .lang-item {
+        margin-top: 10px;
+      }
+
+      .edu-item:first-child,
+      .lang-item:first-child {
+        margin-top: 0;
+      }
+
+      .ats {
+        font-size: 0.82rem;
+        line-height: 1.6;
+        color: var(--muted);
+      }
+
+      .note {
+        margin-top: 10px;
+        font-size: 0.76rem;
+        color: var(--soft);
+      }
+
+      .skills-group {
+        margin-top: 14px;
+      }
+
+      .skills-group:first-of-type {
+        margin-top: 0;
+      }
+
+      .skills-group h3 {
+        margin: 0 0 8px;
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--muted);
+        letter-spacing: 0.02em;
+      }
+
+      @media (max-width: 860px) {
+        .layout,
+        .mini-grid,
+        .highlights {
+          grid-template-columns: 1fr;
+        }
+
+        .resume {
+          padding: 22px 18px 28px;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+        }
+      }
+
+      @media print {
+        body {
+          background: #fff;
+        }
+
+        .resume {
+          max-width: 100%;
+          padding: 12px 14px 16px;
+        }
+
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        .project,
+        .highlight,
+        .value-box {
+          break-inside: avoid;
+        }
+
+        section,
+        .block {
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="resume">
+      <header class="header">
+        <h1>Mateus Vitor Silvério da Silva</h1>
+        <p class="headline">
+          Desenvolvedor Frontend Júnior | Estagiário Frontend | React, Next.js,
+          TypeScript
+        </p>
+
+        <div class="contact">
+          <span>Anápolis - GO</span>
+          <span
+            ><a href="https://wa.me/5562995006895?text=Ol%C3%A1%2C%20Mateus."
+              >62995006895</a
+            ></span
+          >
+          <span>
+            <a href="mailto:mateus.vitor2352@gmail.com"
+              >mateus.vitor2352@gmail.com</a
+            >
+          </span>
+          <span>
+            <a
+              href="https://nocturnnn.github.io/Portfolio/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Portfólio
+            </a>
+          </span>
+          <span>
+            <a
+              href="https://br.linkedin.com/in/mateus-vitor-2a3ba7335"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+          </span>
+        </div>
+
+        <p class="summary">
+          Desenvolvedor frontend com experiência prática na construção de
+          interfaces modernas, responsivas e orientadas a produto. Atuo com
+          React, Next.js e TypeScript, unindo UI, performance, integrações,
+          autenticação, pagamentos e automação para entregar aplicações com
+          qualidade visual, escalabilidade e valor de negócio.
+        </p>
+
+        <div class="highlights">
+          <div class="highlight">
+            <strong>200+ entregas</strong>
+            <span
+              >interfaces, páginas, componentes, seções e iterações de
+              produto</span
+            >
+          </div>
+
+          <div class="highlight">
+            <strong>50+ integrações</strong>
+            <span
+              >APIs, autenticação, banco de dados, webhooks, pagamentos e
+              automações</span
+            >
+          </div>
+
+          <div class="highlight">
+            <strong>420h+ de estudo</strong>
+            <span
+              >frontend, JavaScript, React, Git, integrações e arquitetura
+              web</span
+            >
+          </div>
+
+          <div class="highlight">
+            <strong>Foco em produto</strong>
+            <span
+              >UX, componentização, performance, manutenção e clareza de
+              interface</span
+            >
+          </div>
+        </div>
+      </header>
+
+      <div class="layout">
+        <div>
+          <section>
+            <h2>Experiência Profissional</h2>
+
+            <div class="block">
+              <div class="row">
+                <div>
+                  <div class="title">NocturnShop</div>
+                  <div class="subtitle">
+                    Desenvolvedor Frontend / Full Stack & Automation
+                  </div>
+                </div>
+                <div class="meta">07/2023 — atual</div>
+              </div>
+
+              <ul>
+                <li>
+                  Desenvolveu interfaces para landing pages, dashboards,
+                  marketplace e aplicações web completas, elevando consistência
+                  visual, usabilidade e clareza de navegação.
+                </li>
+                <li>
+                  Transformou páginas isoladas em uma base mais escalável com
+                  componentização, reaproveitamento de padrões e melhor
+                  organização frontend.
+                </li>
+                <li>
+                  Implementou integrações com APIs REST, autenticação,
+                  pagamentos, Supabase, Firebase e webhooks, conectando
+                  interface e fluxo de negócio.
+                </li>
+                <li>
+                  Aplicou boas práticas de performance web, SEO técnico,
+                  acessibilidade e manutenção de código para fortalecer
+                  qualidade e evolução do produto.
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h2>Projetos em Destaque</h2>
+
+            <div class="project">
+              <div class="project-head">
+                <div>
+                  <div class="title">Portfólio e aplicações web autorais</div>
+                  <div class="subtitle">
+                    <a
+                      href="https://nocturnnn.github.io/Portfolio/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      nocturnnn.github.io/Portfolio
+                    </a>
+                  </div>
+                </div>
+                <div class="project-type">Frontend • UI • Produto</div>
+              </div>
+              <p>
+                Reúne projetos de landing pages, dashboards, interfaces
+                interativas e experiências visuais modernas com foco em
+                apresentação, navegação e acabamento visual.
+              </p>
+            </div>
+
+            <div class="project">
+              <div class="project-head">
+                <div class="title">Experiências web interativas e 3D</div>
+                <div class="project-type">
+                  Three.js • Motion • Creative Front-end
+                </div>
+              </div>
+              <p>
+                Projetos com animações, microinterações, 3D web e abordagens
+                visuais imersivas, demonstrando domínio de experiência,
+                composição visual e storytelling digital.
+              </p>
+            </div>
+
+            <div class="project">
+              <div class="project-head">
+                <div class="title">
+                  Interfaces de produto, dashboards e e-commerce UI
+                </div>
+                <div class="project-type">React • TypeScript • UI Systems</div>
+              </div>
+              <p>
+                Construção de telas orientadas a produto com filtros, grids,
+                organização de conteúdo, fluxos de autenticação, pagamentos e
+                integração com serviços externos.
+              </p>
+            </div>
+          </section>
+
+          <section class="mini-grid">
+            <div>
+              <h2>Formação</h2>
+
+              <div class="block">
+                <div class="edu-item">
+                  <div class="title">Análise e Desenvolvimento de Sistemas</div>
+                  <div class="subtitle">Universidade Norte do Paraná</div>
+                  <div class="meta">2024 — cursando</div>
+                </div>
+
+                <div class="edu-item">
+                  <div class="title">Ciências da Computação</div>
+                  <div class="subtitle">Instituto Federal de Goiás</div>
+                  <div class="meta">2021 — 2023</div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h2>Idiomas</h2>
+
+              <div class="block">
+                <div class="lang-item">
+                  <div class="title">Português</div>
+                  <div class="meta">Nativo</div>
+                </div>
+
+                <div class="lang-item">
+                  <div class="title">Inglês</div>
+                  <div class="meta">Intermediário para leitura técnica</div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <aside>
+          <section>
+            <h2>Proposta de Valor</h2>
+
+            <div class="value-box">
+              <p>
+                Perfil acima da média para início de carreira: combina frontend,
+                UI, motion, performance, integrações e visão de produto no mesmo
+                repertório.
+              </p>
+              <small>
+                Vai além do layout: entende estrutura, escalabilidade,
+                experiência do usuário, manutenção de código e conexão entre
+                interface e negócio.
+              </small>
+            </div>
+          </section>
+
+          <section>
+            <h2>Competências-Chave</h2>
+
+            <div class="skills-group">
+              <h3>Frontend Core</h3>
+              <div class="chip-list">
+                <span class="chip">React.js</span>
+                <span class="chip">Next.js</span>
+                <span class="chip">JavaScript</span>
+                <span class="chip">TypeScript</span>
+                <span class="chip">HTML5</span>
+                <span class="chip">CSS3</span>
+                <span class="chip">Tailwind CSS</span>
+                <span class="chip">Vite</span>
+              </div>
+            </div>
+
+            <div class="skills-group">
+              <h3>UI & Experiência</h3>
+              <div class="chip-list">
+                <span class="chip">UI/UX</span>
+                <span class="chip">Design Responsivo</span>
+                <span class="chip">Mobile First</span>
+                <span class="chip">Interfaces Interativas</span>
+                <span class="chip">Microinterações</span>
+                <span class="chip">Framer Motion</span>
+                <span class="chip">GSAP</span>
+                <span class="chip">Motion Design</span>
+                <span class="chip">Landing Pages</span>
+                <span class="chip">Dashboard UI</span>
+                <span class="chip">E-commerce UI</span>
+              </div>
+            </div>
+
+            <div class="skills-group">
+              <h3>3D & Diferenciais Visuais</h3>
+              <div class="chip-list">
+                <span class="chip">Three.js</span>
+                <span class="chip">React Three Fiber</span>
+                <span class="chip">WebGL</span>
+                <span class="chip">Experiências 3D</span>
+                <span class="chip">Creative Front-end</span>
+              </div>
+            </div>
+
+            <div class="skills-group">
+              <h3>Performance & Qualidade</h3>
+              <div class="chip-list">
+                <span class="chip">Acessibilidade</span>
+                <span class="chip">WCAG</span>
+                <span class="chip">SEO Técnico</span>
+                <span class="chip">Core Web Vitals</span>
+                <span class="chip">Lighthouse</span>
+                <span class="chip">Componentização</span>
+                <span class="chip">Design System</span>
+                <span class="chip">Clean Code</span>
+              </div>
+            </div>
+
+            <div class="skills-group">
+              <h3>Integrações & Backend</h3>
+              <div class="chip-list">
+                <span class="chip">APIs REST</span>
+                <span class="chip">Integração de APIs</span>
+                <span class="chip">Autenticação</span>
+                <span class="chip">Webhooks</span>
+                <span class="chip">Stripe</span>
+                <span class="chip">Supabase</span>
+                <span class="chip">Firebase</span>
+                <span class="chip">Node.js</span>
+                <span class="chip">PostgreSQL</span>
+                <span class="chip">N8N</span>
+              </div>
+            </div>
+
+            <div class="skills-group">
+              <h3>Ferramentas & Ambiente</h3>
+              <div class="chip-list">
+                <span class="chip">Git</span>
+                <span class="chip">GitHub</span>
+                <span class="chip">GitHub Actions</span>
+                <span class="chip">VS Code</span>
+                <span class="chip">Figma</span>
+                <span class="chip">Chrome DevTools</span>
+                <span class="chip">Vercel</span>
+                <span class="chip">Postman</span>
+                <span class="chip">NPM</span>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </main>
+  </body>
+</html>
