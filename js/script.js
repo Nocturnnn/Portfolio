@@ -282,6 +282,25 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
       featured: true,
     },
+    {
+      title: "Noc Checkbox — Dashboard Analítico Premium",
+      description:
+        "Dashboard moderno com foco em visualização de dados, combinando glassmorphism, microinterações, gráficos interativos e layout inspirado em interfaces sci-fi. Desenvolvido para transformar dados complexos em uma experiência visual clara, rápida e elegante.",
+      image: "img/portifolio/noccheckbox.png",
+      link: "https://dashboard-checkbox-jt1l.vercel.app/",
+      type: "Dashboard",
+      stack: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Recharts",
+        "Lucide Icons",
+        "UI/UX",
+        "Data Visualization",
+      ],
+      featured: true,
+    },
   ];
 
   const projectsGrid = document.getElementById("projectsGrid");
