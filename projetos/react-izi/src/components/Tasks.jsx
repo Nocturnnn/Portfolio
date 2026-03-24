@@ -1,4 +1,4 @@
-import { ChevronRightIcon } from "lucide-react";
+import { ChevronRightIcon, TrashIcon } from "lucide-react";
 
 function Tasks(props) {
   return (
@@ -13,6 +13,13 @@ function Tasks(props) {
           </button>
           <button className="ml-2 p-2 rounded-md hover:bg-slate-300">
             <ChevronRightIcon className="text-slate-400" />
+          </button>
+
+          <button
+            onClick={() => props.onTaskClick(task.id)}
+            className="ml-2 p-2 rounded-md hover:bg-slate-300"
+          >
+            <TrashIcon className="text-slate-400" />
           </button>
         </li>
       ))}

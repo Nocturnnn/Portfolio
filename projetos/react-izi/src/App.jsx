@@ -34,12 +34,21 @@ function App() {
     setTasks(newTasks); // atualização do estado com a nova lista de tarefas
   }
 
+  function onDeleteTaskClick(taskId) {
+    const newTasks = tasks.filter((task) => task.id !== taskId); // filtra as tarefas, removendo a que foi clicada
+    setTasks(newTasks); // atualização do estado com a nova lista de tarefas
+  }
+
   return (
     <div className="w-screen h-screen bg-slate-500 flex justify-center p-6">
       <div className="w-125">
         <h1 className="text-3xl font-bold text-center mb-6">To Do List</h1>
         <AddTask />
-        <Tasks tasks={tasks} onTaskClick={onTaskClick} />
+        <Tasks
+          tasks={tasks}
+          onTaskClick={onTaskClick}
+          onDeleteTaskClick={onDeleteTaskClick}
+        />
       </div>
     </div>
   );
