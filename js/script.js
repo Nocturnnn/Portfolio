@@ -301,6 +301,25 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
       featured: true,
     },
+    {
+      title: "Conduit API — WhatsApp Link Generator",
+      description:
+        "Landing page SaaS estilizada para geração de links do WhatsApp, com foco em conversão, UX refinada, microinterações e identidade visual premium inspirada no ecossistema WhatsApp.",
+      image: "img/portifolio/WhatsApp_Api.png",
+      link: "https://whats-app-api-sigma.vercel.app/",
+      type: "SaaS",
+      stack: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Framer Motion",
+        "App Router",
+        "Server Components",
+        "UI/UX",
+      ],
+      featured: true,
+    },
   ];
 
   const projectsGrid = document.getElementById("projectsGrid");
