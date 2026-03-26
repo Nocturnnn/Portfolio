@@ -320,6 +320,24 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
       featured: true,
     },
+    {
+      title: "Yamara — Premium Motorcycle Showcase",
+      description:
+        "Showcase automotivo premium com visual futurista, hero cinematográfico, scroll de modelos e microinterações elegantes para a marca fictícia Yamara.",
+      image: "img/portifolio/yamara.png",
+      link: "https://yamara.vercel.app/",
+      type: "Landing Page",
+      stack: [
+        "React",
+        "TypeScript",
+        "Vite",
+        "CSS",
+        "UI/UX",
+        "Responsive Design",
+        "Motion",
+      ],
+      featured: true,
+    },
   ];
 
   const projectsGrid = document.getElementById("projectsGrid");
