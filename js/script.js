@@ -338,6 +338,23 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
       featured: true,
     },
+    {
+      title: "Steel Ball Run — Experiência Cinematográfica Interativa",
+      description:
+        "Homenagem visual inspirada em JoJo: Steel Ball Run, com scroll cinematográfico, transições dramáticas, atmosfera dinâmica e foco total na identidade de cada personagem.",
+      image: "img/portifolio/steel ball run.png",
+      link: "https://steel-ball-run-site.vercel.app/",
+      type: "Interface Interativa",
+      stack: [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Framer Motion",
+        "UI/UX",
+        "Creative Front-end",
+      ],
+      featured: true,
+    },
   ];
 
   const projectsGrid = document.getElementById("projectsGrid");
