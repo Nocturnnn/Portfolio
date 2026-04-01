@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Mateus Vitor Silvério da Silva | Automation Builder | n8n, Supabase, APIs
+    </title>
+
+    <style>
+      :root {
+        --bg: #ffffff;
+        --surface: #f8fafc;
+        --surface-2: #f1f5f9;
+        --text: #0f172a;
+        --muted: #475569;
+        --soft: #64748b;
+        --line: #e2e8f0;
+        --strong: #020617;
+        --accent: #0f172a;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 1.42;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+      }
+
+      .resume {
+        width: 100%;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 28px 24px 32px;
+      }
+
+      .header {
+        border-bottom: 2px solid var(--line);
+        padding-bottom: 16px;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 2.15rem;
+        line-height: 1.02;
+        letter-spacing: -0.04em;
+        color: var(--strong);
+      }
+
+      .headline {
+        margin: 8px 0 0;
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--muted);
+      }
+
+      .contact {
+        margin-top: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px 14px;
+        font-size: 0.93rem;
+        color: var(--muted);
+      }
+
+      .contact a {
+        color: var(--text);
+        text-decoration: none;
+      }
+
+      .contact a:hover {
+        text-decoration: underline;
+      }
+
+      .summary {
+        margin: 14px 0 0;
+        font-size: 0.97rem;
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .highlights {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-top: 16px;
+      }
+
+      .highlight {
+        border: 1px solid var(--line);
+        background: var(--surface);
+        border-radius: 10px;
+        padding: 12px;
+      }
+
+      .highlight strong {
+        display: block;
+        font-size: 1rem;
+        color: var(--strong);
+      }
+
+      .highlight span {
+        display: block;
+        margin-top: 5px;
+        font-size: 0.8rem;
+        color: var(--muted);
+        line-height: 1.35;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: 1.4fr 0.9fr;
+        gap: 24px;
+        margin-top: 18px;
+      }
+
+      section {
+        margin-top: 16px;
+      }
+
+      h2 {
+        margin: 0 0 10px;
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: var(--strong);
+      }
+
+      .block {
+        border-top: 1px solid var(--line);
+        padding-top: 12px;
+        margin-top: 12px;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .title {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--strong);
+      }
+
+      .subtitle {
+        margin-top: 2px;
+        color: var(--muted);
+        font-weight: 700;
+        font-size: 0.92rem;
+      }
+
+      .meta {
+        color: var(--soft);
+        font-size: 0.88rem;
+        white-space: nowrap;
+      }
+
+      ul {
+        margin: 8px 0 0 18px;
+        padding: 0;
+      }
+
+      li {
+        margin-bottom: 6px;
+      }
+
+      .project {
+        border: 1px solid var(--line);
+        background: #fff;
+        border-radius: 10px;
+        padding: 12px;
+        margin-top: 10px;
+      }
+
+      .project:first-of-type {
+        margin-top: 0;
+      }
+
+      .project-head {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .project-type {
+        font-size: 0.8rem;
+        color: var(--soft);
+        font-weight: 700;
+      }
+
+      .project p {
+        margin: 8px 0 0;
+        font-size: 0.92rem;
+        color: var(--muted);
+      }
+
+      .chip-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+      }
+
+      .chip {
+        border: 1px solid var(--line);
+        background: var(--surface);
+        padding: 5px 9px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        color: var(--text);
+      }
+
+      .value-box {
+        border: 1px solid var(--line);
+        background: var(--surface);
+        border-radius: 10px;
+        padding: 12px;
+      }
+
+      .value-box p {
+        margin: 0;
+        font-size: 0.93rem;
+        color: var(--text);
+        font-weight: 700;
+      }
+
+      .value-box small {
+        display: block;
+        margin-top: 6px;
+        color: var(--muted);
+        line-height: 1.4;
+      }
+
+      .mini-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .edu-item,
+      .lang-item {
+        margin-top: 10px;
+      }
+
+      .edu-item:first-child,
+      .lang-item:first-child {
+        margin-top: 0;
+      }
+
+      .skills-group {
+        margin-top: 14px;
+      }
+
+      .skills-group:first-of-type {
+        margin-top: 0;
+      }
+
+      .skills-group h3 {
+        margin: 0 0 8px;
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--muted);
+        letter-spacing: 0.02em;
+      }
+
+      @media (max-width: 860px) {
+        .layout,
+        .mini-grid,
+        .highlights {
+          grid-template-columns: 1fr;
+        }
+
+        .resume {
+          padding: 22px 18px 28px;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+        }
+      }
+
+      @media print {
+        body {
+          background: #fff;
+        }
+
+        .resume {
+          max-width: 100%;
+          padding: 12px 14px 16px;
+        }
+
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        .project,
+        .highlight,
+        .value-box {
+          break-inside: avoid;
+        }
+
+        section,
+        .block {
+          break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="resume">
+      <header class="header">
+        <h1>Mateus Vitor Silvério da Silva</h1>
+        <p class="headline">
+          Automation Builder | Full Stack Developer | n8n, Supabase, APIs,
+          Webhooks
+        </p>
+
+        <div class="contact">
+          <span>Anápolis - GO, Brasil</span>
+          <span
+            ><a href="https://wa.me/5562995006895">+55 62 99500-6895</a></span
+          >
+          <span>
+            <a href="mailto:mateus.vitor2352@gmail.com"
+              >mateus.vitor2352@gmail.com</a
+            >
+          </span>
+          <span>
+            <a
+              href="https://nocturnnn.github.io/Portfolio/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Portfólio
+            </a>
+          </span>
+          <span>
+            <a
+              href="https://br.linkedin.com/in/mateus-vitor-2a3ba7335"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+          </span>
+        </div>
+
+        <p class="summary">
+          Desenvolvedor Full Stack com foco em automação de processos,
+          integração entre sistemas e estruturação de fluxos com n8n, Supabase,
+          APIs, webhooks e Google Sheets. Tenho experiência prática em
+          transformar processos manuais em sistemas mais claros, seguros e
+          simples para times não técnicos usarem no dia a dia.
+        </p>
+
+        <div class="highlights">
+          <div class="highlight">
+            <strong>Automação & lógica</strong>
+            <span
+              >estruturação de fluxos, validação, sync de dados e regras de
+              negócio</span
+            >
+          </div>
+
+          <div class="highlight">
+            <strong>n8n + Supabase</strong>
+            <span
+              >workflows, banco de dados, Edge Functions, webhooks e
+              integrações</span
+            >
+          </div>
+
+          <div class="highlight">
+            <strong>Visão de sistema</strong>
+            <span
+              >separação entre dado global e local, controle de duplicados e
+              edge cases</span
+            >
+          </div>
+
+          <div class="highlight">
+            <strong>Operação simples</strong>
+            <span
+              >front-end para reduzir erro humano e facilitar uso por equipe não
+              técnica</span
+            >
+          </div>
+        </div>
+      </header>
+
+      <div class="layout">
+        <div>
+          <section>
+            <h2>Experiência Relevante</h2>
+
+            <div class="block">
+              <div class="row">
+                <div>
+                  <div class="title">NocturnShop</div>
+                  <div class="subtitle">
+                    Full Stack Developer & Automation Builder
+                  </div>
+                </div>
+                <div class="meta">2023 — atual</div>
+              </div>
+
+              <ul>
+                <li>
+                  Estruturei fluxos com foco em Input → Logic → Output,
+                  conectando front-end, Supabase, Edge Functions, webhooks e
+                  n8n.
+                </li>
+                <li>
+                  Modelei dados e regras para separar informações globais e
+                  locais, evitando sobrescrita indevida e melhorando
+                  consistência.
+                </li>
+                <li>
+                  Implementei integrações com APIs, autenticação, pagamentos,
+                  banco de dados e automações acionadas por eventos.
+                </li>
+                <li>
+                  Criei interfaces para simplificar a operação do time,
+                  reduzindo dependência de edição manual em banco ou planilhas.
+                </li>
+                <li>
+                  Corrigi problemas de sincronização, IDs inconsistentes, fluxo
+                  entre sistemas e regras de atualização entre múltiplas fontes.
+                </li>
+              </ul>
+            </div>
+          </section>
+
+          <section>
+            <h2>Projetos em Destaque</h2>
+
+            <div class="project">
+              <div class="project-head">
+                <div>
+                  <div class="title">
+                    Mini sistema de sincronização de contatos
+                  </div>
+                  <div class="subtitle">
+                    Case prático inspirado na vaga da Strive Digital
+                  </div>
+                </div>
+                <div class="project-type">
+                  n8n • Supabase • Edge Functions • Sheets
+                </div>
+              </div>
+              <p>
+                Estruturei um mini projeto com banco principal, múltiplas
+                planilhas por cliente e sincronização de dados globais do
+                contato. Separei nome, email e telefone como dados globais,
+                mantendo status, observações e responsável como dados locais por
+                cliente.
+              </p>
+            </div>
+
+            <div class="project">
+              <div class="project-head">
+                <div class="title">
+                  Sincronização segura entre banco e planilhas
+                </div>
+                <div class="project-type">
+                  Data Flows • Deduplication • Sync Logic
+                </div>
+              </div>
+              <p>
+                Corrigi um fluxo em que o sistema usava IDs internos do banco
+                para localizar linhas em planilhas. Mantive UUID no banco e
+                passei a usar códigos externos na sincronização, tornando o
+                processo mais estável e previsível.
+              </p>
+            </div>
+
+            <div class="project">
+              <div class="project-head">
+                <div class="title">Automação de e-mails por eventos</div>
+                <div class="project-type">
+                  Resend • Webhooks • Edge Functions
+                </div>
+              </div>
+              <p>
+                Implementei envio automático de e-mails em ações de assinatura
+                na NocturnShop, removendo trabalho manual e melhorando
+                confiabilidade na comunicação do sistema.
+              </p>
+            </div>
+          </section>
+
+          <section class="mini-grid">
+            <div>
+              <h2>Formação</h2>
+
+              <div class="block">
+                <div class="edu-item">
+                  <div class="title">Análise e Desenvolvimento de Sistemas</div>
+                  <div class="subtitle">Universidade Norte do Paraná</div>
+                  <div class="meta">2024 — cursando</div>
+                </div>
+
+                <div class="edu-item">
+                  <div class="title">Ciência da Computação</div>
+                  <div class="subtitle">Instituto Federal de Goiás</div>
+                  <div class="meta">2021 — 2023</div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <h2>Idiomas</h2>
+
+              <div class="block">
+                <div class="lang-item">
+                  <div class="title">Português</div>
+                  <div class="meta">Nativo</div>
+                </div>
+
+                <div class="lang-item">
+                  <div class="title">Inglês</div>
+                  <div class="meta">Leitura técnica e comunicação básica</div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <aside>
+          <section>
+            <h2>Proposta de Valor</h2>
+
+            <div class="value-box">
+              <p>
+                Perfil com foco em lógica, automação e estruturação de sistemas:
+                une front-end, banco de dados, integrações e fluxos
+                automatizados.
+              </p>
+              <small>
+                Além de implementar, penso em como deixar o processo simples
+                para o time usar, seguro para o sistema manter e claro para
+                evoluir.
+              </small>
+            </div>
+          </section>
+
+          <section>
+  <h2>Resultados e Forma de Pensar</h2>
+
+  <div class="block">
+    <ul>
+      <li>
+        Estruturo problemas de forma simples e prática, pensando em
+        clareza de fluxo e operação real.
+      </li>
+      <li>
+        Dou atenção especial para duplicados, erro humano, conflito
+        de dados, atualização em vários lugares e manutenção futura.
+      </li>
+      <li>
+        Costumo construir sistemas que sejam fáceis para o time usar
+        e seguros para manter e evoluir.
+      </li>
+    </ul>
+  </div>
+</section>
+
+          <section>
+            <h2>Competências-Chave</h2>
+
+            <div class="skills-group">
+              <h3>Automação & Dados</h3>
+              <div class="chip-list">
+                <span class="chip">n8n</span>
+                <span class="chip">Workflows</span>
+                <span class="chip">Webhooks</span>
+                <span class="chip">Google Sheets</span>
+                <span class="chip">Sync de Dados</span>
+                <span class="chip">Deduplicação</span>
+                <span class="chip">Validação</span>
+                <span class="chip">Edge Cases</span>
+              </div>
+            </div>
+
+            <div class="skills-group">
+              <h3>Banco & Backend</h3>
+              <div class="chip-list">
+                <span class="chip">Supabase</span>
+                <span class="chip">PostgreSQL</span>
+                <span class="chip">Edge Functions</span>
+                <span class="chip">APIs REST</span>
+                <span class="chip">Node.js</span>
+                <span class="chip">Resend</span>
+                <span class="chip">Autenticação</span>
+                <span class="chip">Integração de APIs</span>
+              </div>
+            </div>
+
+            <div class="skills-group">
+              <h3>Front-end para Operação</h3>
+              <div class="chip-list">
+                <span class="chip">React</span>
+                <span class="chip">Next.js</span>
+                <span class="chip">TypeScript</span>
+                <span class="chip">HTML</span>
+                <span class="chip">CSS</span>
+                <span class="chip">Dashboard UI</span>
+                <span class="chip">UX</span>
+                <span class="chip">Interfaces para Times</span>
+              </div>
+            </div>
+
+            <div class="skills-group">
+              <h3>Forma de Trabalho</h3>
+              <div class="chip-list">
+                <span class="chip">Pensamento Lógico</span>
+                <span class="chip">Resolução de Problemas</span>
+                <span class="chip">Clareza de Estrutura</span>
+                <span class="chip">Atenção a Detalhes</span>
+                <span class="chip">Melhoria de Sistemas</span>
+                <span class="chip">Autonomia</span>
+              </div>
+            </div>
+
+            <div class="skills-group">
+              <h3>Ferramentas</h3>
+              <div class="chip-list">
+                <span class="chip">Git</span>
+                <span class="chip">GitHub</span>
+                <span class="chip">Postman</span>
+                <span class="chip">VS Code</span>
+                <span class="chip">Vercel</span>
+                <span class="chip">Figma</span>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </div>
+    </main>
+  </body>
+</html>
