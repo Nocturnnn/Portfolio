@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calm Access Login</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0e1116;
+        --panel: rgba(18, 24, 34, 0.78);
+        --panel-border: rgba(255, 255, 255, 0.1);
+        --text: #f3f6fb;
+        --muted: #a8b3c7;
+        --accent: #8ad3c7;
+        --accent-strong: #c6f4de;
+        --shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background:
+          radial-gradient(circle at top, rgba(138, 211, 199, 0.16), transparent 36%),
+          linear-gradient(180deg, #0b0f14 0%, var(--bg) 100%);
+        color: var(--text);
+      }
+
+      main {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 56px 0 72px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+        gap: 28px;
+        align-items: center;
+      }
+
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--panel-border);
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(18px);
+      }
+
+      .copy {
+        padding: 34px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(138, 211, 199, 0.12);
+        color: var(--accent-strong);
+        font-size: 0.84rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 18px 0 14px;
+        font-size: clamp(2.2rem, 4vw, 4.3rem);
+        line-height: 0.95;
+      }
+
+      .lead {
+        margin: 0;
+        color: var(--muted);
+        font-size: 1.05rem;
+        line-height: 1.75;
+      }
+
+      .visual {
+        padding: 18px;
+      }
+
+      .visual img {
+        display: block;
+        width: 100%;
+        border-radius: 22px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 24px;
+        margin-top: 28px;
+      }
+
+      .section {
+        padding: 28px;
+      }
+
+      h2 {
+        margin: 0 0 16px;
+        font-size: 1.1rem;
+        letter-spacing: 0.02em;
+      }
+
+      p,
+      li {
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 20px;
+      }
+
+      .stack {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .stack span {
+        padding: 10px 14px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.03);
+        color: var(--text);
+        font-size: 0.92rem;
+      }
+
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 30px;
+        color: var(--accent-strong);
+        text-decoration: none;
+      }
+
+      .back-link:hover {
+        color: var(--text);
+      }
+
+      @media (max-width: 900px) {
+        .hero,
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        main {
+          padding-top: 28px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div class="copy panel">
+          <span class="eyebrow">Authentication UI</span>
+          <h1>Calm Access Login</h1>
+          <p class="lead">
+            Interface de login pensada para tornar a experiência de acesso
+            mais suave, clara e acolhedora, sem abrir mão de detalhes práticos
+            que ajudam no uso real do dia a dia.
+          </p>
+          <a class="back-link" href="../../index.html">
+            Voltar para projetos
+          </a>
+        </div>
+
+        <div class="visual panel">
+          <img
+            src="../../img/portifolio/login-1.png"
+            alt="Preview do projeto Calm Access Login"
+          />
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="section panel">
+          <h2>Visão Geral</h2>
+          <p>
+            O projeto foi criado para mostrar como uma tela de login pode ir
+            além do básico. A proposta combina visual limpo, organização
+            cuidadosa e pequenas interações que ajudam o usuário a entender
+            melhor o fluxo e reduzir atrito durante o acesso.
+          </p>
+          <p>
+            No momento, a autenticação ainda está simulada no frontend, mas a
+            base estrutural já está pronta para evoluir para integração real no
+            futuro.
+          </p>
+        </article>
+
+        <article class="section panel">
+          <h2>Principais Recursos</h2>
+          <ul>
+            <li>Login com email ou nome de usuário.</li>
+            <li>Validação local dos campos.</li>
+            <li>Mostrar e ocultar senha.</li>
+            <li>Indicador de força da senha.</li>
+            <li>Alerta de Caps Lock ativo.</li>
+            <li>Modo de recuperação de senha.</li>
+            <li>Feedback visual de erro, sucesso e informação.</li>
+            <li>Conta demo para teste rápido e lembrar acesso com localStorage.</li>
+          </ul>
+        </article>
+
+        <article class="section panel" style="grid-column: 1 / -1">
+          <h2>Stack</h2>
+          <div class="stack">
+            <span>Next.js 15</span>
+            <span>React 19</span>
+            <span>TypeScript</span>
+            <span>Tailwind CSS 4</span>
+            <span>Lucide React</span>
+            <span>Motion</span>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

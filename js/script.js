@@ -355,6 +355,39 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
       featured: true,
     },
+    {
+      title: "Diepio Clone — Arcade Shooter com TypeScript",
+      description:
+        "Jogo de navegador inspirado em diep.io, com combate 2D em Canvas, progressão por XP, level up e upgrades para transformar o tanque em uma máquina de caos geométrico.",
+      image: "img/portifolio/diepio.png",
+      link: "https://diepio-clone.vercel.app/",
+      type: "Browser Game",
+      stack: [
+        "TypeScript",
+        "Vite",
+        "HTML5 Canvas",
+        "Game Dev",
+        "2D",
+      ],
+      featured: true,
+    },
+    {
+      title: "Calm Access Login — Interface de Login com Next.js 15",
+      description:
+        "Tela de login refinada com validação local, mostrar e ocultar senha, indicador de força, alerta de Caps Lock, modo de recuperação e conta demo para teste rápido.",
+      image: "img/portifolio/login-1.png",
+      link: "https://login-1-rose.vercel.app/",
+      type: "Authentication UI",
+      stack: [
+        "Next.js 15",
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS 4",
+        "Lucide React",
+        "Motion",
+      ],
+      featured: true,
+    },
   ];
 
   const projectsGrid = document.getElementById("projectsGrid");
