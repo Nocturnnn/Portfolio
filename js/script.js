@@ -416,6 +416,16 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
       featured: true,
     },
+    {
+      title: "Immersia — Landing Page para Ativações Tecnológicas",
+      description:
+        "Projeto conceito de landing page premium com visual tecnológico, animações refinadas e foco em performance, experiência e posicionamento de marca.",
+      image: "img/portifolio/Emmersia.png",
+      link: "https://immersia-murex.vercel.app/",
+      type: "Freelance Project",
+      stack: ["React", "TypeScript", "Vite", "CSS", "Performance", "Branding"],
+      featured: true,
+    },
   ];
 
   const projectsGrid = document.getElementById("projectsGrid");
