@@ -399,6 +399,23 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
       featured: true,
     },
+    {
+      title: "Elden Ring — Experiência Editorial Interativa",
+      description:
+        "Experiência front-end autoral desenvolvida com React, TypeScript, Vite e Framer Motion, que transforma a estética sombria de Elden Ring em uma apresentação editorial interativa.",
+      image: "img/portifolio/elden-editorial.png",
+      link: "https://elden-editorial.vercel.app/",
+      type: "Interface Interativa",
+      stack: [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Framer Motion",
+        "UI/UX",
+        "Creative Front-end",
+      ],
+      featured: true,
+    },
   ];
 
   const projectsGrid = document.getElementById("projectsGrid");
