@@ -426,6 +426,23 @@ document.addEventListener("DOMContentLoaded", () => {
       stack: ["React", "TypeScript", "Vite", "CSS", "Performance", "Branding"],
       featured: true,
     },
+        {
+      title: "Login Lamp — Interface de Login Interativa",
+      description:
+        "Tela de login criada em React com uma lâmpada interativa ao lado do formulário: ao puxar a corda, a luz liga e desliga, alterando toda a atmosfera da experiência e deixando a autenticação muito mais memorável.",
+      image: "img/portifolio/login-lamp.png",
+      link: "https://login-lamp-seven.vercel.app/",
+      type: "Authentication UI",
+      stack: [
+        "React",
+        "Vite",
+        "JavaScript",
+        "UI/UX",
+        "Motion",
+        "Creative Front-end",
+      ],
+      featured: true,
+    },
   ];
 
   const projectsGrid = document.getElementById("projectsGrid");
