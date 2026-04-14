@@ -426,7 +426,7 @@ document.addEventListener("DOMContentLoaded", () => {
       stack: ["React", "TypeScript", "Vite", "CSS", "Performance", "Branding"],
       featured: true,
     },
-        {
+    {
       title: "Login Lamp — Interface de Login Interativa",
       description:
         "Tela de login criada em React com uma lâmpada interativa ao lado do formulário: ao puxar a corda, a luz liga e desliga, alterando toda a atmosfera da experiência e deixando a autenticação muito mais memorável.",
@@ -441,6 +441,16 @@ document.addEventListener("DOMContentLoaded", () => {
         "Motion",
         "Creative Front-end",
       ],
+      featured: true,
+    },
+    {
+      title: "Nubank Concept — Landing Page Premium",
+      description:
+        "Landing page conceitual inspirada no universo Nubank, com hero cinematográfico centrado no cartão Ultravioleta, narrativa visual premium, animações refinadas e foco em branding, confiança e conversão.",
+      image: "img/portifolio/Nubank.png",
+      link: "https://nubank-rho.vercel.app/",
+      type: "Landing Page",
+      stack: ["React", "TypeScript", "Vite", "UI/UX", "Branding", "Motion"],
       featured: true,
     },
   ];
