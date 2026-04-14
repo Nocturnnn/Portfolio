@@ -386,7 +386,7 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "White Stone — Experiência Espiritual Interativa",
       description:
         "Experiência interativa inspirada na simbologia da pedra branca de Apocalipse 2:17.",
-      image: "img/portifolio/Pedra Branca.png",
+      image: "img/portifolio/Pedra branca.png",
       link: "https://sua-pedra-branca.vercel.app/",
       type: "Interface Interativa",
       stack: [
