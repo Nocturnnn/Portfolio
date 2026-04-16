@@ -453,6 +453,23 @@ document.addEventListener("DOMContentLoaded", () => {
       stack: ["React", "TypeScript", "Vite", "UI/UX", "Branding", "Motion"],
       featured: true,
     },
+    {
+      title: "Sistema Solar — Experiência Web Interativa",
+      description:
+        "Aplicação web interativa sobre o Sistema Solar, com navegação entre os oito planetas, interface imersiva, animações fluidas e adaptação dinâmica de cores, fundo e painéis conforme o planeta selecionado.",
+      image: "img/portifolio/Sistema Solar.png",
+      link: "https://sistema-solar-wheat.vercel.app/",
+      type: "Interface Interativa",
+      stack: [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Framer Motion",
+        "UI/UX",
+        "Responsive Design",
+      ],
+      featured: true,
+    },
   ];
 
   const projectsGrid = document.getElementById("projectsGrid");
