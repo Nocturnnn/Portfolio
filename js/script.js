@@ -470,6 +470,40 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
       featured: true,
     },
+    {
+      title: "Pintura Digital em React — Experiência Ilustrada Interativa",
+      description:
+        "Experiência visual em React que constrói uma pintura digital em camadas, com elementos ilustrados, composição artística e animações sutis.",
+      image: "img/portifolio/Pintura digital.png",
+      link: "https://pintura-artistica.vercel.app/",
+      type: "Experimento",
+      stack: [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Framer Motion",
+        "Creative Front-end",
+        "UI Design",
+      ],
+      featured: true,
+    },
+    {
+      title: "Palavras em Partículas — Experimento Canvas Interativo",
+      description:
+        "Experimento em Canvas onde o texto digitado vira partículas interativas que reagem ao mouse e retornam suavemente à forma original.",
+      image: "img/portifolio/Palavras-particulas.png",
+      link: "https://palavras-em-particulas.vercel.app/",
+      type: "Experimento",
+      stack: [
+        "React",
+        "JavaScript",
+        "Canvas API",
+        "requestAnimationFrame",
+        "Physics",
+        "Creative Front-end",
+      ],
+      featured: true,
+    },
   ];
 
   const projectsGrid = document.getElementById("projectsGrid");
