@@ -504,6 +504,23 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
       featured: true,
     },
+    {
+      title: "Anime X1: Mesa dos Destinos",
+      description:
+        "Simulador de batalhas entre personagens de anime com cartas, ranking, filtros, modo caos, resultado narrativo e motor logico para atributos, poderes, fraquezas, counters e escala divina.",
+      image: "img/portifolio/x1animes.png",
+      link: "https://x1-animes.vercel.app/",
+      type: "Simulador",
+      stack: [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Framer Motion",
+        "Game Logic",
+        "UI/UX",
+      ],
+      featured: true,
+    },
   ];
 
   const projectsGrid = document.getElementById("projectsGrid");
