@@ -521,6 +521,23 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
       featured: true,
     },
+    {
+      title: "Relógio Analógico — Experiência Visual",
+      description:
+        "Relógio analógico em tela cheia com marcações detalhadas, ponteiros dinâmicos e visual escuro sofisticado com brilho, profundidade e acabamento responsivo.",
+      image: "img/portifolio/Relógio analógico.png",
+      link: "https://relogio-de-ponteiro.vercel.app/",
+      type: "Interface Interativa",
+      stack: [
+        "React",
+        "TypeScript",
+        "Vite",
+        "CSS",
+        "Responsive Design",
+        "Motion",
+      ],
+      featured: true,
+    },
   ];
 
   const projectsGrid = document.getElementById("projectsGrid");
@@ -529,13 +546,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("searchInput");
   const resetFilters = document.getElementById("resetFilters");
   const projectsCounter = document.getElementById("projectsCounter");
+  const projectsPagination = document.getElementById("projectsPagination");
   const emptyState = document.getElementById("emptyState");
   const heroProjectCount = document.getElementById("heroProjectCount");
+  const projectsPerPage = 12;
+  let filteredProjects = [...projects];
+  let currentPage = 1;
 
   heroProjectCount.textContent = `${projects.length}+`;
 
   populateFilters(projects);
-  renderProjects(projects);
+  renderProjects();
   initMockupSlider(projects.filter((project) => project.featured));
   revealOnScroll();
   initFilterEvents();
@@ -582,7 +603,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const selectedStack = stackFilter.value;
     const selectedType = typeFilter.value;
 
-    const filtered = projects.filter((project) => {
+    filteredProjects = projects.filter((project) => {
       const matchesSearch =
         !query ||
         project.title.toLowerCase().includes(query) ||
@@ -599,22 +620,37 @@ document.addEventListener("DOMContentLoaded", () => {
       return matchesSearch && matchesStack && matchesType;
     });
 
-    renderProjects(filtered);
+    currentPage = 1;
+    renderProjects();
   }
 
-  function renderProjects(projectsList) {
+  function renderProjects(shouldScroll = false) {
     projectsGrid.innerHTML = "";
+    projectsPagination.innerHTML = "";
 
-    if (!projectsList.length) {
+    const totalProjects = filteredProjects.length;
+    const totalPages = Math.ceil(totalProjects / projectsPerPage);
+
+    if (!totalProjects) {
       projectsCounter.textContent = "0 projetos encontrados";
       emptyState.classList.remove("hidden");
+      projectsPagination.classList.add("hidden");
+      refreshRevealObserver();
       return;
     }
 
-    emptyState.classList.add("hidden");
-    projectsCounter.textContent = `${projectsList.length} projeto${projectsList.length > 1 ? "s" : ""} encontrado${projectsList.length > 1 ? "s" : ""}`;
+    if (currentPage > totalPages) currentPage = totalPages;
 
-    projectsList.forEach((project, index) => {
+    emptyState.classList.add("hidden");
+    projectsPagination.classList.toggle("hidden", totalPages <= 1);
+
+    const pageStart = (currentPage - 1) * projectsPerPage;
+    const pageEnd = Math.min(pageStart + projectsPerPage, totalProjects);
+    const pageProjects = filteredProjects.slice(pageStart, pageEnd);
+
+    projectsCounter.textContent = `${pageStart + 1}-${pageEnd} de ${totalProjects} projeto${totalProjects > 1 ? "s" : ""} encontrado${totalProjects > 1 ? "s" : ""}`;
+
+    pageProjects.forEach((project, index) => {
       const card = document.createElement("article");
       const direction = index % 2 === 0 ? "left" : "right";
 
@@ -655,9 +691,111 @@ document.addEventListener("DOMContentLoaded", () => {
       projectsGrid.appendChild(card);
     });
 
+    renderPagination(totalPages);
     initCardGlow();
     initCardTilt();
     refreshRevealObserver();
+
+    if (shouldScroll) {
+      document
+        .getElementById("projetos")
+        .scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  function renderPagination(totalPages) {
+    if (totalPages <= 1) return;
+
+    const firstButton = createPaginationButton("Primeira", 1, {
+      disabled: currentPage === 1,
+      label: "Ir para primeira página",
+    });
+
+    const previousButton = createPaginationButton("Anterior", currentPage - 1, {
+      disabled: currentPage === 1,
+      label: "Página anterior",
+    });
+
+    const nextButton = createPaginationButton("Próxima", currentPage + 1, {
+      disabled: currentPage === totalPages,
+      label: "Próxima página",
+    });
+
+    const lastButton = createPaginationButton("Última", totalPages, {
+      disabled: currentPage === totalPages,
+      label: "Ir para última página",
+    });
+
+    projectsPagination.appendChild(firstButton);
+    projectsPagination.appendChild(previousButton);
+
+    getVisiblePages(totalPages).forEach((page) => {
+      if (page === "...") {
+        const ellipsis = document.createElement("span");
+        ellipsis.className = "pagination-ellipsis";
+        ellipsis.textContent = "...";
+        projectsPagination.appendChild(ellipsis);
+        return;
+      }
+
+      const pageButton = createPaginationButton(page, page, {
+        active: page === currentPage,
+        label: `Ir para página ${page}`,
+      });
+
+      projectsPagination.appendChild(pageButton);
+    });
+
+    projectsPagination.appendChild(nextButton);
+    projectsPagination.appendChild(lastButton);
+  }
+
+  function createPaginationButton(text, page, options = {}) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.textContent = text;
+    button.disabled = Boolean(options.disabled);
+    button.setAttribute("aria-label", options.label);
+
+    if (options.active) {
+      button.classList.add("active");
+      button.setAttribute("aria-current", "page");
+    }
+
+    button.addEventListener("click", () => {
+      if (button.disabled || page === currentPage) return;
+      currentPage = page;
+      renderProjects(true);
+    });
+
+    return button;
+  }
+
+  function getVisiblePages(totalPages) {
+    if (totalPages <= 7) {
+      return Array.from({ length: totalPages }, (_, index) => index + 1);
+    }
+
+    const pages = new Set([1, totalPages, currentPage]);
+
+    if (currentPage > 1) pages.add(currentPage - 1);
+    if (currentPage < totalPages) pages.add(currentPage + 1);
+    if (currentPage <= 3) pages.add(2).add(3).add(4);
+    if (currentPage >= totalPages - 2) {
+      pages.add(totalPages - 1).add(totalPages - 2).add(totalPages - 3);
+    }
+
+    return [...pages]
+      .filter((page) => page >= 1 && page <= totalPages)
+      .sort((a, b) => a - b)
+      .reduce((items, page, index, sortedPages) => {
+        if (index > 0 && page - sortedPages[index - 1] > 1) {
+          items.push("...");
+        }
+
+        items.push(page);
+        return items;
+      }, []);
   }
 
   function initMockupSlider(featuredProjects) {
