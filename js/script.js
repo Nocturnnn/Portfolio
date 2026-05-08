@@ -1,6 +1,56 @@
 document.addEventListener("DOMContentLoaded", () => {
   const projects = [
     {
+      title: "Forza Horizon Start Screen - React Game UI",
+      description:
+        "Tela inicial inspirada em jogos de corrida, com ceu neon, estrada em perspectiva, carros em silhueta e clima de festival.",
+      image: "img/portifolio/forza-horizon-start.png",
+      link: "https://race-forza.vercel.app/",
+      type: "Game UI",
+      stack: ["React", "Vite", "CSS", "Lucide React", "Responsive Design"],
+      featured: true,
+    },
+    {
+      title: "Glass Effect from ThreeJS - Interface Interativa",
+      description:
+        "Experiencia visual com placas de vidro reativas ao cursor, brilho suave, profundidade e atmosfera de dashboard premium.",
+      image: "img/portifolio/glass-effect-threejs.png",
+      link: "https://glass-effect-xi.vercel.app/",
+      type: "Creative Coding",
+      stack: ["React", "Vite", "CSS", "SVG", "JavaScript"],
+      featured: true,
+    },
+    {
+      title: "Portal Dimensional - Experiencia Canvas e GSAP",
+      description:
+        "SPA visual com portal neon, aneis animados, particulas em Canvas e timeline cinematografica feita com GSAP.",
+      image: "img/portifolio/portal-dimensional.png",
+      link: "https://portal-dimensional.vercel.app/",
+      type: "Experimento",
+      stack: ["React", "Vite", "CSS", "Canvas API", "GSAP"],
+      featured: true,
+    },
+    {
+      title: "Barista One - Dashboard Premium de Cafe",
+      description:
+        "Dashboard SaaS inspirado no universo do cafe, com dados mockados, componentes reutilizaveis e visual glassmorphism.",
+      image: "img/portifolio/coffee-dashboard.png",
+      link: "https://cafe-umber-five.vercel.app/",
+      type: "Dashboard",
+      stack: ["React", "Vite", "CSS", "Lucide React", "Responsive Design"],
+      featured: true,
+    },
+    {
+      title: "Interactive Garden - Flores com Next.js",
+      description:
+        "Experiencia interativa em que cada clique planta uma flor unica, com vento, caules em SVG e animacoes em CSS.",
+      image: "img/portifolio/interactive-garden.png",
+      link: "https://click-flowers-gray.vercel.app/",
+      type: "Experimento",
+      stack: ["Next.js", "React", "TypeScript", "CSS", "SVG"],
+      featured: true,
+    },
+    {
       title: "Balduíno IV — Poster Editorial",
       description:
         "Experiência editorial inspirada em pôsteres históricos, com tipografia monumental e atmosfera dramática.",
