@@ -1,6 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
   const projects = [
     {
+      title: "Flor Surreal — Botânica Especulativa em 3D",
+      description:
+        "Experiência artística em formato de prancha botânica, com uma flor 3D translúcida, reflexos de arco-íris que mudam conforme o ângulo e um halo suave de luz. Inclui inspeção interativa, nervuras e notas científicas em uma composição editorial responsiva.",
+      image: "img/portifolio/flor-surreal.png",
+      link: "https://florsurreal.vercel.app/",
+      type: "Creative Coding",
+      stack: [
+        "React",
+        "TypeScript",
+        "Three.js",
+        "Vite",
+        "WebGL",
+        "GLSL",
+        "Creative Front-end",
+      ],
+      featured: true,
+    },
+    {
       title: "Forza Horizon Start Screen - React Game UI",
       description:
         "Tela inicial inspirada em jogos de corrida, com ceu neon, estrada em perspectiva, carros em silhueta e clima de festival.",
