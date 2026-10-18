@@ -1,6 +1,24 @@
 document.addEventListener("DOMContentLoaded", () => {
   const projects = [
     {
+      title: "Iridescência — Atlas Entomológico em 3D",
+      description:
+        "Experiência interativa inspirada em uma prancha científica, com uma borboleta 3D iridescente, nervuras delicadas e reflexos que mudam conforme a luz e o ângulo de observação. Permite girar e aproximar o espécime, alternar vistas, explorar a estrutura e consultar notas de campo.",
+      image: "img/portifolio/iridescencia.png",
+      link: "https://bug-cyan.vercel.app/",
+      type: "Creative Coding",
+      stack: [
+        "React",
+        "TypeScript",
+        "Three.js",
+        "Vite",
+        "WebGL",
+        "GLSL",
+        "Creative Front-end",
+      ],
+      featured: true,
+    },
+    {
       title: "Flor Surreal — Botânica Especulativa em 3D",
       description:
         "Experiência artística em formato de prancha botânica, com uma flor 3D translúcida, reflexos de arco-íris que mudam conforme o ângulo e um halo suave de luz. Inclui inspeção interativa, nervuras e notas científicas em uma composição editorial responsiva.",
