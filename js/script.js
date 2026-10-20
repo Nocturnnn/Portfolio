@@ -1,6 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
   const projects = [
     {
+      title: "Ecos da Terra-média — Jornada Interativa em 3D",
+      description:
+        "Experiência de fãs de O Senhor dos Anéis, com um anel 3D que percorre as seções conforme o scroll. Reúne camadas em parallax, mapa da Terra-média, seis personagens, criaturas e um quiz de afinidade, com imagens responsivas e renderização sob demanda.",
+      image: "img/portifolio/ecos-da-terra-media.webp",
+      link: "https://ecos-da-terra-media.vercel.app/",
+      type: "3D Web Experience",
+      stack: [
+        "Three.js",
+        "JavaScript",
+        "Vite",
+        "WebGL",
+        "CSS",
+        "Parallax",
+        "Responsive Design",
+        "Performance",
+      ],
+      featured: true,
+    },
+    {
       title: "Iridescência — Atlas Entomológico em 3D",
       description:
         "Experiência interativa inspirada em uma prancha científica, com uma borboleta 3D iridescente, nervuras delicadas e reflexos que mudam conforme a luz e o ângulo de observação. Permite girar e aproximar o espécime, alternar vistas, explorar a estrutura e consultar notas de campo.",
