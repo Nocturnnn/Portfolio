@@ -1,6 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
   const projects = [
     {
+      title: "A Casa da Meia-Noite — Mistério Interativo",
+      description:
+        "Mansão ilustrada de mistério com cômodos exploráveis, três pistas e um final secreto. Conheça uma bruxa, um vampiro e um fantasma, descubra sua criatura em um quiz e continue a aventura com progresso salvo no navegador. Inclui animações de rolagem, teias em SVG e layout responsivo.",
+      image: "img/portifolio/a-casa-da-meia-noite.jpg",
+      link: "https://a-casa-da-meia-noite.vercel.app/",
+      type: "Interactive Storytelling",
+      stack: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "SVG",
+        "Responsive Design",
+      ],
+      featured: true,
+    },
+    {
       title: "Ecos da Terra-média — Jornada Interativa em 3D",
       description:
         "Experiência de fãs de O Senhor dos Anéis, com um anel 3D que percorre as seções conforme o scroll. Reúne camadas em parallax, mapa da Terra-média, seis personagens, criaturas e um quiz de afinidade, com imagens responsivas e renderização sob demanda.",
