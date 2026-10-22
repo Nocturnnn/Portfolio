@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mateus Vitor | Web Designer & Full Stack</title>
+    <title>Mateus Vitor | Web Designer & Desenvolvedor Web</title>
+    <meta name="description" content="Mateus Vitor, Web Designer e Desenvolvedor Web Júnior. Interfaces responsivas com React, Next.js e TypeScript, projetos autorais e experiência na NocturnShop." />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,131 +19,208 @@
     />
 
     <link rel="stylesheet" href="style/style.css" />
+    <link rel="stylesheet" href="style/hero.css" />
+    <link rel="stylesheet" href="style/editorial.css" />
   </head>
   <body>
     <div class="bg-orb orb-1"></div>
     <div class="bg-orb orb-2"></div>
     <div class="bg-grid"></div>
 
-    <header>
-      <div class="container header-inner">
-        <a
-          href="#topo"
-          class="logo reveal"
-          data-reveal="top"
-          style="--delay: 0.05s"
-        >
-          Mateus<span>.</span>
-        </a>
-
-        <nav class="reveal" data-reveal="top" style="--delay: 0.15s">
-          <a href="#projetos">Projetos</a>
+    <header class="site-header">
+      <div class="header-inner editorial-container">
+        <a href="#topo" class="editorial-logo" aria-label="Mateus Vitor — início">mv<span>.</span><sup>©</sup></a>
+        <nav aria-label="Navegação principal">
           <a href="#sobre">Sobre</a>
+          <a href="#experiencia">Experiência</a>
+          <a href="#formacao">Formação</a>
+          <a href="#projetos">Projetos</a>
           <a href="#contato">Contato</a>
         </nav>
-
-        <a
-          href="https://github.com/Nocturnnn"
-          target="_blank"
-          class="header-cta reveal"
-          data-reveal="top"
-          style="--delay: 0.2s"
-        >
-          Github
-        </a>
+        <a href="https://github.com/Nocturnnn" target="_blank" rel="noopener noreferrer" class="header-profile">GitHub <span aria-hidden="true">↗</span></a>
       </div>
     </header>
 
     <main id="topo">
-      <section class="hero">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <span class="badge reveal" data-reveal="top" style="--delay: 0.1s">
-              Web Designer & Full Stack · Code-First
-            </span>
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-stage">
+        <div class="hero-guides" aria-hidden="true"><i></i><i></i></div>
 
-            <h1 class="reveal" data-reveal="top" style="--delay: 0.2s">
-              Crio experiências digitais <span>modernas</span>, interativas e
-              com direção visual forte
-            </h1>
+        <div class="hero-meta hero-outro">
+          <span>Portfólio pessoal <span class="hero-divider">/</span> 2026</span>
+          <a href="#contato" class="hero-availability"><i></i> Aberto a conexões</a>
+        </div>
 
-            <p class="reveal" data-reveal="top" style="--delay: 0.3s">
-              Desenvolvo interfaces que unem estética, performance e narrativa
-              visual — com foco em impacto, clareza e experiência premium.
-            </p>
+        <div class="hero-art hero-orb-art" aria-hidden="true">
+          <div class="hero-orb"></div>
+          <div class="hero-orbit"></div>
+          <div class="hero-art-shadow"></div>
+        </div>
 
-            <div
-              class="hero-stats reveal"
-              data-reveal="top"
-              style="--delay: 0.35s"
-            >
-              <div class="stat">
-                <strong id="heroProjectCount">0+</strong>
-                <span>projetos</span>
-              </div>
-              <div class="stat">
-                <strong>UI + Code</strong>
-                <span>design orientado à implementação</span>
-              </div>
-              <div class="stat">
-                <strong>Front-end</strong>
-                <span>com base full stack</span>
-              </div>
+        <h1 class="hero-name hero-outro" id="hero-title">
+          <span class="hero-first-name">MATEUS</span>
+          <span class="hero-last-name">VITOR<span class="hero-asterisk" aria-hidden="true">✳</span></span>
+        </h1>
+
+        <div class="hero-art" aria-label="Uma seleção dos meus projetos de design e desenvolvimento">
+          <div class="hero-project hero-project-back" data-hero-project-index="1">
+            <a class="hero-project-float" href="https://ecos-da-terra-media.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto Ecos da Terra-média">
+              <span class="hero-window-bar" aria-hidden="true"><i></i><i></i><i></i><span>ecos da terra-média / experiência 3d</span><b>↗</b></span>
+              <img src="img/portifolio/ecos-da-terra-media.webp" alt="Ecos da Terra-média — Jornada Interativa em 3D" width="1920" height="1080" fetchpriority="high" />
+            </a>
+          </div>
+          <div class="hero-project hero-project-front" data-hero-project-index="0">
+            <a class="hero-project-float" href="https://a-casa-da-meia-noite.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto A Casa da Meia-Noite">
+              <span class="hero-window-bar" aria-hidden="true"><i></i><i></i><i></i><span>a casa da meia-noite / história interativa</span><b>↗</b></span>
+              <img src="img/portifolio/a-casa-da-meia-noite.jpg" alt="A Casa da Meia-Noite — Mistério Interativo" width="1920" height="1080" fetchpriority="high" />
+            </a>
+          </div>
+          <span class="hero-art-note"><i></i> Design em movimento. Código com intenção.</span>
+        </div>
+
+        <div class="hero-details hero-outro">
+          <div class="hero-role"><span aria-hidden="true">+</span><div>Web Designer & Desenvolvedor Web<small>React · Next.js · TypeScript</small></div></div>
+          <a href="#projetos" class="hero-projects-link">Ver projetos <span aria-hidden="true">↗</span></a>
+        </div>
+
+        <div class="hero-bottom hero-outro">
+          <a href="#hero-intro" class="hero-scroll"><span aria-hidden="true">↓</span> Role para me conhecer</a>
+          <span class="hero-edition">Vol. 01 / Ideias em experiências</span>
+        </div>
+
+        <div class="hero-intro" id="hero-intro">
+          <p class="hero-eyebrow"><span>01 /</span> Prazer, Mateus.</p>
+          <h2>Design que conecta.<br /><em>Código que dá vida.</em></h2>
+          <p class="hero-intro-copy">Sou Web Designer e Desenvolvedor Web Júnior. Transformo requisitos de produto em interfaces claras e responsivas, unindo UI/UX, React, Next.js e TypeScript.</p>
+          <a href="#sobre" class="hero-intro-link">Um pouco mais sobre mim <span aria-hidden="true">↘</span></a>
+        </div>
+
+        <button class="hero-motion-toggle" type="button" aria-label="Pausar movimento flutuante" aria-pressed="false" hidden><span aria-hidden="true">Ⅱ</span></button>
+      </div>
+    </section>
+
+      <section id="sobre" class="editorial-section about-editorial" aria-labelledby="about-title">
+        <div class="editorial-container">
+          <p class="editorial-eyebrow reveal" data-reveal="bottom"><span>01 /</span> Sobre mim</p>
+          <div class="about-layout">
+            <div class="about-intro reveal" data-reveal="bottom">
+              <h2 class="editorial-title" id="about-title">Interfaces com clareza.<br /><em>Código com propósito.</em></h2>
+              <a class="personal-signature" href="https://www.linkedin.com/in/mateus-vitor-2a3ba7335/" target="_blank" rel="noopener noreferrer">Mateus Vitor <span aria-hidden="true">↗</span></a>
+              <p class="personal-location">Anápolis, Goiás · Brasil</p>
             </div>
-
-            <div class="actions reveal" data-reveal="top" style="--delay: 0.4s">
-              <a href="#projetos" class="btn primary">Ver projetos</a>
-              <a href="#contato" class="btn ghost">Fale comigo</a>
+            <div class="about-narrative reveal" data-reveal="bottom" style="--delay: .1s">
+              <p>Sou Web Designer e Desenvolvedor Web Júnior. Trabalho entre UI/UX e implementação com HTML, CSS, JavaScript, TypeScript, React e Next.js, transformando requisitos de produto em interfaces claras, reutilizáveis e preparadas para diferentes dispositivos.</p>
+              <p>Na NocturnShop, meu projeto autoral e empreendimento próprio, desenvolvo landing pages, dashboards, marketplace e aplicações responsivas. Conecto as jornadas da interface a APIs, autenticação, dados, pagamentos e automações.</p>
+              <p>Minha base combina design responsivo, Mobile First, componentização, performance web, SEO técnico e acessibilidade WCAG. Busco minha primeira oportunidade formal para contribuir com execução visual, qualidade frontend e visão de produto.</p>
+              <a class="editorial-text-link" href="https://github.com/Nocturnnn" target="_blank" rel="noopener noreferrer">Conheça meu GitHub <span aria-hidden="true">↗</span></a>
             </div>
           </div>
-
-          <div
-            class="hero-visual reveal"
-            data-reveal="right"
-            style="--delay: 0.3s"
-          >
-            <div class="mockup-shell">
-              <div class="mockup-topbar">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-
-              <div class="mockup">
-                <div class="mockup-slider" id="mockupSlider"></div>
-
-                <a
-                  class="mockup-overlay"
-                  id="mockupOverlay"
-                  target="_blank"
-                  aria-label="Ver projeto em destaque"
-                ></a>
-
-                <div class="mockup-caption" id="mockupCaption">
-                  <span class="mockup-label">Projeto em destaque</span>
-                  <h3 id="mockupTitle">Carregando...</h3>
-                  <p id="mockupType">Tipo</p>
-                </div>
-              </div>
-            </div>
-
-            <p
-              class="desktop-hint reveal"
-              data-reveal="bottom"
-              style="--delay: 0.45s"
-            >
-              Para uma experiência completa, visualize este site em um
-              computador.
-            </p>
+          <div class="about-results reveal" data-reveal="bottom" aria-label="Resultados da experiência prática">
+            <div><strong>200<span>+</span></strong><h3>Entregas de interface</h3><p>Páginas, componentes, seções e iterações de produto.</p></div>
+            <div><strong>50<span>+</span></strong><h3>Integrações</h3><p>APIs, autenticação, dados, pagamentos e automações.</p></div>
+            <div><strong>420<span>h+</span></strong><h3>Estudo contínuo</h3><p>Desenvolvimento web, JavaScript, React, Git e arquitetura.</p></div>
+          </div>
+          <div class="about-footnotes reveal" data-reveal="bottom">
+            <div><span>01 / Atuação</span><p>Web Design, UI/UX e desenvolvimento de interfaces responsivas.</p></div>
+            <div><span>02 / Stack em foco</span><p>React · Next.js · TypeScript · HTML · CSS</p></div>
+            <div><span>03 / Idiomas</span><p>Português nativo · Inglês intermediário para leitura técnica.</p></div>
           </div>
         </div>
       </section>
 
-      <section id="projetos">
+      <section id="experiencia" class="editorial-section experience-editorial" aria-labelledby="experience-title">
+        <div class="editorial-container">
+          <p class="editorial-eyebrow reveal" data-reveal="bottom"><span>02 /</span> Experiência</p>
+          <h2 class="editorial-title editorial-title-wide reveal" data-reveal="bottom" id="experience-title">Da ideia ao produto.<br /><em>Uma construção contínua.</em></h2>
+          <article class="experience-row reveal" data-reveal="bottom">
+            <div class="experience-period"><span class="current-status"><i></i> Atuação atual</span><p>Julho de 2023 — atual</p><small>01 / Projeto autoral</small></div>
+            <div class="experience-content">
+              <a class="experience-company" href="https://nocturnshop.com/" target="_blank" rel="noopener noreferrer"><h3>NocturnShop</h3><span aria-hidden="true">↗</span></a>
+              <p class="experience-role">Desenvolvedor Web & Web Designer</p>
+              <p class="experience-context">Projeto autoral / empreendimento próprio</p>
+              <ul>
+                <li>Design e desenvolvimento de landing pages, dashboards, marketplace e aplicações web responsivas, conciliando UI/UX, navegação e requisitos de produto.</li>
+                <li>Criação de componentes e padrões reutilizáveis para dar consistência à interface e facilitar a manutenção do frontend.</li>
+                <li>Integrações com APIs REST, autenticação, Supabase, Firebase, Stripe e webhooks, conectando interfaces a dados e regras de negócio.</li>
+                <li>Automações com n8n e serviços externos, acompanhando o fluxo entre configuração, execução e retorno ao usuário.</li>
+                <li>Evolução do design à publicação, com responsividade, performance web, SEO técnico, acessibilidade e manutenção contínua.</li>
+              </ul>
+              <div class="editorial-tags" aria-label="Tecnologias utilizadas"><span>React</span><span>Next.js</span><span>TypeScript</span><span>APIs REST</span><span>n8n</span><span>Supabase</span><span>Stripe</span></div>
+              <a class="editorial-text-link" href="https://nocturnshop.com/" target="_blank" rel="noopener noreferrer">Conheça a NocturnShop <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="aprendizado" class="editorial-section learning-editorial" aria-labelledby="learning-title">
+        <div class="editorial-container">
+          <div class="learning-heading reveal" data-reveal="bottom">
+            <div><p class="editorial-eyebrow"><span>03 /</span> Stack & evolução</p><h2 class="editorial-title" id="learning-title">Certificações<br /><em>& aprendizado.</em></h2></div>
+            <p>O que estudo se conecta ao que construo. Uma base em interfaces, código e integrações, com aprendizado contínuo.</p>
+          </div>
+          <div class="learning-grid">
+            <article class="learning-item reveal" data-reveal="bottom">
+              <div class="learning-copy"><p class="learning-provider">Udemy · Luiz Otávio Miranda e Tales Calogi Malaquias</p><h3>JavaScript & TypeScript</h3><p>JavaScript e TypeScript do básico ao avançado — JS + TS.</p><span class="learning-state is-complete"><i></i> Curso concluído · 100%</span></div>
+              <div class="tech-token token-js" aria-hidden="true"><span>JS<small>+ TS</small></span></div>
+            </article>
+            <article class="learning-item reveal" data-reveal="bottom">
+              <div class="learning-copy"><p class="learning-provider">Udemy · Luiz Otávio Miranda e Tales Calogi Malaquias</p><h3>React & Next.js</h3><p>Curso de React JS 19 e Next.js 15. Componentização e interfaces reutilizáveis.</p><span class="learning-state">Formação complementar</span></div>
+              <div class="tech-token token-react" aria-hidden="true"><span>Re<small>+ Next</small></span></div>
+            </article>
+            <article class="learning-item reveal" data-reveal="bottom">
+              <div class="learning-copy"><p class="learning-provider">Udemy · Serliv Cursos e Daniel Tapias Morales</p><h3>Do Figma ao código</h3><p>Design da interface web completo: Figma, UI, HTML e CSS.</p><span class="learning-state">Design de interfaces · UI/UX</span></div>
+              <div class="tech-token token-figma" aria-hidden="true"><span>Fi<small>UI / UX</small></span></div>
+            </article>
+            <article class="learning-item reveal" data-reveal="bottom">
+              <div class="learning-copy"><p class="learning-provider">Udemy · Paulo Andrade, PhD, e Rodrigo Macedo</p><h3>Automação & inteligência artificial</h3><p>Formação Automação com Inteligência Artificial 2026 com n8n.</p><span class="learning-state">Em andamento · 86%</span><progress value="86" max="100" aria-label="Progresso da formação em automação com n8n">86%</progress></div>
+              <div class="tech-token token-n8n" aria-hidden="true"><span>n8n<small>workflows</small></span></div>
+            </article>
+            <article class="learning-item reveal" data-reveal="bottom">
+              <div class="learning-copy"><p class="learning-provider">Curso em Vídeo</p><h3>HTML5 & CSS3</h3><p>Todos os módulos. Base para interfaces responsivas e implementação web.</p><span class="learning-state is-complete"><i></i> Conteúdo integral cursado</span></div>
+              <div class="tech-token token-web" aria-hidden="true"><span>&lt;/&gt;<small>HTML · CSS</small></span></div>
+            </article>
+            <article class="learning-item reveal" data-reveal="bottom">
+              <div class="learning-copy"><p class="learning-provider">Curso em Vídeo</p><h3>Python & fundamentos</h3><p>Python — todos os mundos. Fundamentos e lógica de programação.</p><span class="learning-state is-complete"><i></i> Conteúdo integral cursado</span></div>
+              <div class="tech-token token-python" aria-hidden="true"><span>Py<small>fundamentos</small></span></div>
+            </article>
+          </div>
+          <div class="stack-heading reveal" data-reveal="bottom"><h3>Da interface à publicação.</h3><p>Tecnologias e práticas que acompanham meu trabalho.</p></div>
+          <div class="stack-matrix reveal" data-reveal="bottom">
+            <div><span class="stack-number">01 /</span><h4>Integrações & dados</h4><p>Node.js · APIs REST · PostgreSQL · Supabase · Firebase · Stripe · Webhooks</p></div>
+            <div><span class="stack-number">02 /</span><h4>Motion & interfaces criativas</h4><p>Framer Motion · GSAP · Three.js · React Three Fiber · WebGL</p></div>
+            <div><span class="stack-number">03 /</span><h4>Performance & qualidade</h4><p>Core Web Vitals · Lighthouse · SEO técnico · Acessibilidade WCAG · Clean Code</p></div>
+            <div><span class="stack-number">04 /</span><h4>Ferramentas & publicação</h4><p>Git · GitHub · GitHub Actions · Vercel · Vite · Tailwind CSS · VS Code · Postman · NPM</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="formacao" class="editorial-section education-editorial" aria-labelledby="education-title">
+        <div class="editorial-container">
+          <p class="editorial-eyebrow reveal" data-reveal="bottom"><span>04 /</span> Formação</p>
+          <h2 class="editorial-title reveal" data-reveal="bottom" id="education-title">Conhecimento como base.<br /><em>Prática como caminho.</em></h2>
+          <div class="education-main">
+            <div class="education-details reveal" data-reveal="bottom">
+              <span class="education-state"><i></i> Graduação concluída</span>
+              <h3>Análise e<br />Desenvolvimento de Sistemas</h3>
+              <p class="education-university">Universidade Pitágoras Unopar Anhanguera</p>
+              <p class="education-period">2024 — 2026 · Superior de Tecnologia</p>
+              <dl class="education-dates"><div><dt>Conclusão</dt><dd>20 de junho de 2026</dd></div><div><dt>Colação de grau</dt><dd>8 de julho de 2026</dd></div></dl>
+              <a class="editorial-text-link" href="docs/diploma-ads-exibicao.pdf" target="_blank" rel="noopener noreferrer">Ver diploma em PDF <span aria-hidden="true">↗</span></a>
+            </div>
+            <figure class="diploma-figure reveal" data-reveal="bottom" style="--delay: .1s">
+              <button class="diploma-preview" type="button" aria-label="Ampliar diploma de Análise e Desenvolvimento de Sistemas" aria-haspopup="dialog" data-open-diploma><img src="img/formacao/diploma-ads.webp" alt="Diploma de Tecnólogo em Análise e Desenvolvimento de Sistemas de Mateus Vitor, emitido pela Universidade Pitágoras Unopar Anhanguera" width="1400" height="1053" loading="lazy" /><span>Ampliar diploma <b aria-hidden="true">↗</b></span></button>
+              <figcaption>Cópia para exibição · dados pessoais ocultados.</figcaption>
+            </figure>
+          </div>
+          <article class="education-secondary reveal" data-reveal="bottom"><div><span class="education-period">2021 — 2023</span><p>Base acadêmica</p></div><div><h3>Ciências da Computação</h3><p>Instituto Federal de Goiás</p><p class="education-context">Curso realizado de 2021 a 2023, com dois anos de formação em fundamentos de programação.</p></div><span class="education-index" aria-hidden="true">02 /</span></article>
+        </div>
+      </section>
+
+      <section id="projetos" class="projects-editorial">
         <div class="container">
           <div class="section-head reveal" data-reveal="bottom">
-            <span class="section-kicker">Portfólio</span>
-            <h2>Projetos selecionados</h2>
+            <p class="editorial-eyebrow"><span>05 /</span> Projetos selecionados</p>
+            <h2 class="editorial-title">Ideias que ganham<br /><em>forma e movimento.</em></h2>
             <p>
               Trabalhos que exploram interface, narrativa, motion, 3D e direção
               visual com foco em experiência digital.
@@ -211,39 +289,11 @@
         </div>
       </section>
 
-      <section id="sobre">
-        <div class="container about">
-          <div class="section-head reveal" data-reveal="bottom">
-            <span class="section-kicker">Sobre</span>
-            <h2>Sobre mim</h2>
-          </div>
-
-          <div
-            class="about-card reveal"
-            data-reveal="bottom"
-            style="--delay: 0.15s"
-          >
-            <p>
-              Sou web designer e desenvolvedor full stack focado em criar
-              interfaces sofisticadas, funcionais e alinhadas a objetivos reais.
-              Trabalho de forma code-first, unindo design e engenharia desde a
-              primeira linha.
-            </p>
-
-            <p>
-              Gosto de construir experiências com identidade visual forte,
-              motion design, storytelling e atenção aos detalhes — sem abrir mão
-              de performance, responsividade e organização técnica.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section id="contato">
         <div class="container contact">
           <div class="section-head reveal" data-reveal="bottom">
-            <span class="section-kicker">Contato</span>
-            <h2>Vamos conversar</h2>
+            <p class="editorial-eyebrow"><span>06 /</span> Contato</p>
+            <h2 class="editorial-title">Vamos criar<br /><em>algo juntos?</em></h2>
             <p>Aberto a freelas, parcerias e oportunidades profissionais.</p>
           </div>
 
@@ -273,6 +323,13 @@
       © 2026 Mateus Vitor — Todos os direitos reservados.
     </footer>
 
+    <dialog class="diploma-dialog" id="diploma-dialog" aria-labelledby="diploma-dialog-title">
+      <div class="diploma-dialog-bar"><h2 id="diploma-dialog-title">Formação em Análise e Desenvolvimento de Sistemas</h2><button type="button" class="diploma-close" aria-label="Fechar diploma">×</button></div>
+      <img src="img/formacao/diploma-ads.webp" alt="Diploma de Tecnólogo em Análise e Desenvolvimento de Sistemas — Mateus Vitor" width="1400" height="1053" loading="lazy" />
+      <div class="diploma-dialog-footer"><p>Cópia para exibição com dados pessoais ocultados. A assinatura digital pertence ao arquivo original.</p><a href="docs/diploma-ads-exibicao.pdf" target="_blank" rel="noopener noreferrer">Abrir PDF ↗</a></div>
+    </dialog>
+    <script src="js/editorial.js"></script>
+    <script src="js/hero.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

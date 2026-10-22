@@ -30,6 +30,8 @@
 }
 
 html {
+  overflow-x: clip;
+  scroll-padding-top: 100px;
   scroll-behavior: smooth;
 }
 
@@ -49,7 +51,7 @@ body {
     linear-gradient(180deg, #090910 0%, #0c0d14 100%);
   color: var(--text);
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip;
   position: relative;
 }
 
@@ -233,12 +235,6 @@ section {
   padding: 120px 0;
 }
 
-.hero {
-  min-height: 100vh;
-  display: grid;
-  align-items: center;
-  padding-top: calc(var(--header-h) + 40px);
-}
 
 .hero-grid {
   display: grid;
@@ -267,23 +263,8 @@ section {
   letter-spacing: 0.02em;
 }
 
-.hero h1 {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: clamp(2.35rem, 4.7vw, 4rem);
-  line-height: 1.06;
-  letter-spacing: -0.045em;
-}
 
-.hero h1 span {
-  color: var(--primary);
-}
 
-.hero p {
-  max-width: 560px;
-  color: var(--muted);
-  font-size: 1.06rem;
-}
 
 .hero-stats {
   margin-top: 30px;
@@ -960,13 +941,7 @@ footer {
     padding: 90px 0;
   }
 
-  .hero {
-    padding-top: calc(var(--header-h) + 20px);
-  }
 
-  .hero h1 {
-    font-size: 2.15rem;
-  }
 
   .hero-stats {
     grid-template-columns: 1fr;
@@ -1000,9 +975,6 @@ footer {
     width: min(94%, 1240px);
   }
 
-  .hero h1 {
-    font-size: 1.92rem;
-  }
 
   .card-content {
     padding: 20px;

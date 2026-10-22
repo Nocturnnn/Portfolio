@@ -662,6 +662,18 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   ];
 
+  document.querySelectorAll("[data-hero-project-index]").forEach((preview) => {
+    const project = projects[Number(preview.dataset.heroProjectIndex)];
+    if (!project) return;
+    const link = preview.querySelector("a");
+    const image = preview.querySelector("img");
+    link.href = project.link;
+    link.setAttribute("aria-label", `Abrir projeto ${project.title}`);
+    image.src = project.image;
+    image.alt = project.title;
+    preview.querySelector(".hero-window-bar > span").textContent = project.title.split(" — ")[0];
+  });
+
   const projectsGrid = document.getElementById("projectsGrid");
   const stackFilter = document.getElementById("stackFilter");
   const typeFilter = document.getElementById("typeFilter");
@@ -670,16 +682,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const projectsCounter = document.getElementById("projectsCounter");
   const projectsPagination = document.getElementById("projectsPagination");
   const emptyState = document.getElementById("emptyState");
-  const heroProjectCount = document.getElementById("heroProjectCount");
   const projectsPerPage = 12;
   let filteredProjects = [...projects];
   let currentPage = 1;
 
-  heroProjectCount.textContent = `${projects.length}+`;
 
   populateFilters(projects);
   renderProjects();
-  initMockupSlider(projects.filter((project) => project.featured));
   revealOnScroll();
   initFilterEvents();
 
@@ -918,44 +927,6 @@ document.addEventListener("DOMContentLoaded", () => {
         items.push(page);
         return items;
       }, []);
-  }
-
-  function initMockupSlider(featuredProjects) {
-    const slider = document.getElementById("mockupSlider");
-    const overlay = document.getElementById("mockupOverlay");
-    const title = document.getElementById("mockupTitle");
-    const type = document.getElementById("mockupType");
-
-    if (!slider || !overlay || !featuredProjects.length) return;
-
-    slider.innerHTML = featuredProjects
-      .map(
-        (project, index) => `
-          <div class="mockup-slide ${index === 0 ? "active" : ""}">
-            <img src="${project.image}" alt="${project.title}" />
-          </div>
-        `,
-      )
-      .join("");
-
-    const slides = slider.querySelectorAll(".mockup-slide");
-    let current = 0;
-
-    updateMockupContent();
-
-    setInterval(() => {
-      slides[current].classList.remove("active");
-      current = (current + 1) % slides.length;
-      slides[current].classList.add("active");
-      updateMockupContent();
-    }, 4200);
-
-    function updateMockupContent() {
-      const currentProject = featuredProjects[current];
-      overlay.href = currentProject.link;
-      title.textContent = currentProject.title;
-      type.textContent = currentProject.type;
-    }
   }
 
   function initCardGlow() {
