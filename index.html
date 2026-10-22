@@ -2,27 +2,25 @@
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <title>Mateus Vitor | Web Designer & Desenvolvedor Web</title>
     <meta name="description" content="Mateus Vitor, Web Designer e Desenvolvedor Web Júnior. Interfaces responsivas com React, Next.js e TypeScript, projetos autorais e experiência na NocturnShop." />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+    <meta name="theme-color" content="#090910" />
+    <link rel="preload" href="assets/fonts/inter-latin-variable.woff2" as="font" type="font/woff2" crossorigin />
     <link
       rel="shortcut icon"
-      href="img/favicon/favicon.jpg"
-      type="image/x-icon"
+      href="img/favicon/favicon-64.png"
+      type="image/png"
     />
 
     <link rel="stylesheet" href="style/style.css" />
     <link rel="stylesheet" href="style/hero.css" />
     <link rel="stylesheet" href="style/editorial.css" />
+    <link rel="stylesheet" href="style/mobile.css" />
   </head>
   <body>
+    <a class="skip-link" href="#topo">Pular para o conteúdo</a>
     <div class="bg-orb orb-1"></div>
     <div class="bg-orb orb-2"></div>
     <div class="bg-grid"></div>
@@ -30,7 +28,7 @@
     <header class="site-header">
       <div class="header-inner editorial-container">
         <a href="#topo" class="editorial-logo" aria-label="Mateus Vitor — início">mv<span>.</span><sup>©</sup></a>
-        <nav aria-label="Navegação principal">
+        <nav class="desktop-navigation" aria-label="Navegação principal">
           <a href="#sobre">Sobre</a>
           <a href="#experiencia">Experiência</a>
           <a href="#formacao">Formação</a>
@@ -38,10 +36,22 @@
           <a href="#contato">Contato</a>
         </nav>
         <a href="https://github.com/Nocturnnn" target="_blank" rel="noopener noreferrer" class="header-profile">GitHub <span aria-hidden="true">↗</span></a>
+        <details class="mobile-menu">
+          <summary>Menu <span aria-hidden="true">+</span></summary>
+          <nav aria-label="Navegação móvel">
+            <a href="#sobre">Sobre <span aria-hidden="true">↗</span></a>
+            <a href="#experiencia">Experiência <span aria-hidden="true">↗</span></a>
+            <a href="#aprendizado">Stack & aprendizado <span aria-hidden="true">↗</span></a>
+            <a href="#formacao">Formação <span aria-hidden="true">↗</span></a>
+            <a href="#projetos">Projetos <span aria-hidden="true">↗</span></a>
+            <a href="#contato">Contato <span aria-hidden="true">↗</span></a>
+            <a href="https://github.com/Nocturnnn" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+          </nav>
+        </details>
       </div>
     </header>
 
-    <main id="topo">
+    <main id="topo" tabindex="-1">
     <section class="hero" id="inicio" aria-labelledby="hero-title">
       <div class="hero-stage">
         <div class="hero-guides" aria-hidden="true"><i></i><i></i></div>
@@ -66,13 +76,13 @@
           <div class="hero-project hero-project-back" data-hero-project-index="1">
             <a class="hero-project-float" href="https://ecos-da-terra-media.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto Ecos da Terra-média">
               <span class="hero-window-bar" aria-hidden="true"><i></i><i></i><i></i><span>ecos da terra-média / experiência 3d</span><b>↗</b></span>
-              <img src="img/portifolio/ecos-da-terra-media.webp" alt="Ecos da Terra-média — Jornada Interativa em 3D" width="1920" height="1080" fetchpriority="high" />
+              <img src="img/responsive/ecos-da-terra-media-800.webp" srcset="img/responsive/ecos-da-terra-media-480.webp 480w, img/responsive/ecos-da-terra-media-800.webp 800w, img/responsive/ecos-da-terra-media-1200.webp 1200w" sizes="(max-width: 760px) 62vw, (max-width: 960px) and (max-height: 580px) 270px, (max-width: 900px) 50vw, 36vw" decoding="async" alt="Ecos da Terra-média — Jornada Interativa em 3D" width="1536" height="1024" fetchpriority="auto" />
             </a>
           </div>
           <div class="hero-project hero-project-front" data-hero-project-index="0">
             <a class="hero-project-float" href="https://a-casa-da-meia-noite.vercel.app/" target="_blank" rel="noopener noreferrer" aria-label="Abrir projeto A Casa da Meia-Noite">
               <span class="hero-window-bar" aria-hidden="true"><i></i><i></i><i></i><span>a casa da meia-noite / história interativa</span><b>↗</b></span>
-              <img src="img/portifolio/a-casa-da-meia-noite.jpg" alt="A Casa da Meia-Noite — Mistério Interativo" width="1920" height="1080" fetchpriority="high" />
+              <img src="img/responsive/a-casa-da-meia-noite-800.webp" srcset="img/responsive/a-casa-da-meia-noite-480.webp 480w, img/responsive/a-casa-da-meia-noite-800.webp 800w, img/responsive/a-casa-da-meia-noite-1200.webp 1200w" sizes="(max-width: 760px) 62vw, (max-width: 960px) and (max-height: 580px) 270px, (max-width: 900px) 50vw, 36vw" decoding="async" alt="A Casa da Meia-Noite — Mistério Interativo" width="1440" height="900" fetchpriority="high" />
             </a>
           </div>
           <span class="hero-art-note"><i></i> Design em movimento. Código com intenção.</span>
@@ -208,7 +218,7 @@
               <a class="editorial-text-link" href="docs/diploma-ads-exibicao.pdf" target="_blank" rel="noopener noreferrer">Ver diploma em PDF <span aria-hidden="true">↗</span></a>
             </div>
             <figure class="diploma-figure reveal" data-reveal="bottom" style="--delay: .1s">
-              <button class="diploma-preview" type="button" aria-label="Ampliar diploma de Análise e Desenvolvimento de Sistemas" aria-haspopup="dialog" data-open-diploma><img src="img/formacao/diploma-ads.webp" alt="Diploma de Tecnólogo em Análise e Desenvolvimento de Sistemas de Mateus Vitor, emitido pela Universidade Pitágoras Unopar Anhanguera" width="1400" height="1053" loading="lazy" /><span>Ampliar diploma <b aria-hidden="true">↗</b></span></button>
+              <button class="diploma-preview" type="button" aria-label="Ampliar diploma de Análise e Desenvolvimento de Sistemas" aria-haspopup="dialog" data-open-diploma><img src="img/formacao/diploma-ads.webp" decoding="async" alt="Diploma de Tecnólogo em Análise e Desenvolvimento de Sistemas de Mateus Vitor, emitido pela Universidade Pitágoras Unopar Anhanguera" width="1400" height="1053" loading="lazy" /><span>Ampliar diploma <b aria-hidden="true">↗</b></span></button>
               <figcaption>Cópia para exibição · dados pessoais ocultados.</figcaption>
             </figure>
           </div>
@@ -235,8 +245,13 @@
             <div class="filter-group filter-search">
               <label for="searchInput">Buscar projeto</label>
               <input
-                type="text"
+                type="search"
                 id="searchInput"
+                name="project-search"
+                inputmode="search"
+                autocomplete="off"
+                autocapitalize="none"
+                spellcheck="false"
                 placeholder="Ex.: React, 3D, landing page, dashboard..."
               />
             </div>
@@ -269,7 +284,7 @@
             data-reveal="bottom"
             style="--delay: 0.15s"
           >
-            <p id="projectsCounter">0 projetos encontrados</p>
+            <p id="projectsCounter" role="status" aria-live="polite" aria-atomic="true">0 projetos encontrados</p>
           </div>
 
           <div class="projects" id="projectsGrid"></div>
@@ -320,16 +335,18 @@
     </main>
 
     <footer class="reveal" data-reveal="bottom" style="--delay: 0.1s">
-      © 2026 Mateus Vitor — Todos os direitos reservados.
+      <p>© 2026 Mateus Vitor — Todos os direitos reservados.</p>
+      <a class="footer-top" href="#topo">Voltar ao topo <span aria-hidden="true">↑</span></a>
     </footer>
 
     <dialog class="diploma-dialog" id="diploma-dialog" aria-labelledby="diploma-dialog-title">
       <div class="diploma-dialog-bar"><h2 id="diploma-dialog-title">Formação em Análise e Desenvolvimento de Sistemas</h2><button type="button" class="diploma-close" aria-label="Fechar diploma">×</button></div>
-      <img src="img/formacao/diploma-ads.webp" alt="Diploma de Tecnólogo em Análise e Desenvolvimento de Sistemas — Mateus Vitor" width="1400" height="1053" loading="lazy" />
+      <img src="img/formacao/diploma-ads.webp" decoding="async" alt="Diploma de Tecnólogo em Análise e Desenvolvimento de Sistemas — Mateus Vitor" width="1400" height="1053" loading="lazy" />
       <div class="diploma-dialog-footer"><p>Cópia para exibição com dados pessoais ocultados. A assinatura digital pertence ao arquivo original.</p><a href="docs/diploma-ads-exibicao.pdf" target="_blank" rel="noopener noreferrer">Abrir PDF ↗</a></div>
     </dialog>
-    <script src="js/editorial.js"></script>
-    <script src="js/hero.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/project-images.js" defer></script>
+    <script src="js/editorial.js" defer></script>
+    <script src="js/hero.js" defer></script>
+    <script src="js/script.js" defer></script>
   </body>
 </html>

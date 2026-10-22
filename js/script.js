@@ -662,6 +662,15 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   ];
 
+  const responsiveLayout = matchMedia("(max-width: 760px), (max-width: 960px) and (max-height: 580px)");
+  const finePointer = matchMedia("(hover: hover) and (pointer: fine)");
+  const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
+  let revealObserver;
+  let searchTimer;
+  const projectImage = (project) => window.portfolioImages?.[project.image] || {
+    src: project.image, srcset: "", width: 1440, height: 900,
+  };
+
   document.querySelectorAll("[data-hero-project-index]").forEach((preview) => {
     const project = projects[Number(preview.dataset.heroProjectIndex)];
     if (!project) return;
@@ -669,7 +678,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const image = preview.querySelector("img");
     link.href = project.link;
     link.setAttribute("aria-label", `Abrir projeto ${project.title}`);
-    image.src = project.image;
+    const asset = projectImage(project);
+    image.srcset = asset.srcset;
+    image.sizes = "(max-width: 760px) 62vw, (max-width: 960px) and (max-height: 580px) 270px, (max-width: 900px) 50vw, 36vw";
+    image.width = asset.width;
+    image.height = asset.height;
+    image.src = asset.src;
     image.alt = project.title;
     preview.querySelector(".hero-window-bar > span").textContent = project.title.split(" — ")[0];
   });
@@ -682,7 +696,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const projectsCounter = document.getElementById("projectsCounter");
   const projectsPagination = document.getElementById("projectsPagination");
   const emptyState = document.getElementById("emptyState");
-  const projectsPerPage = 12;
+  let projectsPerPage = responsiveLayout.matches ? 6 : 12;
   let filteredProjects = [...projects];
   let currentPage = 1;
 
@@ -691,6 +705,14 @@ document.addEventListener("DOMContentLoaded", () => {
   renderProjects();
   revealOnScroll();
   initFilterEvents();
+  responsiveLayout.addEventListener("change", () => {
+    const firstIndex = (currentPage - 1) * projectsPerPage;
+    projectsPerPage = responsiveLayout.matches ? 6 : 12;
+    currentPage = Math.floor(firstIndex / projectsPerPage) + 1;
+    renderProjects();
+    revealOnScroll();
+  });
+  reducedMotion.addEventListener("change", () => revealOnScroll());
 
   function populateFilters(projectsList) {
     const allStacks = [
@@ -717,7 +739,17 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function initFilterEvents() {
-    searchInput.addEventListener("input", applyFilters);
+    searchInput.addEventListener("input", () => {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(applyFilters, 140);
+    });
+    searchInput.addEventListener("search", applyFilters);
+    searchInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        clearTimeout(searchTimer);
+        applyFilters();
+      }
+    });
     stackFilter.addEventListener("change", applyFilters);
     typeFilter.addEventListener("change", applyFilters);
 
@@ -730,6 +762,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function applyFilters() {
+    clearTimeout(searchTimer);
     const query = searchInput.value.trim().toLowerCase();
     const selectedStack = stackFilter.value;
     const selectedType = typeFilter.value;
@@ -756,6 +789,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function renderProjects(shouldScroll = false) {
+    projectsGrid.querySelectorAll(".reveal").forEach((card) => revealObserver?.unobserve(card));
     projectsGrid.innerHTML = "";
     projectsPagination.innerHTML = "";
 
@@ -790,10 +824,11 @@ document.addEventListener("DOMContentLoaded", () => {
       card.style.setProperty("--delay", `${Math.min(index * 0.04, 0.24)}s`);
 
       const highlightedTags = project.stack.slice(0, 5);
+      const asset = projectImage(project);
 
       card.innerHTML = `
         <div class="card-media">
-          <img src="${project.image}" alt="${project.title}" loading="lazy" />
+          <img src="${asset.src}" srcset="${asset.srcset}" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 960px) and (max-height: 580px) 660px, (max-width: 1100px) 44vw, 420px" width="${asset.width}" height="${asset.height}" alt="${project.title}" loading="lazy" decoding="async" />
           <div class="card-overlay"></div>
 
           <div class="card-badges">
@@ -811,7 +846,7 @@ document.addEventListener("DOMContentLoaded", () => {
               ${highlightedTags.map((tag) => `<span>${tag}</span>`).join("")}
             </div>
 
-            <a href="${project.link}" target="_blank" class="card-link">
+            <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="card-link">
               Ver projeto
               <span aria-hidden="true">→</span>
             </a>
@@ -830,7 +865,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (shouldScroll) {
       document
         .getElementById("projetos")
-        .scrollIntoView({ behavior: "smooth", block: "start" });
+        .scrollIntoView({ behavior: reducedMotion.matches ? "auto" : "smooth", block: "start" });
     }
   }
 
@@ -859,6 +894,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     projectsPagination.appendChild(firstButton);
     projectsPagination.appendChild(previousButton);
+    const summary = document.createElement("span");
+    summary.className = "pagination-summary";
+    summary.textContent = `${currentPage} / ${totalPages}`;
+    summary.setAttribute("aria-label", `Página ${currentPage} de ${totalPages}`);
+    projectsPagination.appendChild(summary);
 
     getVisiblePages(totalPages).forEach((page) => {
       if (page === "...") {
@@ -885,6 +925,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const button = document.createElement("button");
     button.type = "button";
     button.textContent = text;
+    button.className = typeof text === "number" ? "pagination-page" :
+      (text === "Primeira" || text === "Última" ? "pagination-edge" : "pagination-direction");
     button.disabled = Boolean(options.disabled);
     button.setAttribute("aria-label", options.label);
 
@@ -897,6 +939,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (button.disabled || page === currentPage) return;
       currentPage = page;
       renderProjects(true);
+      const replacement = [...projectsPagination.querySelectorAll("button")].find(
+        (item) => item.getAttribute("aria-label") === options.label && !item.disabled,
+      ) || projectsPagination.querySelector(".pagination-direction:not(:disabled)");
+      replacement?.focus({ preventScroll: true });
     });
 
     return button;
@@ -930,6 +976,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function initCardGlow() {
+    if (responsiveLayout.matches || !finePointer.matches || reducedMotion.matches) return;
     const cards = document.querySelectorAll(".card");
 
     cards.forEach((card) => {
@@ -942,6 +989,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function initCardTilt() {
+    if (responsiveLayout.matches || !finePointer.matches || reducedMotion.matches) return;
     const cards = document.querySelectorAll(".card");
 
     cards.forEach((card) => {
@@ -964,31 +1012,25 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function revealOnScroll() {
-    const elements = document.querySelectorAll(".reveal");
-
-    const observer = new IntersectionObserver(
-      (entries) => {
+  function revealOnScroll(root = document) {
+    const elements = root.querySelectorAll(".reveal:not(.active)");
+    if (responsiveLayout.matches || reducedMotion.matches || !("IntersectionObserver" in window)) {
+      elements.forEach((element) => element.classList.add("active"));
+      return;
+    }
+    if (!revealObserver) {
+      revealObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("active");
-            observer.unobserve(entry.target);
-          }
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("active");
+          revealObserver.unobserve(entry.target);
         });
-      },
-      {
-        threshold: 0.14,
-      },
-    );
-
-    elements.forEach((element) => observer.observe(element));
-    window.__revealObserver = observer;
+      }, { threshold: .08 });
+    }
+    elements.forEach((element) => revealObserver.observe(element));
   }
 
   function refreshRevealObserver() {
-    if (window.__revealObserver) {
-      window.__revealObserver.disconnect();
-    }
-    revealOnScroll();
+    revealOnScroll(projectsGrid);
   }
 });

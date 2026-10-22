@@ -11,7 +11,8 @@ function floatingHero() {
   const outro = hero.querySelectorAll(".hero-meta, .hero-details, .hero-bottom");
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
   const finePointer = matchMedia("(hover: hover) and (pointer: fine)");
-  const mobile = matchMedia("(max-width: 600px)");
+  const mobile = matchMedia("(max-width: 760px)");
+  const shortViewport = matchMedia("(max-width: 960px) and (max-height: 580px)");
   const clamp = (value) => Math.max(0, Math.min(1, value));
   const smoothstep = (value) => value * value * (3 - 2 * value);
   let progress = 0;
@@ -28,6 +29,9 @@ function floatingHero() {
   let height = innerHeight;
   let paused = false;
   let focusIntro = false;
+  let enabled = false;
+  let sceneVisible = true;
+  let resizeFrame = 0;
 
   function render() {
     const travel = smoothstep(clamp((progress - .05) / .8));
@@ -42,8 +46,10 @@ function floatingHero() {
     hero.style.setProperty("--intro-y", `${(1 - introOpacity) * 35}px`);
     hero.style.setProperty("--pointer-x", `${pointerX.toFixed(2)}px`);
     hero.style.setProperty("--pointer-y", `${pointerY.toFixed(2)}px`);
-    intro.inert = introOpacity < .5;
-    outro.forEach((element) => { element.inert = opacity < .15; });
+    if (intro.inert !== (introOpacity < .5)) intro.inert = introOpacity < .5;
+    outro.forEach((element) => {
+      if (element.inert !== (opacity < .15)) element.inert = opacity < .15;
+    });
     if (focusIntro && introOpacity > .95) {
       intro.focus({ preventScroll: true });
       focusIntro = false;
@@ -68,11 +74,14 @@ function floatingHero() {
   }
 
   function requestTick() {
-    if (!frame && !reducedMotion.matches && !document.hidden) frame = requestAnimationFrame(tick);
+    if (!frame && enabled && sceneVisible && !document.hidden) frame = requestAnimationFrame(tick);
   }
 
   function onScroll() {
-    targetProgress = clamp((scrollY - start) / distance);
+    if (!enabled) return;
+    const next = clamp((scrollY - start) / distance);
+    if (next === targetProgress && Math.abs(next - progress) < .0001) return;
+    targetProgress = next;
     requestTick();
   }
 
@@ -88,10 +97,10 @@ function floatingHero() {
     cancelAnimationFrame(frame);
     frame = 0;
     lastTime = 0;
-    const reduced = reducedMotion.matches;
-    hero.classList.toggle("hero--animated", !reduced);
-    toggle.hidden = reduced;
-    if (reduced) {
+    enabled = !reducedMotion.matches && !shortViewport.matches;
+    hero.classList.toggle("hero--animated", enabled);
+    toggle.hidden = !enabled;
+    if (!enabled) {
       hero.removeAttribute("style");
       intro.inert = false;
       outro.forEach((element) => { element.inert = false; });
@@ -103,7 +112,7 @@ function floatingHero() {
   }
 
   stage.addEventListener("pointermove", (event) => {
-    if (paused || reducedMotion.matches || !finePointer.matches) return;
+    if (!enabled || paused || !finePointer.matches || event.pointerType === "touch") return;
     const bounds = stage.getBoundingClientRect();
     targetX = ((event.clientX - bounds.left) / bounds.width - .5) * 24;
     targetY = ((event.clientY - bounds.top) / bounds.height - .5) * 20;
@@ -123,23 +132,50 @@ function floatingHero() {
     requestTick();
   });
   hero.querySelector(".hero-scroll").addEventListener("click", (event) => {
-    if (reducedMotion.matches) return;
+    if (!enabled) return;
     event.preventDefault();
     focusIntro = true;
     scrollTo({ top: start + distance * .94, behavior: "smooth" });
   });
   intro.tabIndex = -1;
   window.addEventListener("scroll", onScroll, { passive: true });
-  window.addEventListener("resize", measure, { passive: true });
+  window.addEventListener("resize", () => {
+    if (resizeFrame) return;
+    resizeFrame = requestAnimationFrame(() => {
+      resizeFrame = 0;
+      measure();
+      if (enabled) render();
+    });
+  }, { passive: true });
   window.addEventListener("pageshow", configure);
   document.addEventListener("visibilitychange", () => {
     if (document.hidden) {
       cancelAnimationFrame(frame);
       frame = 0;
       lastTime = 0;
-    } else onScroll();
+    } else {
+      onScroll();
+      requestTick();
+    }
   });
   reducedMotion.addEventListener("change", configure);
+  shortViewport.addEventListener("change", configure);
+  mobile.addEventListener("change", configure);
+  if ("IntersectionObserver" in window) {
+    const visibility = new IntersectionObserver(([entry]) => {
+      sceneVisible = entry.isIntersecting;
+      hero.classList.toggle("hero-motion-offscreen", !sceneVisible);
+      if (!sceneVisible) {
+        cancelAnimationFrame(frame);
+        frame = 0;
+        lastTime = 0;
+      } else {
+        onScroll();
+        requestTick();
+      }
+    });
+    visibility.observe(stage);
+  }
   configure();
 }
 
