@@ -32,6 +32,9 @@ function floatingHero() {
   let enabled = false;
   let sceneVisible = true;
   let resizeFrame = 0;
+  function updateMotionLabel() {
+    toggle.setAttribute("aria-label", window.PortfolioI18n.t(paused ? "hero.resume" : "hero.pause"));
+  }
 
   function render() {
     const travel = smoothstep(clamp((progress - .05) / .8));
@@ -126,7 +129,7 @@ function floatingHero() {
     paused = !paused;
     hero.classList.toggle("hero-motion-paused", paused);
     toggle.setAttribute("aria-pressed", String(paused));
-    toggle.setAttribute("aria-label", paused ? "Retomar movimento flutuante" : "Pausar movimento flutuante");
+    updateMotionLabel();
     toggle.firstElementChild.textContent = paused ? "▷" : "Ⅱ";
     targetX = targetY = 0;
     requestTick();
@@ -161,6 +164,7 @@ function floatingHero() {
   reducedMotion.addEventListener("change", configure);
   shortViewport.addEventListener("change", configure);
   mobile.addEventListener("change", configure);
+  window.addEventListener("portfolio:languagechange", updateMotionLabel);
   if ("IntersectionObserver" in window) {
     const visibility = new IntersectionObserver(([entry]) => {
       sceneVisible = entry.isIntersecting;

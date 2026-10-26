@@ -1,667 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const projects = [
-    {
-      title: "A Casa da Meia-Noite — Mistério Interativo",
-      description:
-        "Mansão ilustrada de mistério com cômodos exploráveis, três pistas e um final secreto. Conheça uma bruxa, um vampiro e um fantasma, descubra sua criatura em um quiz e continue a aventura com progresso salvo no navegador. Inclui animações de rolagem, teias em SVG e layout responsivo.",
-      image: "img/portifolio/a-casa-da-meia-noite.jpg",
-      link: "https://a-casa-da-meia-noite.vercel.app/",
-      type: "Interactive Storytelling",
-      stack: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "Tailwind CSS",
-        "SVG",
-        "Responsive Design",
-      ],
-      featured: true,
-    },
-    {
-      title: "Ecos da Terra-média — Jornada Interativa em 3D",
-      description:
-        "Experiência de fãs de O Senhor dos Anéis, com um anel 3D que percorre as seções conforme o scroll. Reúne camadas em parallax, mapa da Terra-média, seis personagens, criaturas e um quiz de afinidade, com imagens responsivas e renderização sob demanda.",
-      image: "img/portifolio/ecos-da-terra-media.webp",
-      link: "https://ecos-da-terra-media.vercel.app/",
-      type: "3D Web Experience",
-      stack: [
-        "Three.js",
-        "JavaScript",
-        "Vite",
-        "WebGL",
-        "CSS",
-        "Parallax",
-        "Responsive Design",
-        "Performance",
-      ],
-      featured: true,
-    },
-    {
-      title: "Iridescência — Atlas Entomológico em 3D",
-      description:
-        "Experiência interativa inspirada em uma prancha científica, com uma borboleta 3D iridescente, nervuras delicadas e reflexos que mudam conforme a luz e o ângulo de observação. Permite girar e aproximar o espécime, alternar vistas, explorar a estrutura e consultar notas de campo.",
-      image: "img/portifolio/iridescencia.png",
-      link: "https://bug-cyan.vercel.app/",
-      type: "Creative Coding",
-      stack: [
-        "React",
-        "TypeScript",
-        "Three.js",
-        "Vite",
-        "WebGL",
-        "GLSL",
-        "Creative Front-end",
-      ],
-      featured: true,
-    },
-    {
-      title: "Flor Surreal — Botânica Especulativa em 3D",
-      description:
-        "Experiência artística em formato de prancha botânica, com uma flor 3D translúcida, reflexos de arco-íris que mudam conforme o ângulo e um halo suave de luz. Inclui inspeção interativa, nervuras e notas científicas em uma composição editorial responsiva.",
-      image: "img/portifolio/flor-surreal.png",
-      link: "https://florsurreal.vercel.app/",
-      type: "Creative Coding",
-      stack: [
-        "React",
-        "TypeScript",
-        "Three.js",
-        "Vite",
-        "WebGL",
-        "GLSL",
-        "Creative Front-end",
-      ],
-      featured: true,
-    },
-    {
-      title: "Forza Horizon Start Screen - React Game UI",
-      description:
-        "Tela inicial inspirada em jogos de corrida, com ceu neon, estrada em perspectiva, carros em silhueta e clima de festival.",
-      image: "img/portifolio/forza-horizon-start.png",
-      link: "https://race-forza.vercel.app/",
-      type: "Game UI",
-      stack: ["React", "Vite", "CSS", "Lucide React", "Responsive Design"],
-      featured: true,
-    },
-    {
-      title: "Glass Effect from ThreeJS - Interface Interativa",
-      description:
-        "Experiencia visual com placas de vidro reativas ao cursor, brilho suave, profundidade e atmosfera de dashboard premium.",
-      image: "img/portifolio/glass-effect-threejs.png",
-      link: "https://glass-effect-xi.vercel.app/",
-      type: "Creative Coding",
-      stack: ["React", "Vite", "CSS", "SVG", "JavaScript"],
-      featured: true,
-    },
-    {
-      title: "Portal Dimensional - Experiencia Canvas e GSAP",
-      description:
-        "SPA visual com portal neon, aneis animados, particulas em Canvas e timeline cinematografica feita com GSAP.",
-      image: "img/portifolio/portal-dimensional.png",
-      link: "https://portal-dimensional.vercel.app/",
-      type: "Experimento",
-      stack: ["React", "Vite", "CSS", "Canvas API", "GSAP"],
-      featured: true,
-    },
-    {
-      title: "Barista One - Dashboard Premium de Cafe",
-      description:
-        "Dashboard SaaS inspirado no universo do cafe, com dados mockados, componentes reutilizaveis e visual glassmorphism.",
-      image: "img/portifolio/coffee-dashboard.png",
-      link: "https://cafe-umber-five.vercel.app/",
-      type: "Dashboard",
-      stack: ["React", "Vite", "CSS", "Lucide React", "Responsive Design"],
-      featured: true,
-    },
-    {
-      title: "Interactive Garden - Flores com Next.js",
-      description:
-        "Experiencia interativa em que cada clique planta uma flor unica, com vento, caules em SVG e animacoes em CSS.",
-      image: "img/portifolio/interactive-garden.png",
-      link: "https://click-flowers-gray.vercel.app/",
-      type: "Experimento",
-      stack: ["Next.js", "React", "TypeScript", "CSS", "SVG"],
-      featured: true,
-    },
-    {
-      title: "Balduíno IV — Poster Editorial",
-      description:
-        "Experiência editorial inspirada em pôsteres históricos, com tipografia monumental e atmosfera dramática.",
-      image: "img/portifolio/Balduino.png",
-      link: "projetos/Balduino_IV/",
-      type: "Editorial",
-      stack: ["HTML", "CSS", "Typography", "UI Design"],
-      featured: true,
-    },
-    {
-      title: "The Blood Crowned Monarch",
-      description:
-        "Projeto dark-fantasy com estética cinematográfica, efeitos sutis e narrativa visual intensa.",
-      image: "img/portifolio/monarch.png",
-      link: "projetos/monarch/",
-      type: "Landing Page",
-      stack: ["UI", "UX", "Front-end", "Cinematic"],
-      featured: true,
-    },
-    {
-      title: "Dream House — Real Estate Landing Page",
-      description:
-        "Landing page imobiliária com abordagem editorial, tipografia refinada e elementos decorativos sutis inspirados em layouts cinematográficos.",
-      image: "img/portifolio/dream-house.png",
-      link: "projetos/dream-house-home/",
-      type: "Landing Page",
-      stack: ["HTML", "CSS", "Editorial", "UI Design"],
-      featured: true,
-    },
-    {
-      title: "O Pinguim e a Montanha (meme)",
-      description:
-        "Experimento visual e narrativo inspirado em um meme existencial, combinando humor, atmosfera e direção de arte.",
-      image: "img/portifolio/pingu.png",
-      link: "projetos/penguin/",
-      type: "Experimento",
-      stack: ["HTML", "CSS", "JavaScript", "UI", "Front-end", "Cinemático"],
-      featured: true,
-    },
-    {
-      title: "Xadrez 3D — Experiência Cinematográfica",
-      description:
-        "Experimento visual em WebGL com atmosfera contemplativa, iluminação dramática e composição inspirada na filosofia do xadrez.",
-      image: "img/portifolio/chess3d.png",
-      link: "projetos/chess-3d/",
-      type: "3D Web Experience",
-      stack: ["Three.js", "WebGL", "JavaScript", "GSAP", "React", "CSS", "3D"],
-      featured: true,
-    },
-    {
-      title: "Cosmic Drift Surfista Prateado — Experiência Visual Espacial",
-      description:
-        "Projeto com foco em fluidez visual, profundidade falsa e geração procedural de elementos para criar uma experiência espacial imersiva.",
-      image: "img/portifolio/surfer.png",
-      link: "projetos/Surfista_Prateado/",
-      type: "Experimento",
-      stack: ["React", "Vite", "JavaScript", "CSS Animations", "Performance"],
-      featured: false,
-    },
-    {
-      title: "Baldur’s Gate 3 — Codex Cinematográfico Interativo",
-      description:
-        "Interface estilo grimório arcano com foco em narrativa, atmosfera sombria e estrutura orientada a dados.",
-      image: "img/portifolio/BDG3.png",
-      link: "projetos/bdg3-characters/",
-      type: "Interface Interativa",
-      stack: ["HTML5", "CSS3", "JavaScript", "AOS", "UI/UX", "Dark Theme"],
-      featured: false,
-    },
-    {
-      title: "JoJo — Experiência Cinematográfica Interativa",
-      description:
-        "Projeto visual inspirado em JoJo’s Bizarre Adventure com navegação imersiva, mudança de atmosfera e forte identidade estética.",
-      image: "img/portifolio/Jojo.png",
-      link: "projetos/Jojo/",
-      type: "Interface Interativa",
-      stack: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "UI/UX"],
-      featured: false,
-    },
-    {
-      title: "NeuroFlow AI — Landing Page SaaS com Next.js",
-      description:
-        "Landing page SaaS moderna com base escalável, foco em estrutura, animações suaves e organização por componentes.",
-      image: "img/portifolio/neuroflow_ai.png",
-      link: "https://github.com/Nocturnnn/Neuroflow_AI",
-      type: "SaaS",
-      stack: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "Tailwind CSS v4",
-        "Framer Motion",
-      ],
-      featured: true,
-    },
-    {
-      title: "Bedroom Aparts — Dashboard Imobiliário com React + Motion",
-      description:
-        "Dashboard premium com visualização de dados, glassmorphism, microinterações e arquitetura pronta para evolução.",
-      image: "img/portifolio/Bedroom Aparts.png",
-      link: "https://bedroom-aparts.vercel.app/",
-      type: "Dashboard",
-      stack: [
-        "React",
-        "TypeScript",
-        "Vite",
-        "Tailwind CSS",
-        "Motion",
-        "Recharts",
-      ],
-      featured: true,
-    },
-    {
-      title: "Karzone Luxury Automotive — Experiência Web Premium",
-      description:
-        "Landing page automotiva com storytelling visual, rolagem cinematográfica e vitrine interativa de veículos.",
-      image: "img/portifolio/Cars.png",
-      link: "https://cars-delta-two.vercel.app/",
-      type: "Landing Page",
-      stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Motion"],
-      featured: true,
-    },
-    {
-      title: "Vantage Expedition — Experiência Web Cinematográfica",
-      description:
-        "Projeto inspirado em explorações alpinas, com interface editorial, expansão de cards e atmosfera imersiva.",
-      image: "img/portifolio/Vantage.png",
-      link: "https://vantage-adventure.vercel.app/",
-      type: "Landing Page",
-      stack: [
-        "React",
-        "TypeScript",
-        "Tailwind CSS",
-        "Motion",
-        "Responsive Design",
-      ],
-      featured: true,
-    },
-    {
-      title: "NocturnGear — Experiência Web Premium Outdoor",
-      description:
-        "Projeto com estética robusta e sofisticada, grid interativo de produtos e direção visual voltada ao universo outdoor.",
-      image: "img/portifolio/nocturngear.png",
-      link: "https://nocturn-gear.vercel.app/",
-      type: "E-commerce UI",
-      stack: [
-        "React",
-        "TypeScript",
-        "Tailwind CSS",
-        "Motion",
-        "Responsive Design",
-      ],
-      featured: true,
-    },
-    {
-      title: "Nike 3D Product Experience — Showcase Interativo de Produto",
-      description:
-        "Experiência 3D de produto com WebGL, rotação dinâmica, scroll guiado e foco total no tênis como protagonista visual.",
-      image: "img/portifolio/Nike.png",
-      link: "https://github.com/Nocturnnn/nike-shoe-landing",
-      type: "3D Web Experience",
-      stack: [
-        "React",
-        "TypeScript",
-        "Three.js",
-        "React Three Fiber",
-        "GSAP",
-        "Framer Motion",
-        "Tailwind CSS",
-        "WebGL",
-      ],
-      featured: true,
-    },
-    {
-      title: "Pagani Digital Showroom — Experiência Web 3D",
-      description:
-        "Showroom automotivo digital com iluminação cinematográfica, renderização 3D em tempo real e ambientação premium.",
-      image: "img/portifolio/pagani.png",
-      link: "https://github.com/Nocturnnn/pagani-automobili",
-      type: "3D Web Experience",
-      stack: [
-        "Next.js",
-        "React",
-        "Three.js",
-        "React Three Fiber",
-        "GSAP",
-        "ScrollTrigger",
-        "WebGL",
-      ],
-      featured: true,
-    },
-    {
-      title: "Neo-Street — Experiência Web Inspirada em Streetwear Futurista",
-      description:
-        "Projeto visual ousado com estética urbana digital, grids marcantes e identidade de marca experimental.",
-      image: "img/portifolio/neo street.png",
-      link: "https://neo-street.vercel.app/",
-      type: "E-commerce UI",
-      stack: [
-        "React",
-        "TypeScript",
-        "Tailwind CSS",
-        "UI/UX Design",
-        "Creative Front-end",
-      ],
-      featured: true,
-    },
-    {
-      title: "Portfolio Scene — Hero Cinematográfica Interativa",
-      description:
-        "Experimento visual desenvolvido para explorar uma abertura de portfólio mais artística, com tipografia monumental, parallax no mouse, cards centralizados com falso 3D e acabamento glass premium.",
-      image: "img/portifolio/cinematic-portifolio.png",
-      link: "https://portfolio-cinematic-brown.vercel.app/",
-      type: "Experimento",
-      stack: [
-        "React",
-        "Vite",
-        "JavaScript",
-        "CSS",
-        "Parallax",
-        "Glassmorphism",
-        "Creative Front-end",
-      ],
-      featured: true,
-    },
-    {
-      title: "Dark Fantasy Living Wallpaper — Experiência Web 3D Ritualística",
-      description:
-        "Projeto experimental inspirado na estética de wallpapers cinematográficos de desktop, transformando esse conceito em uma experiência web viva com modelo 3D central, halo luminoso, partículas, butterflies e atmosfera dark fantasy em tempo real.",
-      image: "img/portifolio/dark-fantasy.png",
-      link: "https://github.com/Nocturnnn/dark-fantasy-site",
-      type: "3D Web Experience",
-      stack: [
-        "React",
-        "Vite",
-        "JavaScript",
-        "Three.js",
-        "React Three Fiber",
-        "GLB",
-        "Tailwind CSS v4",
-        "Framer Motion",
-        "WebGL",
-      ],
-      featured: true,
-    },
-    {
-      title: "Eterna — Poster Editorial Sci-Fi Interativo",
-      description:
-        "Experimento visual desenvolvido em React com proposta editorial e atmosfera sci-fi minimalista, combinando tipografia monumental animada, glow reativo ao mouse, parallax em múltiplas camadas, efeito liquid distortion nas letras e microdetalhes de interface para criar uma hero section artística e cinematográfica.",
-      image: "img/portifolio/eterna-design.png",
-      link: "https://eterna-hero.vercel.app/",
-      type: "Experimento",
-      stack: [
-        "React",
-        "Vite",
-        "JavaScript",
-        "CSS",
-        "Creative Front-end",
-        "Parallax",
-        "Motion Design",
-      ],
-      featured: true,
-    },
-    {
-      title: "Portal Terra — Boas-vindas para Alienígenas 👽🌍",
-      description:
-        "Landing page experimental com estética sci-fi que simula um portal diplomático da Terra, tentando convencer alienígenas a não atacarem o planeta. Combina humor, vídeo de fundo e interface cinematográfica para criar uma experiência imersiva e criativa.",
-      image: "img/portifolio/bem vindo há terra.png",
-      link: "https://welcome-earth-five.vercel.app/",
-      type: "Landing Page",
-      stack: [
-        "React",
-        "Vite",
-        "JavaScript",
-        "CSS",
-        "UI/UX",
-        "Motion",
-        "Creative Front-end",
-      ],
-      featured: true,
-    },
-    {
-      title: "Noc Checkbox — Dashboard Analítico Premium",
-      description:
-        "Dashboard moderno com foco em visualização de dados, combinando glassmorphism, microinterações, gráficos interativos e layout inspirado em interfaces sci-fi. Desenvolvido para transformar dados complexos em uma experiência visual clara, rápida e elegante.",
-      image: "img/portifolio/noccheckbox.png",
-      link: "https://dashboard-checkbox-jt1l.vercel.app/",
-      type: "Dashboard",
-      stack: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "Tailwind CSS",
-        "Recharts",
-        "Lucide Icons",
-        "UI/UX",
-        "Data Visualization",
-      ],
-      featured: true,
-    },
-    {
-      title: "Conduit API — WhatsApp Link Generator",
-      description:
-        "Landing page SaaS estilizada para geração de links do WhatsApp, com foco em conversão, UX refinada, microinterações e identidade visual premium inspirada no ecossistema WhatsApp.",
-      image: "img/portifolio/WhatsApp_Api.png",
-      link: "https://whats-app-api-sigma.vercel.app/",
-      type: "SaaS",
-      stack: [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "Tailwind CSS",
-        "Framer Motion",
-        "App Router",
-        "Server Components",
-        "UI/UX",
-      ],
-      featured: true,
-    },
-    {
-      title: "Yamara — Premium Motorcycle Showcase",
-      description:
-        "Showcase automotivo premium com visual futurista, hero cinematográfico, scroll de modelos e microinterações elegantes para a marca fictícia Yamara.",
-      image: "img/portifolio/yamara.png",
-      link: "https://yamara.vercel.app/",
-      type: "Landing Page",
-      stack: [
-        "React",
-        "TypeScript",
-        "Vite",
-        "CSS",
-        "UI/UX",
-        "Responsive Design",
-        "Motion",
-      ],
-      featured: true,
-    },
-    {
-      title: "Steel Ball Run — Experiência Cinematográfica Interativa",
-      description:
-        "Homenagem visual inspirada em JoJo: Steel Ball Run, com scroll cinematográfico, transições dramáticas, atmosfera dinâmica e foco total na identidade de cada personagem.",
-      image: "img/portifolio/steel ball run.png",
-      link: "https://steel-ball-run-site.vercel.app/",
-      type: "Interface Interativa",
-      stack: [
-        "React",
-        "TypeScript",
-        "Vite",
-        "Framer Motion",
-        "UI/UX",
-        "Creative Front-end",
-      ],
-      featured: true,
-    },
-    {
-      title: "Diepio Clone — Arcade Shooter com TypeScript",
-      description:
-        "Jogo de navegador inspirado em diep.io, com combate 2D em Canvas, progressão por XP, level up e upgrades para transformar o tanque em uma máquina de caos geométrico.",
-      image: "img/portifolio/diepio.png",
-      link: "https://diepio-clone.vercel.app/",
-      type: "Browser Game",
-      stack: ["TypeScript", "Vite", "HTML5 Canvas", "Game Dev", "2D"],
-      featured: true,
-    },
-    {
-      title: "Calm Access Login — Interface de Login com Next.js 15",
-      description:
-        "Tela de login refinada com validação local, mostrar e ocultar senha, indicador de força, alerta de Caps Lock, modo de recuperação e conta demo para teste rápido.",
-      image: "img/portifolio/login-1.png",
-      link: "https://login-1-rose.vercel.app/",
-      type: "Authentication UI",
-      stack: [
-        "Next.js 15",
-        "React 19",
-        "TypeScript",
-        "Tailwind CSS 4",
-        "Lucide React",
-        "Motion",
-      ],
-      featured: true,
-    },
-    {
-      title: "White Stone — Experiência Espiritual Interativa",
-      description:
-        "Experiência interativa inspirada na simbologia da pedra branca de Apocalipse 2:17.",
-      image: "img/portifolio/Pedra branca.png",
-      link: "https://sua-pedra-branca.vercel.app/",
-      type: "Interface Interativa",
-      stack: [
-        "React",
-        "JavaScript",
-        "Framer Motion",
-        "CSS",
-        "UI/UX",
-        "Creative Front-end",
-      ],
-      featured: true,
-    },
-    {
-      title: "Elden Ring — Experiência Editorial Interativa",
-      description:
-        "Experiência front-end autoral desenvolvida com React, TypeScript, Vite e Framer Motion, que transforma a estética sombria de Elden Ring em uma apresentação editorial interativa.",
-      image: "img/portifolio/elden-editorial.png",
-      link: "https://elden-editorial.vercel.app/",
-      type: "Interface Interativa",
-      stack: [
-        "React",
-        "TypeScript",
-        "Vite",
-        "Framer Motion",
-        "UI/UX",
-        "Creative Front-end",
-      ],
-      featured: true,
-    },
-    {
-      title: "Immersia — Landing Page para Ativações Tecnológicas",
-      description:
-        "Projeto conceito de landing page premium com visual tecnológico, animações refinadas e foco em performance, experiência e posicionamento de marca.",
-      image: "img/portifolio/Emmersia.png",
-      link: "https://immersia-murex.vercel.app/",
-      type: "Freelance Project",
-      stack: ["React", "TypeScript", "Vite", "CSS", "Performance", "Branding"],
-      featured: true,
-    },
-    {
-      title: "Login Lamp — Interface de Login Interativa",
-      description:
-        "Tela de login criada em React com uma lâmpada interativa ao lado do formulário: ao puxar a corda, a luz liga e desliga, alterando toda a atmosfera da experiência e deixando a autenticação muito mais memorável.",
-      image: "img/portifolio/login-lamp.png",
-      link: "https://login-lamp-seven.vercel.app/",
-      type: "Authentication UI",
-      stack: [
-        "React",
-        "Vite",
-        "JavaScript",
-        "UI/UX",
-        "Motion",
-        "Creative Front-end",
-      ],
-      featured: true,
-    },
-    {
-      title: "Nubank Concept — Landing Page Premium",
-      description:
-        "Landing page conceitual inspirada no universo Nubank, com hero cinematográfico centrado no cartão Ultravioleta, narrativa visual premium, animações refinadas e foco em branding, confiança e conversão.",
-      image: "img/portifolio/Nubank.png",
-      link: "https://nubank-rho.vercel.app/",
-      type: "Landing Page",
-      stack: ["React", "TypeScript", "Vite", "UI/UX", "Branding", "Motion"],
-      featured: true,
-    },
-    {
-      title: "Sistema Solar — Experiência Web Interativa",
-      description:
-        "Aplicação web interativa sobre o Sistema Solar, com navegação entre os oito planetas, interface imersiva, animações fluidas e adaptação dinâmica de cores, fundo e painéis conforme o planeta selecionado.",
-      image: "img/portifolio/Sistema Solar.png",
-      link: "https://sistema-solar-wheat.vercel.app/",
-      type: "Interface Interativa",
-      stack: [
-        "React",
-        "TypeScript",
-        "Vite",
-        "Framer Motion",
-        "UI/UX",
-        "Responsive Design",
-      ],
-      featured: true,
-    },
-    {
-      title: "Pintura Digital em React — Experiência Ilustrada Interativa",
-      description:
-        "Experiência visual em React que constrói uma pintura digital em camadas, com elementos ilustrados, composição artística e animações sutis.",
-      image: "img/portifolio/Pintura digital.png",
-      link: "https://pintura-artistica.vercel.app/",
-      type: "Experimento",
-      stack: [
-        "React",
-        "TypeScript",
-        "Vite",
-        "Framer Motion",
-        "Creative Front-end",
-        "UI Design",
-      ],
-      featured: true,
-    },
-    {
-      title: "Palavras em Partículas — Experimento Canvas Interativo",
-      description:
-        "Experimento em Canvas onde o texto digitado vira partículas interativas que reagem ao mouse e retornam suavemente à forma original.",
-      image: "img/portifolio/Palavras-particulas.png",
-      link: "https://palavras-em-particulas.vercel.app/",
-      type: "Experimento",
-      stack: [
-        "React",
-        "JavaScript",
-        "Canvas API",
-        "requestAnimationFrame",
-        "Physics",
-        "Creative Front-end",
-      ],
-      featured: true,
-    },
-    {
-      title: "Anime X1: Mesa dos Destinos",
-      description:
-        "Simulador de batalhas entre personagens de anime com cartas, ranking, filtros, modo caos, resultado narrativo e motor logico para atributos, poderes, fraquezas, counters e escala divina.",
-      image: "img/portifolio/x1animes.png",
-      link: "https://x1-animes.vercel.app/",
-      type: "Simulador",
-      stack: [
-        "React",
-        "TypeScript",
-        "Vite",
-        "Framer Motion",
-        "Game Logic",
-        "UI/UX",
-      ],
-      featured: true,
-    },
-    {
-      title: "Relógio Analógico — Experiência Visual",
-      description:
-        "Relógio analógico em tela cheia com marcações detalhadas, ponteiros dinâmicos e visual escuro sofisticado com brilho, profundidade e acabamento responsivo.",
-      image: "img/portifolio/Relógio analógico.png",
-      link: "https://relogio-de-ponteiro.vercel.app/",
-      type: "Interface Interativa",
-      stack: [
-        "React",
-        "TypeScript",
-        "Vite",
-        "CSS",
-        "Responsive Design",
-        "Motion",
-      ],
-      featured: true,
-    },
-  ];
-
+  const i18n = window.PortfolioI18n;
+  const t = (key, params) => i18n.t(key, params);
+  const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[character]);
+  const catalog = window.portfolioProjects;
+  const localizeProject = (project) => ({
+    ...project,
+    title: t(`project.${project.id}.title`),
+    description: t(`project.${project.id}.description`),
+  });
+  let projects = catalog.map(localizeProject);
+  const normalize = (value) => value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
   const responsiveLayout = matchMedia("(max-width: 760px), (max-width: 960px) and (max-height: 580px)");
   const finePointer = matchMedia("(hover: hover) and (pointer: fine)");
   const reducedMotion = matchMedia("(prefers-reduced-motion: reduce)");
@@ -671,22 +19,26 @@ document.addEventListener("DOMContentLoaded", () => {
     src: project.image, srcset: "", width: 1440, height: 900,
   };
 
-  document.querySelectorAll("[data-hero-project-index]").forEach((preview) => {
-    const project = projects[Number(preview.dataset.heroProjectIndex)];
-    if (!project) return;
-    const link = preview.querySelector("a");
-    const image = preview.querySelector("img");
-    link.href = project.link;
-    link.setAttribute("aria-label", `Abrir projeto ${project.title}`);
-    const asset = projectImage(project);
-    image.srcset = asset.srcset;
-    image.sizes = "(max-width: 760px) 62vw, (max-width: 960px) and (max-height: 580px) 270px, (max-width: 900px) 50vw, 36vw";
-    image.width = asset.width;
-    image.height = asset.height;
-    image.src = asset.src;
-    image.alt = project.title;
-    preview.querySelector(".hero-window-bar > span").textContent = project.title.split(" — ")[0];
-  });
+  function updateHeroProjects() {
+    document.querySelectorAll("[data-hero-project-index]").forEach((preview) => {
+      const project = projects[Number(preview.dataset.heroProjectIndex)];
+      if (!project) return;
+      const link = preview.querySelector("a");
+      const image = preview.querySelector("img");
+      link.href = project.link;
+      link.setAttribute("aria-label", t("projects.open", { title: project.title }));
+      const asset = projectImage(project);
+      image.srcset = asset.srcset;
+      image.sizes = "(max-width: 760px) 62vw, (max-width: 960px) and (max-height: 580px) 270px, (max-width: 900px) 50vw, 36vw";
+      image.width = asset.width;
+      image.height = asset.height;
+      image.src = asset.src;
+      image.alt = project.title;
+      preview.querySelector(".hero-window-bar > span").textContent = project.title.split(" — ")[0];
+    });
+
+  }
+  updateHeroProjects();
 
   const projectsGrid = document.getElementById("projectsGrid");
   const stackFilter = document.getElementById("stackFilter");
@@ -713,29 +65,27 @@ document.addEventListener("DOMContentLoaded", () => {
     revealOnScroll();
   });
   reducedMotion.addEventListener("change", () => revealOnScroll());
+  window.addEventListener("portfolio:languagechange", () => {
+    projects = catalog.map(localizeProject);
+    populateFilters(projects);
+    updateHeroProjects();
+    applyFilters({ resetPage: false });
+  });
 
   function populateFilters(projectsList) {
-    const allStacks = [
-      ...new Set(projectsList.flatMap((project) => project.stack)),
-    ].sort((a, b) => a.localeCompare(b, "pt-BR"));
-
-    const allTypes = [
-      ...new Set(projectsList.map((project) => project.type)),
-    ].sort((a, b) => a.localeCompare(b, "pt-BR"));
-
-    allStacks.forEach((stack) => {
-      const option = document.createElement("option");
-      option.value = stack;
-      option.textContent = stack;
-      stackFilter.appendChild(option);
-    });
-
-    allTypes.forEach((type) => {
-      const option = document.createElement("option");
-      option.value = type;
-      option.textContent = type;
-      typeFilter.appendChild(option);
-    });
+    const selectedStack = stackFilter.value || "all";
+    const selectedType = typeFilter.value || "all";
+    stackFilter.replaceChildren(new Option(t("filters.allStacks"), "all"));
+    typeFilter.replaceChildren(new Option(t("filters.allTypes"), "all"));
+    const compare = new Intl.Collator(i18n.locale).compare;
+    [...new Set(projectsList.flatMap((project) => project.stack))]
+      .sort((a, b) => compare(t(`tag.${a}`), t(`tag.${b}`)))
+      .forEach((value) => stackFilter.appendChild(new Option(t(`tag.${value}`), value)));
+    [...new Set(projectsList.map((project) => project.type))]
+      .sort((a, b) => compare(t(`category.${a}`), t(`category.${b}`)))
+      .forEach((value) => typeFilter.appendChild(new Option(t(`category.${value}`), value)));
+    stackFilter.value = selectedStack;
+    typeFilter.value = selectedType;
   }
 
   function initFilterEvents() {
@@ -761,19 +111,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function applyFilters() {
+  function applyFilters(options = {}) {
     clearTimeout(searchTimer);
-    const query = searchInput.value.trim().toLowerCase();
+    const query = normalize(searchInput.value.trim());
     const selectedStack = stackFilter.value;
     const selectedType = typeFilter.value;
 
     filteredProjects = projects.filter((project) => {
-      const matchesSearch =
-        !query ||
-        project.title.toLowerCase().includes(query) ||
-        project.description.toLowerCase().includes(query) ||
-        project.type.toLowerCase().includes(query) ||
-        project.stack.some((item) => item.toLowerCase().includes(query));
+      const searchable = [
+        i18n.projectSearchText(project.id), project.title, project.description,
+        project.type, t(`category.${project.type}`), ...project.stack,
+        ...project.stack.map((tag) => t(`tag.${tag}`)),
+      ].join(" ");
+      const matchesSearch = !query || normalize(searchable).includes(query);
 
       const matchesStack =
         selectedStack === "all" || project.stack.includes(selectedStack);
@@ -784,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return matchesSearch && matchesStack && matchesType;
     });
 
-    currentPage = 1;
+    if (options.resetPage !== false) currentPage = 1;
     renderProjects();
   }
 
@@ -797,7 +147,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const totalPages = Math.ceil(totalProjects / projectsPerPage);
 
     if (!totalProjects) {
-      projectsCounter.textContent = "0 projetos encontrados";
+      projectsCounter.textContent = t("projects.emptyCounter");
       emptyState.classList.remove("hidden");
       projectsPagination.classList.add("hidden");
       refreshRevealObserver();
@@ -813,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const pageEnd = Math.min(pageStart + projectsPerPage, totalProjects);
     const pageProjects = filteredProjects.slice(pageStart, pageEnd);
 
-    projectsCounter.textContent = `${pageStart + 1}-${pageEnd} de ${totalProjects} projeto${totalProjects > 1 ? "s" : ""} encontrado${totalProjects > 1 ? "s" : ""}`;
+    projectsCounter.textContent = totalProjects === 1 ? t("projects.one") : t("projects.count", { start: pageStart + 1, end: pageEnd, total: totalProjects });
 
     pageProjects.forEach((project, index) => {
       const card = document.createElement("article");
@@ -828,26 +178,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
       card.innerHTML = `
         <div class="card-media">
-          <img src="${asset.src}" srcset="${asset.srcset}" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 960px) and (max-height: 580px) 660px, (max-width: 1100px) 44vw, 420px" width="${asset.width}" height="${asset.height}" alt="${project.title}" loading="lazy" decoding="async" />
+          <img src="${escapeHtml(asset.src)}" srcset="${escapeHtml(asset.srcset)}" sizes="(max-width: 760px) calc(100vw - 40px), (max-width: 960px) and (max-height: 580px) 660px, (max-width: 1100px) 44vw, 420px" width="${asset.width}" height="${asset.height}" alt="${escapeHtml(project.title)}" loading="lazy" decoding="async" />
           <div class="card-overlay"></div>
 
           <div class="card-badges">
-            <span class="card-badge">${project.type}</span>
-            <span class="card-badge">${project.stack[0]}</span>
+            <span class="card-badge">${escapeHtml(t(`category.${project.type}`))}</span>
+            <span class="card-badge">${escapeHtml(t(`tag.${project.stack[0]}`))}</span>
           </div>
         </div>
 
         <div class="card-content">
-          <h3>${project.title}</h3>
-          <p>${project.description}</p>
+          <h3>${escapeHtml(project.title)}</h3>
+          <p>${escapeHtml(project.description)}</p>
 
           <div class="card-footer">
             <div class="tags">
-              ${highlightedTags.map((tag) => `<span>${tag}</span>`).join("")}
+              ${highlightedTags.map((tag) => `<span>${escapeHtml(t(`tag.${tag}`))}</span>`).join("")}
             </div>
 
-            <a href="${project.link}" target="_blank" rel="noopener noreferrer" class="card-link">
-              Ver projeto
+            <a href="${escapeHtml(project.link)}" target="_blank" rel="noopener noreferrer" class="card-link" aria-label="${escapeHtml(t("projects.open", { title: project.title }))}">
+              ${escapeHtml(t("projects.link"))}
               <span aria-hidden="true">→</span>
             </a>
           </div>
@@ -872,24 +222,24 @@ document.addEventListener("DOMContentLoaded", () => {
   function renderPagination(totalPages) {
     if (totalPages <= 1) return;
 
-    const firstButton = createPaginationButton("Primeira", 1, {
+    const firstButton = createPaginationButton(t("pagination.first"), 1, {
       disabled: currentPage === 1,
-      label: "Ir para primeira página",
+      label: t("pagination.firstLabel"), edge: true,
     });
 
-    const previousButton = createPaginationButton("Anterior", currentPage - 1, {
+    const previousButton = createPaginationButton(t("pagination.previous"), currentPage - 1, {
       disabled: currentPage === 1,
-      label: "Página anterior",
+      label: t("pagination.previousLabel"),
     });
 
-    const nextButton = createPaginationButton("Próxima", currentPage + 1, {
+    const nextButton = createPaginationButton(t("pagination.next"), currentPage + 1, {
       disabled: currentPage === totalPages,
-      label: "Próxima página",
+      label: t("pagination.nextLabel"),
     });
 
-    const lastButton = createPaginationButton("Última", totalPages, {
+    const lastButton = createPaginationButton(t("pagination.last"), totalPages, {
       disabled: currentPage === totalPages,
-      label: "Ir para última página",
+      label: t("pagination.lastLabel"), edge: true,
     });
 
     projectsPagination.appendChild(firstButton);
@@ -897,7 +247,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const summary = document.createElement("span");
     summary.className = "pagination-summary";
     summary.textContent = `${currentPage} / ${totalPages}`;
-    summary.setAttribute("aria-label", `Página ${currentPage} de ${totalPages}`);
+    summary.setAttribute("aria-label", t("pagination.summary", { page: currentPage, total: totalPages }));
     projectsPagination.appendChild(summary);
 
     getVisiblePages(totalPages).forEach((page) => {
@@ -911,7 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const pageButton = createPaginationButton(page, page, {
         active: page === currentPage,
-        label: `Ir para página ${page}`,
+        label: t("pagination.page", { page }),
       });
 
       projectsPagination.appendChild(pageButton);
@@ -926,7 +276,7 @@ document.addEventListener("DOMContentLoaded", () => {
     button.type = "button";
     button.textContent = text;
     button.className = typeof text === "number" ? "pagination-page" :
-      (text === "Primeira" || text === "Última" ? "pagination-edge" : "pagination-direction");
+      (options.edge ? "pagination-edge" : "pagination-direction");
     button.disabled = Boolean(options.disabled);
     button.setAttribute("aria-label", options.label);
 
