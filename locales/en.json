@@ -320,5 +320,7 @@
   "tag.Lucide Icons": "Lucide Icons",
   "tag.Server Components": "Server Components",
   "tag.Canvas API": "Canvas API",
-  "token.fundamentals": "fundamentals"
+  "token.fundamentals": "fundamentals",
+  "project.arcane.title": "Arcane — The beauty of chaos",
+  "project.arcane.description": "An Arcane fan editorial experience with seven sections, layered parallax, character cutouts and SVG/CSS artwork. Features interactive character panels, responsive navigation and reduced-motion support, built with Next.js, React, TypeScript and GSAP/ScrollTrigger."
 }

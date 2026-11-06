@@ -56,7 +56,7 @@ class StaticBuildTests(unittest.TestCase):
             self.assertEqual(len(cards), len(self.projects))
             counter = next(node for node in tree.walk() if node.attrs.get("id") == "projectsCounter")
             text = "".join(child.text or "" for child in counter.children)
-            self.assertIn("45", text)
+            self.assertIn(str(len(self.projects)), text)
             self.assertNotEqual(text.strip(), "0 projetos encontrados")
 
     def test_ids_anchors_and_translation_bindings(self):
@@ -88,8 +88,8 @@ class StaticBuildTests(unittest.TestCase):
             self.assertEqual({n.attrs["hreflang"] for n in links if "hreflang" in n.attrs}, {"pt-BR", "en", "x-default"})
             schema = structured_data(locale, self.locales[locale], self.projects)
             listing = next(n for n in schema["@graph"] if n["@type"] == "ItemList")
-            self.assertEqual(listing["numberOfItems"], 45)
-            self.assertEqual(len(listing["itemListElement"]), 45)
+            self.assertEqual(listing["numberOfItems"], len(self.projects))
+            self.assertEqual(len(listing["itemListElement"]), len(self.projects))
 
     def test_local_assets_and_responsive_sources_exist(self):
         tree = parse((ROOT / "en/index.html").read_text(encoding="utf-8"))

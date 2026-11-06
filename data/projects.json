@@ -1,5 +1,22 @@
 [
   {
+    "image": "img/portifolio/arcane.png",
+    "link": "https://arcane-five-taupe.vercel.app/",
+    "type": "Editorial",
+    "stack": [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "GSAP",
+      "ScrollTrigger",
+      "Tailwind CSS",
+      "SVG",
+      "Responsive Design"
+    ],
+    "featured": true,
+    "id": "arcane"
+  },
+  {
     "image": "img/portifolio/a-casa-da-meia-noite.jpg",
     "link": "https://a-casa-da-meia-noite.vercel.app/",
     "type": "Interactive Storytelling",
